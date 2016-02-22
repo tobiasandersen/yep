@@ -1,9 +1,9 @@
 import React from 'react'
 import styles from 'styles/Card.css'
 
-const Card = () => (
+const Card = ({ value }) => (
   <div className={styles.card}>
-    100
+    {value * 100}
   </div>
 )
 
