@@ -14,7 +14,6 @@
   "parser": "babel-eslint",
   "rules": {
     "array-bracket-spacing": [ 2, "always" ],
-    "comma-dangle": [1, "always-multiline"],
     "eol-last": 2,
     "indent": [ 2, 2, { "SwitchCase": 1 } ],
     "jsx-quotes": [ 2, "prefer-double" ],
