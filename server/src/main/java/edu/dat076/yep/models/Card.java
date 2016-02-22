@@ -5,14 +5,20 @@ package edu.dat076.yep.models;
  */
 public class Card {
 
+    private int id;
     private String question;
     private String answer;
     private int value;
 
-    public Card(String question, String answer, int value) {
+    public Card(int id, String question, String answer, int value) {
+        this.id = id;
         this.question = question;
         this.answer = answer;
         this.value = value;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public String getQuestion() {
