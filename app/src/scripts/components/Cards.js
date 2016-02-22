@@ -3,7 +3,7 @@ import styles from 'styles/Cards.css'
 import Card from './Card'
 
 const Cards = () => (
-  {
+  <div>
     <Card />
     <Card />
     <Card />
@@ -29,7 +29,7 @@ const Cards = () => (
     <Card />
     <Card />
     <Card />
-  }
+  </div>
 )
 
 export default Cards
