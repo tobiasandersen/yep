@@ -1,0 +1,11 @@
+.container {
+  width: 100%;
+  height: 10%;
+  display: flex;
+  flex-direction: row;
+}
+
+.category {
+  width: 20%;
+  height: 100%;
+}
