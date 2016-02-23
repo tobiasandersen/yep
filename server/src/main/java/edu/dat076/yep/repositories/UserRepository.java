@@ -1,5 +1,6 @@
-package edu.dat076.yep.models;
+package edu.dat076.yep.repositories;
 
+import edu.dat076.yep.models.User;
 import org.springframework.data.repository.CrudRepository;
 
 /**
