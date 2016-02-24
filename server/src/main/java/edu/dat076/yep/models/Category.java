@@ -7,6 +7,7 @@ import java.util.List;
  * Created by marcus on 2016-02-18.
  */
 @Entity
+@Table(name = "CATEGORIES")
 public class Category {
 
     @Id
@@ -17,6 +18,8 @@ public class Category {
 
     @OneToMany
     private List<Card> cards;
+
+    protected Category() {}
 
     public Category(String title, List<Card> cards) {
         this.title = title;

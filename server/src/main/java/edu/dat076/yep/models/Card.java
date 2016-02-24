@@ -1,14 +1,12 @@
 package edu.dat076.yep.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 /**
  * Created by axel on 2016-02-17.
  */
 @Entity
+@Table(name = "CARDS")
 public class Card {
 
     @Id
@@ -18,6 +16,8 @@ public class Card {
     private String question;
     private String answer;
     private int value;
+
+    protected Card() {}
 
     public Card(String question, String answer, int value) {
         this.question = question;
