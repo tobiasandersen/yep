@@ -1,14 +1,12 @@
 package edu.dat076.yep.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 /**
  * Created by marcus on 2016-02-18.
  */
 @Entity
+@Table(name = "USERS")
 public class User {
 
     @Id

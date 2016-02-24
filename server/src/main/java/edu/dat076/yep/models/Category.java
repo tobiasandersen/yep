@@ -1,24 +1,29 @@
 package edu.dat076.yep.models;
 
+import javax.persistence.*;
 import java.util.List;
 
 /**
  * Created by marcus on 2016-02-18.
  */
+@Entity
+@Table(name = "CATEGORIES")
 public class Category {
 
-    private int id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+
     private String title;
+
+    @OneToMany
     private List<Card> cards;
 
-    public Category(int id, String title, List<Card> cards) {
-        this.id = id;
+    protected Category() {}
+
+    public Category(String title, List<Card> cards) {
         this.title = title;
         this.cards = cards;
-    }
-
-    public int getId() {
-        return id;
     }
 
     public String getTitle() {
@@ -29,4 +34,8 @@ public class Category {
         return cards;
     }
 
+    @Override
+    public String toString() {
+        return "Title: " + title + cards.toString();
+    }
 }

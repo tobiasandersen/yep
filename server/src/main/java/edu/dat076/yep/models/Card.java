@@ -1,24 +1,28 @@
 package edu.dat076.yep.models;
 
+import javax.persistence.*;
+
 /**
  * Created by axel on 2016-02-17.
  */
+@Entity
+@Table(name = "CARDS")
 public class Card {
 
-    private int id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+
     private String question;
     private String answer;
     private int value;
 
-    public Card(int id, String question, String answer, int value) {
-        this.id = id;
+    protected Card() {}
+
+    public Card(String question, String answer, int value) {
         this.question = question;
         this.answer = answer;
         this.value = value;
-    }
-
-    public int getId() {
-        return id;
     }
 
     public String getQuestion() {
@@ -33,4 +37,8 @@ public class Card {
         return value;
     }
 
+    @Override
+    public String toString() {
+        return "Question: " + question + ". Answer: " + answer + ". Value: " + value;
+    }
 }
