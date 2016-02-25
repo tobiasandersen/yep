@@ -21,8 +21,12 @@ public class Category {
 
     protected Category() {}
 
-    public Category(String title, List<Card> cards) {
+    public Category(String title) {
         this.title = title;
+    }
+
+    public Category(String title, List<Card> cards) {
+        this(title);
         this.cards = cards;
     }
 
@@ -32,6 +36,14 @@ public class Category {
 
     public List<Card> getCards() {
         return cards;
+    }
+
+    public void addCard(Card card) {
+        this.cards.add(card);
+    }
+
+    public void addCards(List<Card> cards) {
+        this.cards.addAll(cards);
     }
 
     @Override
