@@ -13,3 +13,7 @@
   background-color: #87ABCD;
   transition: ease-in-out 200ms;
 }
+
+.card.is-selected {
+  background: red;
+}

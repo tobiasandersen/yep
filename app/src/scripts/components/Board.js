@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
 import styles from 'styles/Board.css'
-import Cards from './Cards'
+import CategoriesContainer from '../containers/CategoriesContainer'
 import Players from './Players'
 
 class Board extends Component {
   render() {
     return (
       <div className={styles.board}>
-        <Cards />
+        <CategoriesContainer />
         <Players />
       </div>
     )

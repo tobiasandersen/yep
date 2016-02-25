@@ -34,6 +34,7 @@
   },
   "dependencies": {
     "autoprefixer": "^6.3.1",
+    "classnames": "^2.2.3",
     "css-loader": "^0.22.0",
     "eslint-import-resolver-webpack": "^0.1.4",
     "eslint-loader": "^1.1.1",
@@ -44,6 +45,12 @@
     "react-addons-css-transition-group": "^0.14.0",
     "react-css-modules": "^3.6.8",
     "react-dom": "^0.14.0",
+    "react-redux": "^4.4.0",
+    "redux": "^3.3.1",
+    "redux-actions": "^0.9.1",
+    "redux-devtools-dock-monitor": "^1.1.0",
+    "redux-devtools-log-monitor": "^1.0.4",
+    "redux-thunk": "^1.0.3",
     "style-loader": "^0.13.0",
     "webpack-dev-server": "^1.14.0"
   }
