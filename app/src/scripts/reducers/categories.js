@@ -1,18 +1,27 @@
-import { SELECT_CARD } from '../constants/ActionTypes'
+import { RECEIVE_CATEGORIES } from '../constants/ActionTypes'
 
-export function selectedCard(state = null, action) {
+export function categoryIdList(state = [], action) {
   switch(action.type) {
-    case SELECT_CARD:
-      return action.payload
-    default: 
+    case RECEIVE_CATEGORIES:
+      if (action.payload && action.payload.result && action.payload.result.categories) {
+        return action.payload.result.categories
+      }
+
       return state
-  }
-}
-
-export function categories(state = [], action) {
-  switch(action.type) {
     default:
       return state
   }
 }
 
+export function categories(state = {}, action) {
+  switch(action.type) {
+    case RECEIVE_CATEGORIES:
+      if (action.payload && action.payload.entities && action.payload.entities.categories) {
+        return action.payload.entities.categories
+      }
+
+      return state
+    default:
+      return state
+  }
+}
