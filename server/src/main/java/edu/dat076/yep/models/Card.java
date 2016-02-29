@@ -25,6 +25,10 @@ public class Card {
         this.value = value;
     }
 
+    public Long getId() {
+        return id;
+    }
+
     public String getQuestion() {
         return question;
     }

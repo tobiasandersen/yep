@@ -30,6 +30,10 @@ public class Category {
         this.cards = cards;
     }
 
+    public Long getId() {
+        return id;
+    }
+
     public String getTitle() {
         return title;
     }
