@@ -1,13 +1,10 @@
 package edu.dat076.yep.controllers;
 
 import edu.dat076.yep.models.Category;
-import edu.dat076.yep.repositories.CardRepository;
 import edu.dat076.yep.repositories.CategoryRepository;
+import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -23,6 +20,15 @@ public class CategoryController {
     @RequestMapping(value="/categories", method=RequestMethod.GET)
     public List<Category> findAllCategories() {
         return (List<Category>) repository.findAll();
+    }
+
+    @RequestMapping(value="/categories", method=RequestMethod.POST)
+    public Category createCard(@RequestBody String json) {
+        JSONObject jsonObject = new JSONObject(json);
+        String title = jsonObject.getString("title");
+        Category newCategory = new Category(title);
+        repository.save(newCategory);
+        return newCategory;
     }
 
     @RequestMapping(value="/categories/{categoryID}", method=RequestMethod.GET)

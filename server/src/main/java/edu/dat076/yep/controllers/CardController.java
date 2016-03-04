@@ -22,14 +22,13 @@ public class CardController {
         return (List<Card>) repository.findAll();
     }
 
-    // fix post of new card
     @RequestMapping(value="/cards", method=RequestMethod.POST)
     public Card createCard(@RequestBody String json) {
         JSONObject jsonObject = new JSONObject(json);
         String question = jsonObject.getString("question");
         String answer = jsonObject.getString("answer");
         int value = jsonObject.getInt("value");
-        
+
         Card newCard = new Card(question, answer, value);
         repository.save(newCard);
         return newCard;
