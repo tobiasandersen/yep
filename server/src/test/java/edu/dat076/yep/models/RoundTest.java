@@ -41,4 +41,21 @@ public class RoundTest extends YepApplicationTests {
     public void testConstructor() {
         Assert.assertNotNull(round);
     }
+
+    @Test
+    public void testGetMultiplier() {
+        Assert.assertEquals(MULTIPLIER, round.getMultiplier());
+    }
+
+    @Test
+    public void testGetCategories() {
+        Assert.assertEquals(CATEGORIES.size(), round.getCategories().size());
+        Assert.assertEquals(CATEGORIES, round.getCategories());
+    }
+
+    @Test
+    public void testGetBoard() {
+        Assert.assertEquals(BOARD, round.getBoard());
+    }
+
 }

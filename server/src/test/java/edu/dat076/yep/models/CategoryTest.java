@@ -45,27 +45,27 @@ public class CategoryTest extends YepApplicationTests {
 
     @Test
     public void testGetCards() {
-        Assert.assertEquals(3, category.getCards().size());
+        Assert.assertEquals(CARDS.size(), category.getCards().size());
         Assert.assertEquals(CARDS, category.getCards());
     }
 
     @Test
     public void testAddCard() {
         // Check initial size
-        Assert.assertEquals(3, category.getCards().size());
+        Assert.assertEquals(CARDS.size(), category.getCards().size());
         // Add new card
         Card newCard = new Card("foo4", "bar4", 400);
         category.addCard(newCard);
 
         // Check new size and last card
-        Assert.assertEquals(4, category.getCards().size());
+        Assert.assertEquals(CARDS.size(), category.getCards().size());
         Assert.assertEquals(newCard, category.getCards().get(category.getCards().size() - 1));
     }
 
     @Test
     public void testAddCards() {
         // Check initial size
-        Assert.assertEquals(3, category.getCards().size());
+        Assert.assertEquals(CARDS.size(), category.getCards().size());
 
         // Add list of new cards
         Card newCard = new Card("foo4", "bar4", 400);
@@ -76,7 +76,7 @@ public class CategoryTest extends YepApplicationTests {
         category.addCards(list);
 
         // Check new size and two last cards
-        Assert.assertEquals(5, category.getCards().size());
+        Assert.assertEquals(CARDS.size(), category.getCards().size());
         Assert.assertEquals(newCard, category.getCards().get(category.getCards().size() - 2));
         Assert.assertEquals(newCard2, category.getCards().get(category.getCards().size() - 1));
     }
