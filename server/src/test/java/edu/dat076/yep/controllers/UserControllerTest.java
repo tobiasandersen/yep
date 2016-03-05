@@ -41,8 +41,7 @@ public class UserControllerTest extends YepApplicationTests {
     @Test
     public void testFindAllUsers() {
         List<User> list = controller.findAllUsers();
-
-        Assert.assertNotNull("failure - expected to find a list of users", list);
+        Assert.assertNotNull(list);
     }
 
     @Test
