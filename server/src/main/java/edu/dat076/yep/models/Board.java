@@ -1,5 +1,6 @@
 package edu.dat076.yep.models;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -8,7 +9,7 @@ import java.util.List;
 public class Board {
 
     private List<Player> players;
-    private List<Round> rounds; //TODO rounds must be 2..?
+    private List<Round> rounds = new ArrayList<>(2);
 
     public Board(List<Player> players, List<Round> rounds) {
         this.players = players;

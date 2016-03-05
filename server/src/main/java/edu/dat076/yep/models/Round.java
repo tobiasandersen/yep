@@ -1,5 +1,6 @@
 package edu.dat076.yep.models;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -8,7 +9,7 @@ import java.util.List;
 public class Round {
 
     private int multiplier;
-    private List<Category> categories; //TODO categories must be 5..?
+    private List<Category> categories = new ArrayList<>(5);
     private Board board;
 
     public Round(int multiplier, List<Category> categories, Board board) {

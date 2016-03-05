@@ -50,7 +50,7 @@ public class UserControllerTest extends YepApplicationTests {
         User userNotNull = userController.findUserByID(17); // id 17 should be User2 or such
         User userNull = userController.findUserByID(999999);
 
-        Assert.assertNotNull("failure - expected to find a user", userNotNull);
-        Assert.assertNull("failure - expected to not find a user", userNull);
+        Assert.assertNotNull("Failure - expected to find a user", userNotNull);
+        Assert.assertNull("Failure - expected to not find a user", userNull);
     }
 }

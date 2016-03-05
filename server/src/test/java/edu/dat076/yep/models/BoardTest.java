@@ -5,23 +5,18 @@ import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 
 /**
- * Created by marcus on 2016-03-04.
- *
- * Tests the User class.
+ * Created by axel on 2016-03-05.
  */
 @Transactional
-public class UserTest extends YepApplicationTests {
+public class BoardTest extends YepApplicationTests {
 
-    private User user;
-    private final String NAME = "FOO";
+    private Board board;
 
     @Before
     public void setUp() {
-        user = new User(NAME);
     }
 
     @After
@@ -31,11 +26,6 @@ public class UserTest extends YepApplicationTests {
 
     @Test
     public void testConstructor() {
-
-    }
-
-    @Test
-    public void testGetName() {
-        Assert.assertTrue(user.getName().equals(NAME));
+        Assert.assertNotNull(board);
     }
 }

@@ -27,7 +27,7 @@ public class UserController {
 
     @RequestMapping(value="/users/{userID}", method=RequestMethod.GET)
     public User findUserByID(@PathVariable int userID) {
-        return null;
+        return repository.findOne((long) userID);
     }
 
 }
