@@ -26,7 +26,7 @@ public class UserControllerTest extends YepApplicationTests {
 
     @SuppressWarnings("SpringJavaAutowiringInspection")
     @Autowired
-    private UserController userController;
+    private UserController controller;
 
     @Before
     public void setUp() {
@@ -40,17 +40,17 @@ public class UserControllerTest extends YepApplicationTests {
 
     @Test
     public void testFindAllUsers() {
-        List<User> list = userController.findAllUsers();
+        List<User> list = controller.findAllUsers();
 
         Assert.assertNotNull("failure - expected to find a list of users", list);
     }
 
     @Test
     public void testFindUserByID() {
-        User userNotNull = userController.findUserByID(17); // id 17 should be User2 or such
-        User userNull = userController.findUserByID(999999);
+        User userNotNull = controller.findUserByID(17); // id 17 should be User2
+        User userNull = controller.findUserByID(999999);
 
-        Assert.assertNotNull("Failure - expected to find a user", userNotNull);
-        Assert.assertNull("Failure - expected to not find a user", userNull);
+        Assert.assertNotNull(userNotNull);
+        Assert.assertNull(userNull);
     }
 }

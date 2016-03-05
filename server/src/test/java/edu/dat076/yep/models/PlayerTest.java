@@ -14,10 +14,13 @@ import org.springframework.transaction.annotation.Transactional;
 public class PlayerTest extends YepApplicationTests {
 
     private Player player;
+    private final String NAME = "foo";
     private final int POINTS = 100;
+    private final Board BOARD = null;
 
     @Before
     public void setUp() {
+        player = new Player(NAME, POINTS, BOARD);
     }
 
     @After
@@ -28,5 +31,20 @@ public class PlayerTest extends YepApplicationTests {
     @Test
     public void testConstructor() {
         Assert.assertNotNull(player);
+    }
+
+    @Test
+    public void testGetName() {
+        Assert.assertEquals(NAME, player.getName());
+    }
+
+    @Test
+    public void testGetPoints() {
+        Assert.assertEquals(POINTS, player.getPoints());
+    }
+
+    @Test
+    public void testGetBoard() {
+        Assert.assertEquals(BOARD, player.getBoard());
     }
 }

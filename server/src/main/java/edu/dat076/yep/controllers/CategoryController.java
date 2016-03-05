@@ -17,7 +17,7 @@ public class CategoryController {
     @Autowired
     private CategoryRepository repository;
 
-    @RequestMapping(value="/categories", method=RequestMethod.GET)
+    @RequestMapping(value="/cat5egories", method=RequestMethod.GET)
     public List<Category> findAllCategories() {
         return (List<Category>) repository.findAll();
     }
