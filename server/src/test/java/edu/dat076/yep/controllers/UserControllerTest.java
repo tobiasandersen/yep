@@ -47,7 +47,7 @@ public class UserControllerTest extends YepApplicationTests {
 
     @Test
     public void testFindUserByID() {
-        User userNotNull = controller.findUserByID(17); // id 17 should be User2
+        User userNotNull = controller.findUserByID(17); // id 17 should exist
         User userNull = controller.findUserByID(999999);
 
         Assert.assertNotNull(userNotNull);

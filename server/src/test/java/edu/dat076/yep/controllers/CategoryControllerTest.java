@@ -39,8 +39,16 @@ public class CategoryControllerTest extends YepApplicationTests {
     }
 
     @Test
+    public void testCreateCategory() {
+        String json = "{\"title\": \"foo\"}";
+        Category newCategory = controller.createCategory(json);
+        Assert.assertNotNull(newCategory);
+        Assert.assertEquals("foo", newCategory.getTitle());
+    }
+
+    @Test
     public void testFindCategoryByID() {
-        Category categoryNotNull = controller.findCategoryByID(172); // id 172 should be classic lit
+        Category categoryNotNull = controller.findCategoryByID(172); // id 172 should exist
         Category categoryNull = controller.findCategoryByID(999999);
 
         Assert.assertNotNull(categoryNotNull);

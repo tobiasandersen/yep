@@ -23,7 +23,7 @@ public class CategoryController {
     }
 
     @RequestMapping(value="/categories", method=RequestMethod.POST)
-    public Category createCard(@RequestBody String json) {
+    public Category createCategory(@RequestBody String json) {
         JSONObject jsonObject = new JSONObject(json);
         String title = jsonObject.getString("title");
         Category newCategory = new Category(title);

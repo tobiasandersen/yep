@@ -18,7 +18,7 @@ public class CardController {
     private CardRepository repository;
 
     @RequestMapping(value="/cards", method=RequestMethod.GET)
-    public List<Card> findAllCards(@RequestParam(value = "categoryID", required = false) Integer categoryID) {
+    public List<Card> findAllCards() {
         return (List<Card>) repository.findAll();
     }
 
