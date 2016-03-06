@@ -17,6 +17,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * A service that fetches data from an API to be used in the game, in order to
+ * generate cards and minimize the manual work in implementing the game. Hence,
+ * everything is in English.
+ *
  * Created by axel on 2016-02-24.
  */
 @Service
