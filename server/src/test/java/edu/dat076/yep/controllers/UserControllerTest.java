@@ -28,6 +28,8 @@ public class UserControllerTest extends YepApplicationTests {
     @Autowired
     private UserController controller;
 
+    private final String NAME = "foo";
+
     @Before
     public void setUp() {
 
@@ -42,6 +44,14 @@ public class UserControllerTest extends YepApplicationTests {
     public void testFindAllUsers() {
         List<User> list = controller.findAllUsers();
         Assert.assertNotNull(list);
+    }
+
+    @Test
+    public void testCreateUser() {
+        String json = "{\"name\": " + NAME + "}";
+        User newUser = controller.createUser(json);
+        Assert.assertNotNull(newUser);
+        Assert.assertEquals(NAME, newUser.getName());
     }
 
     @Test

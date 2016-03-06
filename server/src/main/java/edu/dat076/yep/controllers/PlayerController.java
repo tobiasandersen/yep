@@ -1,6 +1,7 @@
 package edu.dat076.yep.controllers;
 
 import edu.dat076.yep.models.Player;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
