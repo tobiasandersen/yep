@@ -183,7 +183,7 @@ export const categoriesResponse = {
   ]
 }
 
-export const users = [
+export const usersResponse = [
   {
     id: 1,
     name: 'David',
