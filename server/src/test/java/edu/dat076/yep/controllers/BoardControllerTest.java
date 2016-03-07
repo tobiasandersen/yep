@@ -53,7 +53,7 @@ public class BoardControllerTest extends YepApplicationTests {
     public void testCreateBoard() {
         Board newBoard = null;
         try {
-            HttpResponse response = Unirest.get("http://www.json-generator.com/api/json/get/cpvjCSPAXS?indent=2").asJson();
+            HttpResponse response = Unirest.get("http://www.json-generator.com/api/json/get/crcjDTnUya?indent=2").asJson();
             JSONObject jsonObject = new JSONObject(response.getBody());
             String json = jsonObject.toString();
             newBoard = controller.createBoard(json);

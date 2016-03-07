@@ -28,8 +28,9 @@ public class BoardController {
     @RequestMapping(value="/boards", method=RequestMethod.POST)
     public Board createBoard(@RequestBody String json) {
         JSONObject jsonObject = new JSONObject(json);
-        JSONArray playerArray = jsonObject.getJSONArray("players");
-        JSONArray roundArray = jsonObject.getJSONArray("rounds");
+        JSONArray tmpArray = jsonObject.getJSONArray("array");
+        JSONArray playerArray = tmpArray.getJSONObject(0).getJSONArray("players");
+        JSONArray roundArray = tmpArray.getJSONObject(0).getJSONArray("rounds");
         List<Player> players = new ArrayList<>();
         List<Round> rounds = new ArrayList<>();
 
