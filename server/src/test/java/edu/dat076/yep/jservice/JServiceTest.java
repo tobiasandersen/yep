@@ -20,7 +20,7 @@ import org.springframework.transaction.annotation.Transactional;
  *
  */
 @Transactional
-public class JServiceTests extends YepApplicationTests{
+public class JServiceTest extends YepApplicationTests{
 
     @SuppressWarnings("SpringJavaAutowiringInspection")
     @Autowired

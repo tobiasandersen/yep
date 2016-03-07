@@ -10,12 +10,10 @@ public class Round {
 
     private int multiplier;
     private List<Category> categories = new ArrayList<>(5);
-    private Board board;
 
-    public Round(int multiplier, List<Category> categories, Board board) {
+    public Round(int multiplier, List<Category> categories) {
         this.multiplier = multiplier;
         this.categories = categories;
-        this.board = board;
     }
 
     public int getMultiplier() {
@@ -24,9 +22,5 @@ public class Round {
 
     public List<Category> getCategories() {
         return categories;
-    }
-
-    public Board getBoard() {
-        return board;
     }
 }
