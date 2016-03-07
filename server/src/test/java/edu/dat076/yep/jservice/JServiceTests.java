@@ -1,6 +1,8 @@
 package edu.dat076.yep.jservice;
 
 import edu.dat076.yep.YepApplicationTests;
+import edu.dat076.yep.repositories.CardRepository;
+import edu.dat076.yep.repositories.CategoryRepository;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -24,6 +26,12 @@ public class JServiceTests extends YepApplicationTests{
     @Autowired
     private JService jService;
 
+    @Autowired
+    private CardRepository cardRepository;
+
+    @Autowired
+    private CategoryRepository categoryRepository;
+
     @Before
     public void setUp() {
 
@@ -40,7 +48,9 @@ public class JServiceTests extends YepApplicationTests{
      */
     @Test
     public void testFetchData() {
-
-        Assert.assertTrue(true);
+        categoryRepository.deleteAll();
+        cardRepository.deleteAll();
+        jService.fetchData();
+        Assert.assertTrue(cardRepository.count() != 0 && categoryRepository.count() != 0);
     }
 }
