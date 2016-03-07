@@ -1,6 +1,7 @@
 package edu.dat076.yep.controllers;
 
 import edu.dat076.yep.models.Player;
+import edu.dat076.yep.repositories.PlayerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,14 +17,17 @@ import java.util.List;
 @RestController
 public class PlayerController {
 
+    @Autowired
+    private PlayerRepository repository;
+
     @RequestMapping(value="/players", method=RequestMethod.GET)
     public List<Player> findAllPlayers() {
-        return null;
+        return (List<Player>) repository.findAll();
     }
 
     @RequestMapping(value="/players/{playerID}", method=RequestMethod.GET)
     public Player findPlayerByID(@PathVariable int playerID) {
-        return null;
+        return repository.findOne((long) playerID);
     }
 
 }

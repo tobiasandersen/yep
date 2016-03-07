@@ -1,6 +1,8 @@
 package edu.dat076.yep.controllers;
 
 import edu.dat076.yep.models.Board;
+import edu.dat076.yep.repositories.BoardRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -15,14 +17,17 @@ import java.util.List;
 @RestController
 public class BoardController {
 
+    @Autowired
+    private BoardRepository repository;
+
     @RequestMapping(value="/boards", method=RequestMethod.GET)
     public List<Board> findAllBoards() {
-        return null;
+        return (List<Board>) repository.findAll();
     }
 
     @RequestMapping(value="/boards/{boardID}", method=RequestMethod.GET)
     public Board findBoardByID(@PathVariable int boardID) {
-        return null;
+        return repository.findOne((long) boardID);
     }
 
 }
