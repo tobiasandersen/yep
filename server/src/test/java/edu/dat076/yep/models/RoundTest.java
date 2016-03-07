@@ -19,7 +19,6 @@ public class RoundTest extends YepApplicationTests {
     private Round round;
     private final int MULTIPLIER = 2;
     private final List<Category> CATEGORIES = new ArrayList<>(5);
-    private final Board BOARD = null;
 
     @Before
     public void setUp() {
@@ -29,7 +28,7 @@ public class RoundTest extends YepApplicationTests {
         CATEGORIES.add(new Category("4"));
         CATEGORIES.add(new Category("5"));
 
-        round = new Round(MULTIPLIER, CATEGORIES, BOARD);
+        round = new Round(MULTIPLIER, CATEGORIES);
     }
 
     @After
@@ -51,11 +50,6 @@ public class RoundTest extends YepApplicationTests {
     public void testGetCategories() {
         Assert.assertEquals(CATEGORIES.size(), round.getCategories().size());
         Assert.assertEquals(CATEGORIES, round.getCategories());
-    }
-
-    @Test
-    public void testGetBoard() {
-        Assert.assertEquals(BOARD, round.getBoard());
     }
 
 }
