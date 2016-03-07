@@ -6,7 +6,7 @@ import ButtonAdd from './ButtonAdd'
 const Users = ({ users, addUserToGame }) => (
   <div className={styles.container}>
     <div className={styles.top}>
-      Users
+      <h3>Users</h3>
     </div>
     <ButtonAdd />
     {users.map(user => (

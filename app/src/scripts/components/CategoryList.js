@@ -6,7 +6,7 @@ import CategoryListItem from './CategoryListItem'
 const CategoryList = ({ categories }) => (
   <div className={styles.container}>
     <div className={styles.top}>
-      Title
+      <h3>Categories</h3>
     </div>
     <div className={styles.add}>
       <ButtonAdd />

@@ -7,16 +7,15 @@ export function users(state = [], action) {
         return action.payload
       }
       return state
+    default:
+      return state
+  }
+}
+
+export function players(state = [], action) {
+  switch (action.type) {
     case ADD_USER_TO_GAME:
-      let newState = state
-      newState.map(user => {
-        if (action.id === user.id) {
-          return Object.assign({}, user, {
-            isPlayer: true
-          })
-        }
-      })
-      return newState
+      return state.push(action.user)
     default:
       return state
   }

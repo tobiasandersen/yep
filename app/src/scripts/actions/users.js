@@ -15,9 +15,9 @@ const requestUsers = createAction(REQUEST_USERS)
 const receiveUsers = createAction(RECEIVE_USERS)
 export const searchUser = createAction(SEARCH_USER)
 
-export function addUserToGame(id) {
+export function addUserToGame(user) {
   type: ADD_USER_TO_GAME,
-  id
+  user
 }
 
 export function fetchUsers() {
