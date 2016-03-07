@@ -2,7 +2,6 @@ package edu.dat076.yep;
 
 import edu.dat076.yep.jservice.JService;
 import edu.dat076.yep.repositories.CardRepository;
-import edu.dat076.yep.repositories.UserRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
