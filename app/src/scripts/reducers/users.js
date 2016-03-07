@@ -1,4 +1,4 @@
-import { RECEIVE_USERS, SEARCH_USER } from '../constants/ActionTypes'
+import { RECEIVE_USERS, ADD_USER_TO_GAME } from '../constants/ActionTypes'
 
 export function users(state = [], action) {
   switch(action.type) {
@@ -7,9 +7,16 @@ export function users(state = [], action) {
         return action.payload
       }
       return state
-    case SEARCH_USER:
-      console.log('Reducer')
-      return state.filter(name => name.includes(action.payload))
+    case ADD_USER_TO_GAME:
+      let newState = state
+      newState.map(user => {
+        if (action.id === user.id) {
+          return Object.assign({}, user, {
+            isPlayer: true
+          })
+        }
+      })
+      return newState
     default:
       return state
   }

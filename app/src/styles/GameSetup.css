@@ -4,4 +4,6 @@
   padding: 20px;
   background-color: #17212C;
   color: #FFFFFF;
+  display: flex;
+  flex-flow: row;
 }
