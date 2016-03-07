@@ -5,8 +5,7 @@ import javax.persistence.*;
 /**
  * Created by marcus on 2016-02-18.
  */
-@Entity
-@Table(name = "USERS")
+@MappedSuperclass
 public class User {
 
     @Id

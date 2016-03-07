@@ -15,7 +15,9 @@ public class Board {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    @OneToMany
     private List<Player> players;
+    @OneToMany
     private List<Round> rounds = new ArrayList<>(2);
 
     protected Board() {}

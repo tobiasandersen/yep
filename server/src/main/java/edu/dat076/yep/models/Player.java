@@ -9,20 +9,17 @@ import javax.persistence.*;
 @Table(name = "PLAYERS")
 public class Player extends User {
 
-    @Id
-    private Long id;
-
     private int points;
 
     protected Player() {}
 
     public Player(String name, int points) {
         super(name);
-        id = super.getId();
         this.points = points;
     }
 
     public int getPoints() {
         return points;
     }
+
 }

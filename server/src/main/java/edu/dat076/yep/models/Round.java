@@ -16,6 +16,7 @@ public class Round {
     private Long id;
 
     private int multiplier;
+    @OneToMany
     private List<Category> categories = new ArrayList<>(5);
 
     protected Round() {}
