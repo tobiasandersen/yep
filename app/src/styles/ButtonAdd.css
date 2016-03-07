@@ -1,7 +1,14 @@
 .box {
-  height: 30px;
+  height: 50px;
   width: 100%;
-  background-color: green;
+  margin: 0 auto 20px;
+  background-color: #33485F;
   text-align: center;
-  line-height: 30px;
+  line-height: 50px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.box:hover {
+  background-color: #17212C;
 }
