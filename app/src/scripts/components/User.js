@@ -2,7 +2,9 @@ import React, { PropTypes } from 'react'
 import styles from 'styles/User.css'
 
 const User = ({ user, handleClick }) => (
-  <div className={styles.container} onClick={() => handleClick(user)}>
+  <div className={styles.container} onClick={() => { 
+    handleClick(user) 
+  }}>
     <div className={styles.image}>
     </div>
     <div className={styles.name}>
