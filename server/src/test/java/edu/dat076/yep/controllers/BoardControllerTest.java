@@ -1,8 +1,13 @@
 package edu.dat076.yep.controllers;
 
+import com.mashape.unirest.http.HttpResponse;
+import com.mashape.unirest.http.Unirest;
+import com.mashape.unirest.http.exceptions.UnirestException;
 import edu.dat076.yep.YepApplicationTests;
 import edu.dat076.yep.models.Board;
 import edu.dat076.yep.repositories.BoardRepository;
+import org.json.JSONException;
+import org.json.JSONObject;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -24,7 +29,7 @@ public class BoardControllerTest extends YepApplicationTests {
     @Autowired
     private BoardRepository repository;
 
-    private final int ID = 1; //id should either be created or exist beforehand
+    private final int ID = 3; //id should either be created or exist beforehand
 
     @Before
     public void setUp() {
@@ -42,6 +47,22 @@ public class BoardControllerTest extends YepApplicationTests {
     public void testFindAllBoards() {
         List<Board> list = controller.findAllBoards();
         Assert.assertNotNull("failure - expected a list of boards", list);
+    }
+
+    @Test
+    public void testCreateBoard() {
+        Board newBoard = null;
+        try {
+            HttpResponse response = Unirest.get("http://www.json-generator.com/api/json/get/cpvjCSPAXS?indent=2").asJson();
+            JSONObject jsonObject = new JSONObject(response.getBody());
+            String json = jsonObject.toString();
+            newBoard = controller.createBoard(json);
+        } catch (UnirestException e) {
+            e.printStackTrace();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        Assert.assertNotNull(newBoard);
     }
 
     @Test

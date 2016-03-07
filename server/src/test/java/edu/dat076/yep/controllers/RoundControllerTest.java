@@ -45,6 +45,14 @@ public class RoundControllerTest extends YepApplicationTests {
         Assert.assertNotNull("failure - expected a list of rounds", list);
     }
 
+/*    @Test
+    public void testCreateRound() {
+        String json = "";
+        Round newRound = controller.createRound(json);
+        Assert.assertNotNull(newRound);
+        Assert.assertEquals(MULTI, newRound.getMultiplier());
+    }*/
+
     @Test
     public void testFindRoundByID() {
         Round round = controller.findRoundByID(ID);

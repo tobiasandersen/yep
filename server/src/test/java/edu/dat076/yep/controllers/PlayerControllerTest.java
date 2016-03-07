@@ -46,6 +46,15 @@ public class PlayerControllerTest extends YepApplicationTests {
         Assert.assertNotNull("failure - expected to find a list of players", list);
     }
 
+/*    @Test
+    public void testCreatePlayer() {
+        String json = "{\"name\": " + NAME + ", \"points\": " + POINTS + "}";
+        Player newPlayer = controller.createPlayer(json);
+        Assert.assertNotNull(newPlayer);
+        Assert.assertEquals(NAME, newPlayer.getName());
+        Assert.assertEquals(POINTS, newPlayer.getPoints());
+    }*/
+
     @Test
     public void testFindPlayerByID() {
         Player player = controller.findPlayerByID(ID);
