@@ -24,9 +24,11 @@ public class BoardControllerTest extends YepApplicationTests {
     @Autowired
     private BoardRepository repository;
 
+    private final int ID = 1; //id should either be created or exist beforehand
+
     @Before
     public void setUp() {
-        //Inserts board into repository
+        //Inserts mock board into repository
         Board board = new Board(null, null);
         repository.save(board);
     }
@@ -44,8 +46,8 @@ public class BoardControllerTest extends YepApplicationTests {
 
     @Test
     public void testFindBoardByID() {
-        Board board = controller.findBoardByID(1);
-        Assert.assertNotNull(board);
+        Board board = controller.findBoardByID(ID);
+        Assert.assertNotNull("failure - expected to find a board with id " + ID, board);
 
     }
 }
