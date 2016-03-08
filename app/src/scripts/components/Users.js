@@ -3,7 +3,7 @@ import CSSModules from 'react-css-modules'
 import styles from 'styles/GameSetupBox.css'
 import User from './User'
 import ButtonAdd from './ButtonAdd'
-import AddNewUser from './AddNewUser'
+import AddNew from './AddNew'
 
 const Users = ({ users, addUserToGame, userModalIsOpen, openUserModal, closeUserModal }) => (
   <div styleName="container">
@@ -19,7 +19,7 @@ const Users = ({ users, addUserToGame, userModalIsOpen, openUserModal, closeUser
       ))}
     </div>
     <ButtonAdd handleClick={openUserModal}/>
-    <AddNewUser 
+    <AddNew 
       modalIsOpen={userModalIsOpen} 
       closeModal={closeUserModal} />
   </div>
