@@ -59,23 +59,73 @@ public class RoundControllerTest extends YepApplicationTests {
 
     @Test
     public void testCreateRound() {
-        Round newRound = null;
-        int multi = 0;
-        String message = "failure - expected newly created Round object";
-        try {
-            // Response is from an online json generator
-            HttpResponse response = Unirest.get("http://www.json-generator.com/api/json/get/cuSAnquKHm?indent=2").asJson();
-            JSONObject jsonObject = new JSONObject(response.getBody());
-            String json = jsonObject.toString();
-            newRound = controller.createRound(json);
-
-            //multi = jsonObject.getInt("multiplier");
-        } catch(UnirestException e) {
-            message = "failure - unirest exception got caught";
-        } catch(JSONException e) {
-            message = "failure - json exception got caught";
-        }
-        Assert.assertNotNull(message, newRound);
-        //Assert.assertEquals(multi, newRound.getMultiplier());
+        String json = "{\n" +
+                "  \"multiplier\": " + MULTI + ",\n" +
+                "  \"categories\": [\n" +
+                "    {\n" +
+                "      \"title\": \"Memora\",\n" +
+                "      \"cards\": [\n" +
+                "        {\n" +
+                "          \"question\": \"Panzent\",\n" +
+                "          \"answer\": \"Hometown\",\n" +
+                "          \"value\": 454\n" +
+                "        },\n" +
+                "        {\n" +
+                "          \"question\": \"Kage\",\n" +
+                "          \"answer\": \"Phuel\",\n" +
+                "          \"value\": 354\n" +
+                "        },\n" +
+                "        {\n" +
+                "          \"question\": \"Zuvy\",\n" +
+                "          \"answer\": \"Inquala\",\n" +
+                "          \"value\": 189\n" +
+                "        },\n" +
+                "        {\n" +
+                "          \"question\": \"Genesynk\",\n" +
+                "          \"answer\": \"Comcur\",\n" +
+                "          \"value\": 265\n" +
+                "        },\n" +
+                "        {\n" +
+                "          \"question\": \"Geeknet\",\n" +
+                "          \"answer\": \"Ebidco\",\n" +
+                "          \"value\": 339\n" +
+                "        }\n" +
+                "      ]\n" +
+                "    },\n" +
+                "    {\n" +
+                "      \"title\": \"Exposa\",\n" +
+                "      \"cards\": [\n" +
+                "        {\n" +
+                "          \"question\": \"Magneato\",\n" +
+                "          \"answer\": \"Tropoli\",\n" +
+                "          \"value\": 235\n" +
+                "        },\n" +
+                "        {\n" +
+                "          \"question\": \"Ultrimax\",\n" +
+                "          \"answer\": \"Opticom\",\n" +
+                "          \"value\": 485\n" +
+                "        },\n" +
+                "        {\n" +
+                "          \"question\": \"Zentry\",\n" +
+                "          \"answer\": \"Prowaste\",\n" +
+                "          \"value\": 117\n" +
+                "        },\n" +
+                "        {\n" +
+                "          \"question\": \"Bristo\",\n" +
+                "          \"answer\": \"Equitax\",\n" +
+                "          \"value\": 184\n" +
+                "        },\n" +
+                "        {\n" +
+                "          \"question\": \"Miracula\",\n" +
+                "          \"answer\": \"Zilencio\",\n" +
+                "          \"value\": 153\n" +
+                "        }\n" +
+                "      ]\n" +
+                "    }\n" +
+                "  ]\n" +
+                "}";
+        Round newRound = controller.createRound(json);
+        Assert.assertNotNull("failure - expected newly created Round object", newRound);
+        Assert.assertEquals("failure - excected the same mutiplier", MULTI, newRound.getMultiplier());
     }
 }
