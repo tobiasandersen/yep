@@ -1,13 +1,24 @@
 import { 
   RECEIVE_USERS, 
   ADD_USER_TO_GAME,
-  REGISTER_ANSWER
+  REGISTER_ANSWER,
+  ADD_NEW_USER
 } from '../constants/ActionTypes'
+
+let userId = 5
 
 export function users(state = [], action) {
   switch(action.type) {
     case RECEIVE_USERS:
       return action.payload ? action.payload : state
+    case ADD_NEW_USER:
+      return [
+        ...state, {
+          id: userId++,
+          name: action.payload,
+          image_url: 'hello.jpg'
+        }
+      ]
     default:
       return state
   }

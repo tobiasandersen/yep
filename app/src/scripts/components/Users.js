@@ -5,7 +5,7 @@ import User from './User'
 import ButtonAdd from './ButtonAdd'
 import AddNew from './AddNew'
 
-const Users = ({ users, addUserToGame, userModalIsOpen, openUserModal, closeUserModal }) => (
+const Users = ({ users, addUserToGame, userModalIsOpen, openUserModal, closeUserModal, addNewUser }) => (
   <div styleName="container">
     <div styleName="title">
       <h3>Users</h3>
@@ -21,7 +21,8 @@ const Users = ({ users, addUserToGame, userModalIsOpen, openUserModal, closeUser
     <ButtonAdd handleClick={openUserModal}/>
     <AddNew 
       modalIsOpen={userModalIsOpen} 
-      closeModal={closeUserModal} />
+      closeModal={closeUserModal}
+      addNew={addNewUser} />
   </div>
 )
 
@@ -30,7 +31,8 @@ Users.propTypes = {
   addUserToGame: PropTypes.func.isRequired,
   userModalIsOpen: PropTypes.bool.isRequired,
   closeUserModal: PropTypes.func.isRequired,
-  openUserModal: PropTypes.func.isRequired
+  openUserModal: PropTypes.func.isRequired,
+  addNewUser: PropTypes.func.isRequired
 }
 
 export default CSSModules(Users, styles)
