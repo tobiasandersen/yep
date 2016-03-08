@@ -19,7 +19,7 @@ render(
     <div>
       <Router history={history}>
         <Route path="/" component={App}>
-          <IndexRoute component={GameSetup} />
+          <IndexRoute component={Board} />
           <Route path="board" component={Board} />
           <Route path="*" component={GameSetup} />
         </Route>
