@@ -2,11 +2,9 @@ package edu.dat076.yep.controllers;
 
 import edu.dat076.yep.models.Player;
 import edu.dat076.yep.repositories.PlayerRepository;
+import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -23,6 +21,17 @@ public class PlayerController {
     @RequestMapping(value="/players", method=RequestMethod.GET)
     public List<Player> findAllPlayers() {
         return (List<Player>) repository.findAll();
+    }
+
+    @RequestMapping(value="/players", method=RequestMethod.POST)
+    public Player createPlayer(@RequestBody String json) {
+        JSONObject jsonObject = new JSONObject(json);
+        String name = jsonObject.getString("name");
+        int points = jsonObject.getInt("points");
+
+        Player newPlayer = new Player(name, points);
+        repository.save(newPlayer);
+        return newPlayer;
     }
 
     @RequestMapping(value="/players/{playerID}", method=RequestMethod.GET)
