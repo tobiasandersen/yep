@@ -52,17 +52,18 @@ public class BoardControllerTest extends YepApplicationTests {
     @Test
     public void testCreateBoard() {
         Board newBoard = null;
+        String message = "failure - expected to have a newly created board object";
         try {
             HttpResponse response = Unirest.get("http://www.json-generator.com/api/json/get/crcjDTnUya?indent=2").asJson();
             JSONObject jsonObject = new JSONObject(response.getBody());
             String json = jsonObject.toString();
             newBoard = controller.createBoard(json);
         } catch (UnirestException e) {
-            e.printStackTrace();
+            message = "failure - unirest exception got caught";
         } catch (JSONException e) {
-            e.printStackTrace();
+            message = "failure - json exception got caught";
         }
-        Assert.assertNotNull(newBoard);
+        Assert.assertNotNull(message, newBoard);
     }
 
     @Test
