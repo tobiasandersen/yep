@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import styles from 'styles/GameSetup.css'
 import UsersContainer from '../containers/UsersContainer'
-import CategoryList from './CategoryList'
+import CategoryListContainer from '../containers/CategoryListContainer'
 import ThisGame from './ThisGame'
 
 class GameSetup extends Component {
@@ -9,7 +9,7 @@ class GameSetup extends Component {
     return (
       <div className={styles.container}>
         <UsersContainer />
-        <CategoryList />
+        <CategoryListContainer />
         <ThisGame />
       </div>
     )

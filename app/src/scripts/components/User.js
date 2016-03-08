@@ -1,11 +1,14 @@
 import React, { PropTypes } from 'react'
-import styles from 'styles/User.css'
+import CSSModules from 'react-css-modules'
+import styles from 'styles/GameSetupBox.css'
 
 const User = ({ user, handleClick }) => (
-  <div className={styles.container} onClick={() => handleClick(user.id)}>
-    <div className={styles.image}>
+  <div styleName="list-item" onClick={() => { 
+    handleClick(user) 
+  }}>
+    <div styleName="list-item-image">
     </div>
-    <div className={styles.name}>
+    <div styleName="list-item-name">
       {user.name}
     </div>
   </div>
@@ -16,4 +19,4 @@ User.propTypes = {
   handleClick: PropTypes.func.isRequired
 }
 
-export default User
+export default CSSModules(User, styles)
