@@ -1,20 +1,11 @@
-import React, { PropTypes } from 'react'
-import Modal from 'react-modal'
+import React from 'react'
+import CSSModules from 'react-css-modules'
+import styles from 'styles/AddNewUser'
 
-const AddNewUser = ({ modalIsOpen, closeModal }) => (
-  <div>
-    <Modal
-      isOpen={modalIsOpen}
-      onRequestClose={() => {closeModal}} >
-      <h1>Hello from Users Modal</h1>
-      <button onClick={() => closeModal()}>Close</button>
-    </Modal>
+const AddNewUser = () => (
+  <div styleName="container">
+    <input styleName="username" type="text" placeholder="Enter username"></input>
   </div>
 )
 
-AddNewUser.propTypes = {
-  modalIsOpen: PropTypes.bool.isRequired,
-  closeModal: PropTypes.func.isRequired
-}
-
-export default AddNewUser
+export default CSSModules(AddNewUser, styles)

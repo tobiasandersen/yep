@@ -3,7 +3,7 @@ import CSSModules from 'react-css-modules'
 import styles from 'styles/GameSetupBox.css'
 import ButtonAdd from './ButtonAdd'
 import CategoryListItem from './CategoryListItem'
-import AddNewCategory from './AddNewCategory'
+import AddNew from './AddNew'
 
 const CategoryList = ({ categories, categoryModalIsOpen, openCategoryModal, closeCategoryModal }) => (
   <div styleName="container">
@@ -16,7 +16,7 @@ const CategoryList = ({ categories, categoryModalIsOpen, openCategoryModal, clos
       ))}
     </div>
     <ButtonAdd handleClick={openCategoryModal} />
-    <AddNewCategory 
+    <AddNew 
       modalIsOpen={categoryModalIsOpen} 
       closeModal={closeCategoryModal} />
   </div>
