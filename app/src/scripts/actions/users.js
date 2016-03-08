@@ -7,7 +7,8 @@ import {
     RECEIVE_USERS, 
     ADD_USER_TO_GAME,
     CLOSE_USER_MODAL,
-    OPEN_USER_MODAL
+    OPEN_USER_MODAL,
+    ADD_NEW_USER
 } from '../constants/ActionTypes'
 
 import { usersResponse } from '../dummyData'
@@ -18,6 +19,7 @@ const receiveUsers = createAction(RECEIVE_USERS)
 export const addUserToGame = createAction(ADD_USER_TO_GAME)
 export const closeUserModal = createAction(CLOSE_USER_MODAL)
 export const openUserModal = createAction(OPEN_USER_MODAL)
+export const addNewUser = createAction(ADD_NEW_USER)
 
 export function fetchUsers() {
   return dispatch => {

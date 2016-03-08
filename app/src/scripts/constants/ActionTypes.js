@@ -9,6 +9,7 @@ export const RECEIVE_USERS = 'RECEIVE_USERS'
 export const SEARCH_USER = 'SEARCH_USER'
 export const SELECT_USER = 'SELECT_USER'
 export const ADD_USER_TO_GAME = 'ADD_USER_TO_GAME'
+export const ADD_NEW_USER = 'ADD_NEW_USER'
 export const CLOSE_USER_MODAL = 'CLOSE_USER_MODAL'
 export const OPEN_USER_MODAL = 'OPEN_USER_MODAL'
 

@@ -16,9 +16,9 @@ const CategoryList = ({ categories, categoryModalIsOpen, openCategoryModal, clos
       ))}
     </div>
     <ButtonAdd handleClick={openCategoryModal} />
-    <AddNew 
+    {/*<AddNew 
       modalIsOpen={categoryModalIsOpen} 
-      closeModal={closeCategoryModal} />
+      closeModal={closeCategoryModal} /> */}
   </div>
 )
 

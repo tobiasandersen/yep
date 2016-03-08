@@ -1,7 +1,7 @@
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import Users from '../components/Users'
-import { addUserToGame, closeUserModal, openUserModal } from '../actions/users'
+import { addUserToGame, closeUserModal, openUserModal, addNewUser } from '../actions/users'
 
 function mapStateToProps(state) {
   return {
@@ -11,7 +11,7 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ addUserToGame, closeUserModal, openUserModal }, dispatch)
+  return bindActionCreators({ addUserToGame, closeUserModal, openUserModal, addNewUser }, dispatch)
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Users)
