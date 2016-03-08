@@ -1,13 +1,11 @@
 import React from 'react'
-import { Link } from 'react-router'
-import styles from 'styles/ButtonStart.css'
+import CSSModules from 'react-css-modules'
+import styles from 'styles/GameSetupBox.css'
 
 const ButtonStart = () => (
-  <Link to="/board">
-    <div className={styles.box}>
-      Start Game
-    </div>
-  </Link>
+  <div styleName="button">
+    Start Game
+  </div>
 )
 
 export default CSSModules(ButtonStart, styles)
