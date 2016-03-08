@@ -1,0 +1,55 @@
+@value green, red from "./Colors.css";
+
+.card {
+  align-content: center;
+  background: white;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  font-family: "Proxima Nova";
+  height: 100%;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+}
+
+.value-container {
+  position: absolute;
+  text-align: center;
+  top: 20px;
+  width: 100%;
+}
+
+.buttons-container {
+  bottom: 30px;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+}
+
+.button {
+  composes: button from "./Button.css";
+  background-image: radial-gradient(#8E5DE8, #5831A2);
+  border: 2px solid #4B298A;
+  color: white;
+}
+
+.button:hover {
+  cursor: pointer;
+  opacity: .87;
+}
+
+.value {
+  border-bottom: 3px solid #333;
+  font-size: 30px;
+}
+
+.text {
+  font-size: 52px;
+  line-height: 1.5;
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
+  width: 92%;
+}
+

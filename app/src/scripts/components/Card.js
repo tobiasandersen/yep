@@ -3,21 +3,30 @@ import CSSModules from 'react-css-modules'
 import classNames from 'classnames'
 import styles from 'styles/Card.css'
 
-const Card = ({ id, value, handleClick, isSelected }) => (
+const Card = ({ id, categoryNumber, value, handleClick, isPicked, isSelected }) => (
   <div styleName={classNames({
     'card': true,
-    'is-selected': isSelected
-  })} onClick={() => {handleClick(id)}}>
-    {value * 100}
+    'is-selected': isSelected,
+    'is-picked': isPicked,
+    'is-in-last-category': (++categoryNumber % 5) === 0
+  })} onClick={() => { 
+    if (!isPicked) {
+      handleClick(id)
+    }
+  }}>
+    <span styleName="value">
+      <span styleName="dollar-sign">$</span>
+      {value * 100}
+    </span>
   </div>
 )
 
 Card.propTypes = {
-  answer: PropTypes.string.isRequired,
   id: PropTypes.number.isRequired,
+  categoryNumber: PropTypes.number.isRequired,
   value: PropTypes.number.isRequired,
-  question: PropTypes.string.isRequired,
   handleClick: PropTypes.func.isRequired,
+  isPicked: PropTypes.bool.isRequired,
   isSelected: PropTypes.bool.isRequired
 }
 

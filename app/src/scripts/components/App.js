@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import GameSetup from './GameSetup'
 import { connect } from 'react-redux'
 import { fetchCategories } from '../actions/categories'
 import { fetchUsers } from '../actions/users'
@@ -14,7 +13,9 @@ class App extends Component {
 
   render() {
     return (
-      <GameSetup />
+      <div>
+        {this.props.children}
+      </div>
     )
   }
 }

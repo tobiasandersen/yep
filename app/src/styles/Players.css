@@ -1,0 +1,39 @@
+@value board-bg from "./Colors.css";
+
+.container {
+  border: 5px solid board-bg;
+  box-shadow: 0 -10px 7px -7px rgba(0, 0, 0, .3);
+  align-items: stretch;
+  display: flex;
+  height: 135px;
+  justify-content: space-around;
+  overflow: hidden;
+}
+
+.player {
+  background-image: radial-gradient(#F2FBFF, #D0E6FD);
+  border: 5px solid board-bg;
+  border-radius: 10px;
+  flex-grow: 1;
+  position: relative;
+}
+
+.name {
+  color: #111;
+  font-size: 18px;
+  font-family: "Operator Mono", monospace;
+  font-weight: 500;
+  margin: 13px 0 0 0;
+}
+
+.score {
+  background: rgba(0, 0, 0, .1);
+  color: #111;
+  margin: 0;
+  font-size: 40px;
+  position: absolute;
+  height: 135px;
+  line-height: 130px;
+  top: 0;
+  width: 100%;
+}

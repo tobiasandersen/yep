@@ -3,6 +3,7 @@ import { categories, categoryIdList } from './categories'
 import { cards, selectedCard } from './cards'
 import { users, players } from './users'
 import { modals } from './modals'
+import { routerReducer } from 'react-router-redux'
 
 export default combineReducers({
   cards,
@@ -11,6 +12,7 @@ export default combineReducers({
   selectedCard,
   users,
   modals,
-  players
+  players,
+  routing: routerReducer
 })
 
