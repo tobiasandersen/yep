@@ -1,0 +1,29 @@
+.container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  padding-bottom: 50px;
+  margin-top: -50px;
+  font-size: 80px;
+  font-family: 'impact';
+  color: white;
+}
+
+.username {
+  font-size: 80px;
+  text-align: center;
+  background: transparent;
+  font-family: 'impact';
+  color: white;
+  border: none;
+}
+
+.username:input {
+  border: none;
+}
