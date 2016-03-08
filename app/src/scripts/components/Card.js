@@ -9,7 +9,11 @@ const Card = ({ id, categoryNumber, value, handleClick, isPicked, isSelected }) 
     'is-selected': isSelected,
     'is-picked': isPicked,
     'is-in-last-category': (++categoryNumber % 5) === 0
-  })} onClick={() => {handleClick(id)}}>
+  })} onClick={() => { 
+    if (!isPicked) {
+      handleClick(id)
+    }
+  }}>
     <span styleName="value">
       <span styleName="dollar-sign">$</span>
       {value * 100}
