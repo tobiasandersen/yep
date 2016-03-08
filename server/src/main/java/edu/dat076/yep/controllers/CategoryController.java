@@ -1,11 +1,14 @@
 package edu.dat076.yep.controllers;
 
+import edu.dat076.yep.models.Card;
 import edu.dat076.yep.models.Category;
 import edu.dat076.yep.repositories.CategoryRepository;
+import org.json.JSONArray;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -17,7 +20,7 @@ public class CategoryController {
     @Autowired
     private CategoryRepository repository;
 
-    @RequestMapping(value="/cat5egories", method=RequestMethod.GET)
+    @RequestMapping(value="/categories", method=RequestMethod.GET)
     public List<Category> findAllCategories() {
         return (List<Category>) repository.findAll();
     }
@@ -36,4 +39,28 @@ public class CategoryController {
         return repository.findOne((long) categoryID);
     }
 
+    @RequestMapping(value="/categories/{categoryID}", method=RequestMethod.PUT)
+    public Category addCardsToCategory(@PathVariable int categoryID, @RequestBody String json) {
+        Category updatedCategory = repository.findOne((long) categoryID);
+        JSONObject jsonObject = new JSONObject(json);
+        JSONArray jsonArray = jsonObject.getJSONArray("cards");
+        List<Card> cards = new ArrayList<>();
+
+        if (jsonArray != null) {
+            for (int i = 0; i < jsonArray.length(); i++) {
+                JSONObject jsonCard = jsonArray.getJSONObject(i);
+                String question = jsonCard.getString("question");
+                String answer = jsonCard.getString("answer");
+                int value = jsonCard.getInt("value");
+                Card newCard = new Card(question, answer, value);
+                cards.add(newCard);
+            }
+        }
+
+        updatedCategory.addCards(cards);
+
+        updatedCategory = repository.save(updatedCategory);
+
+        return updatedCategory;
+    }
 }
