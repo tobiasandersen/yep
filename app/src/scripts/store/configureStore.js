@@ -1,4 +1,5 @@
 import { applyMiddleware, compose, createStore } from 'redux'
+import multi from 'redux-multi'
 import thunk from 'redux-thunk'
 import rootReducer from '../reducers/rootReducer'
 import DevTools from '../components/DevTools'
@@ -12,7 +13,7 @@ function withDevTools(middleware) {
 
 export default function configureStore(initialState) {
   // Compose final middleware and use devtools in debug environment
-  let middleware = applyMiddleware(thunk)
+  let middleware = applyMiddleware(thunk, multi)
   middleware = withDevTools(middleware)
 
   // Create final store and subscribe router in debug env ie. for devtools

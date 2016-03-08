@@ -32,9 +32,16 @@
 }
 
 .value {
-  font-family: "Operator Mono", monospace;
-  font-size: 47px;
+  font-family: impact;
+  font-size: 75px;
   font-weight: 500;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 1);
+}
+
+.dollar-sign {
+  font-size: 62px;
+  position: relative;
+  top: -5px;
 }
 
 .card.is-picked .value {

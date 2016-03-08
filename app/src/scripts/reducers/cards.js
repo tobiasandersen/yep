@@ -9,8 +9,8 @@ export function selectedCard(state = null, action) {
       return action.payload
     case CLOSE_CARD:
       return null
-    case RECEIVE_CATEGORIES:
-      return 2
+    // case RECEIVE_CATEGORIES:
+    //   return 2
     default: 
       return state
   }

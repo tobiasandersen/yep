@@ -6,7 +6,7 @@ const OpenCardFront = ({ question, handleShowAnswerClick, value }) => (
   <div styleName="card">
 
     <p styleName="value-container">
-      <span styleName="value">{value * 100}</span>
+      <span styleName="value">{value}</span>
     </p>
 
     <p styleName="text">{question}</p>

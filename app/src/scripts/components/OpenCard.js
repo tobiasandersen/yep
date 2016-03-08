@@ -9,7 +9,7 @@ import styles from '../../styles/OpenCard'
 class OpenCard extends Component {
   constructor(props) {
     super(props)
-    this.state = { isFlipped: true }
+    this.state = { isFlipped: false }
   }
 
   render() {
@@ -50,6 +50,7 @@ class OpenCard extends Component {
       isOpen,
       players,
       question,
+      registerAnswer,
       value
     } = this.props
 
@@ -58,7 +59,7 @@ class OpenCard extends Component {
         isOpen={isOpen}
         onRequestClose={() => { 
           handleClose(id) 
-          this.setState({ isFlipped: true })
+          this.setState({ isFlipped: false })
         }}
         style={modalStyles}
       >
@@ -75,7 +76,13 @@ class OpenCard extends Component {
               />
             } 
             back={
-              <OpenCardBack answer={answer} players={players}/>
+              <OpenCardBack 
+                cardId={id} 
+                answer={answer} 
+                players={players}
+                registerAnswer={registerAnswer}
+                value={value}
+              />
             } 
           /> 
           : null

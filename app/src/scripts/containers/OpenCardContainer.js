@@ -2,6 +2,7 @@ import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import OpenCard from '../components/OpenCard'
 import { closeCard } from '../actions/cards'
+import { registerAnswer } from '../actions/players'
 
 function mapStateToProps(state) {
   const { cards, selectedCard: openCardId, players } = state
@@ -23,7 +24,10 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ handleClose: closeCard }, dispatch)
+  return bindActionCreators({ 
+    handleClose: closeCard,
+    registerAnswer
+  }, dispatch)
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(OpenCard)
