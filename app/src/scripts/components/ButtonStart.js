@@ -1,10 +1,11 @@
 import React from 'react'
-import styles from 'styles/ButtonStart.css'
+import CSSModules from 'react-css-modules'
+import styles from 'styles/GameSetupBox.css'
 
 const ButtonStart = () => (
-  <div className={styles.box}>
+  <div styleName="button">
     Start Game
   </div>
 )
 
-export default ButtonStart
+export default CSSModules(ButtonStart, styles)

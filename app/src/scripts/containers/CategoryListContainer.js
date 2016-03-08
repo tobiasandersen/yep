@@ -1,5 +1,11 @@
 import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
 import { categoriesSelector } from '../selectors/categoriesSelectors'
 import CategoryList from '../components/CategoryList'
+import { openCategoryModal, closeCategoryModal } from '../actions/categoryList'
 
-export default connect(categoriesSelector)(CategoryList)
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ openCategoryModal, closeCategoryModal }, dispatch)
+}
+
+export default connect(categoriesSelector, mapDispatchToProps)(CategoryList)

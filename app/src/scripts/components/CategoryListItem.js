@@ -1,9 +1,9 @@
 import React from 'react'
 import CSSModules from 'react-css-modules'
-import styles from 'styles/CategoryListItem.css'
+import styles from 'styles/GameSetupBox.css'
 
 const CategoryListItem = ({ category }) => (
-  <div styleName="container">
+  <div styleName="list-item">
     {category.title}
   </div>
 )

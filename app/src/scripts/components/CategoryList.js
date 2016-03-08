@@ -1,24 +1,32 @@
 import React, { PropTypes } from 'react'
-import styles from 'styles/CategoryList'
+import CSSModules from 'react-css-modules'
+import styles from 'styles/GameSetupBox.css'
 import ButtonAdd from './ButtonAdd'
 import CategoryListItem from './CategoryListItem'
+import AddNewCategory from './AddNewCategory'
 
-const CategoryList = ({ categories }) => (
-  <div className={styles.container}>
-    <div className={styles.top}>
+const CategoryList = ({ categories, categoryModalIsOpen, openCategoryModal, closeCategoryModal }) => (
+  <div styleName="container">
+    <div styleName="title">
       <h3>Categories</h3>
     </div>
-    <div className={styles.add}>
-      <ButtonAdd />
+    <div styleName="list">  
+      {categories.map(category => (
+        <CategoryListItem key={category.id} category={category} />
+      ))}
     </div>
-    {categories.map(category => (
-      <CategoryListItem key={category.id} category={category} />
-    ))}
+    <ButtonAdd handleClick={openCategoryModal} />
+    <AddNewCategory 
+      modalIsOpen={categoryModalIsOpen} 
+      closeModal={closeCategoryModal} />
   </div>
 )
 
 CategoryList.propTypes = { 
-  categories: PropTypes.array.isRequired
+  categories: PropTypes.array.isRequired,
+  categoryModalIsOpen: PropTypes.bool.isRequired,
+  openCategoryModal: PropTypes.func.isRequired,
+  closeCategoryModal: PropTypes.func.isRequired
 }
 
-export default CategoryList
+export default CSSModules(CategoryList, styles)
