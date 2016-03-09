@@ -21,12 +21,13 @@
 }
 
 .title {
-  width: 100%;
-  padding: 20px;
+  padding: 20px 0 30px 0;
   text-align: center;
+  width: 100%;
 }
 
-.button {
+.button,
+.button:visited {
   position: absolute;
   bottom: 0;
   height: 50px;
@@ -75,7 +76,6 @@
 
 .list-title {
   padding: 20px 30px 10px 30px;
-  font-weight: 700;
 }
 
 .list-item-image {

@@ -1,19 +1,24 @@
-// require('es6-promise').polyfill()
-// require('isomorphic-fetch')
-
+import { categoriesResponse } from '../dummyData'
 import { createAction } from 'redux-actions'
 import { normalize, Schema, arrayOf } from 'normalizr'
-import { 
-  REQUEST_CATEGORIES, 
+import {  
+  REQUEST_CATEGORIES,
   RECEIVE_CATEGORIES,
+  ADD_CATEGORY_TO_GAME,
+  REMOVE_CATEGORY_FROM_GAME,
+  REQUEST_NEW_CATEGORY,
+  RECEIVE_NEW_CATEGORY,
   OPEN_EDIT_CATEGORY_MODAL,
-  CLOSE_EDIT_CATEGORY_MODAL 
+  CLOSE_EDIT_CATEGORY_MODAL
 } from '../constants/ActionTypes'
 
-import { categoriesResponse } from '../dummyData'
+export const addCategoryToGame = createAction(ADD_CATEGORY_TO_GAME)
+export const removeCategoryFromGame = createAction(REMOVE_CATEGORY_FROM_GAME)
 
 const requestCategories = createAction(REQUEST_CATEGORIES)
 const receiveCategories = createAction(RECEIVE_CATEGORIES)
+const requestNewCategory = createAction(REQUEST_NEW_CATEGORY)
+const receiveNewCategory = createAction(RECEIVE_NEW_CATEGORY)
 
 export const openEditCategoryModal= createAction(OPEN_EDIT_CATEGORY_MODAL)
 export const closeEditCategoryModal = createAction(CLOSE_EDIT_CATEGORY_MODAL)
@@ -24,6 +29,16 @@ const card = new Schema('cards')
 category.define({
   cards: arrayOf(card)
 })
+
+export function addNewCategory(title) {
+  return dispatch => {
+    dispatch(requestNewCategory(title))
+
+    setTimeout(() => {
+      dispatch(receiveNewCategory(simulateCategoryResponse(title))) 
+    }, 500)
+  }
+}
 
 export function fetchCategories() {
   return dispatch => {
@@ -49,5 +64,15 @@ export function fetchCategories() {
     // .then((response) => {
     //   dispatch(receiveCategories(response))
     // })
+  }
+}
+
+let id = 100
+
+function simulateCategoryResponse(title) {
+  return {
+    id: id++,
+    title,
+    cards: []
   }
 }

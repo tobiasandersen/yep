@@ -1,7 +1,7 @@
-import { RECEIVE_CATEGORIES, ADD_NEW_CATEGORY } from '../constants/ActionTypes'
-
-let categoryListId = 6
-let categoriesId = 6
+import { 
+  RECEIVE_CATEGORIES,
+  RECEIVE_NEW_CATEGORY
+} from '../constants/ActionTypes'
 
 export function categoryIdList(state = [], action) {
   switch(action.type) {
@@ -11,11 +11,13 @@ export function categoryIdList(state = [], action) {
       }
 
       return state
-    case ADD_NEW_CATEGORY:
+
+    case RECEIVE_NEW_CATEGORY:
       return [
         ...state,
-        categoryListId++
+        action.payload.id
       ]
+
     default:
       return state
   }
@@ -29,15 +31,17 @@ export function categories(state = {}, action) {
       }
 
       return state
-    case ADD_NEW_CATEGORY:
+
+    case RECEIVE_NEW_CATEGORY:
+      const category = action.payload
+      const newCategory = {}
+      newCategory[category.id] = category
+
       return {
         ...state,
-        categoriesId: {
-          id: categoriesId++,
-          title: action.payload,
-          cards: []
-        }
+        ...newCategory 
       }
+
     default:
       return state
   }

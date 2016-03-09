@@ -7,24 +7,34 @@ import AddNew from './AddNew'
 import EditCategoryContainer from '../containers/EditCategoryContainer'
 
 const CategoryList = ({ 
-  categories, 
-  categoryModalIsOpen, 
-  openCategoryModal, 
-  closeCategoryModal, 
+  categories,
+  categoryModalIsOpen,
+  openCategoryModal,
+  closeCategoryModal,
+  addCategoryToGame,
   addNewCategory,
   openEditCategoryModal 
 }) => (
   <div styleName="container">
+
     <div styleName="title">
       <h3>Categories</h3>
     </div>
+
     <div styleName="list">  
       {categories.map(category => (
-        <CategoryListItem key={category.id} category={category} />
+        <CategoryListItem 
+          handleClick={() => addCategoryToGame(category.id)}
+          key={category.id} 
+          title={category.title} 
+        />
       ))}
     </div>
+
     <button onClick={() => openEditCategoryModal()}>Edit</button>
+
     <ButtonAdd handleClick={openCategoryModal} />
+
     <AddNew 
       modalIsOpen={categoryModalIsOpen} 
       closeModal={closeCategoryModal}
@@ -39,8 +49,9 @@ CategoryList.propTypes = {
   categoryModalIsOpen: PropTypes.bool.isRequired,
   openCategoryModal: PropTypes.func.isRequired,
   closeCategoryModal: PropTypes.func.isRequired,
-  addNewCategory: PropTypes.func.isRequired,
-  openEditCategoryModal: PropTypes.func.isRequired
+  openEditCategoryModal: PropTypes.func.isRequired,
+  addCategoryToGame: PropTypes.func.isRequired,
+  addNewCategory: PropTypes.func.isRequired
 }
 
 export default CSSModules(CategoryList, styles)
