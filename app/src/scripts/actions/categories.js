@@ -8,12 +8,15 @@ import {
   REMOVE_CATEGORY_FROM_GAME,
   REQUEST_NEW_CATEGORY,
   RECEIVE_NEW_CATEGORY,
+  EDIT_CATEGORY,
   OPEN_EDIT_CATEGORY_MODAL,
   CLOSE_EDIT_CATEGORY_MODAL
 } from '../constants/ActionTypes'
 
 export const addCategoryToGame = createAction(ADD_CATEGORY_TO_GAME)
 export const removeCategoryFromGame = createAction(REMOVE_CATEGORY_FROM_GAME)
+
+export const editCategory = createAction(EDIT_CATEGORY)
 
 const requestCategories = createAction(REQUEST_CATEGORIES)
 const receiveCategories = createAction(RECEIVE_CATEGORIES)

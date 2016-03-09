@@ -11,10 +11,9 @@ class EditCategory extends Component {
   render() {
     const {
       modalIsOpen,
+      category,
       closeEditCategoryModal
     } = this.props
-
-    console.log(modalIsOpen)
 
     const modalStyles = {
       overlay: {
@@ -52,10 +51,18 @@ class EditCategory extends Component {
         style={modalStyles} >
 
         <div styleName="container">
-          <div styleName="title">
-            CategoryName
+          <span styleName="title">{category.title}</span>
+          <div 
+            styleName="save-and-close" 
+            onClick={() => closeEditCategoryModal()} >
+            Save & Close
           </div>
-          <button onClick={() => closeEditCategoryModal()}>Close</button>
+          <div styleName="content">
+            <div styleName="left">
+            </div>
+            <div styleName="right">
+            </div>
+          </div>
         </div>
 
       </Modal>
@@ -65,6 +72,7 @@ class EditCategory extends Component {
 
 EditCategory.propTypes = {
   modalIsOpen: PropTypes.bool.isRequired,
+  category: PropTypes.object.isRequired,
   closeEditCategoryModal: PropTypes.func.isRequired
 }
 

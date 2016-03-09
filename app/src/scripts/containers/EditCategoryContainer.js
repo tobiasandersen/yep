@@ -7,7 +7,8 @@ import {
 
 function mapStateToProps(state) {
   return {
-    modalIsOpen: state.modals.editCategoryModalIsOpen
+    modalIsOpen: state.modals.editCategoryModalIsOpen,
+    category: state.selectedCategory
   }
 }
 
