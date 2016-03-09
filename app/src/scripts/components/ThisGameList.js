@@ -18,45 +18,56 @@ const ThisGameList = ({
   rounds,
   removePlayerFromGame,
   removeCategoryFromGame
-}) => (
-  <div styleName="container">
+}) => {
 
-    <PickedGameSection 
-      title="Players"
-      addedItems={players.length}
-      minItems={MIN_NBR_OF_PLAYERS}
-      maxItems={MAX_NBR_OF_PLAYERS}
-      content={players.map(player => (
-        <PickedGameItem 
-          handleClick={() => removePlayerFromGame(player.id)}
-          key={player.id}
-          name={player.name}
-        />
-      ))}
-    />
+  const addedCategories = rounds
+  .reduce((sum, current) => (
+    sum += current.categoryIds.length
+  ), 0)
 
-    <PickedGameSection 
-      title="Categories"
-      addedItems={rounds.reduce((sum, current) => (
-        sum += current.categoryIds.length
-      ), 0)}
-      minItems={MIN_NBR_OF_ROUNDS * 5}
-      maxItems={MAX_NBR_OF_ROUNDS * 5} 
-      content={rounds.map(round => (
-        <PickedRound 
-          categoryIds={round.categoryIds}
-          categories={categories}
-          removeCategoryFromGame={removeCategoryFromGame}
-          key={round.roundNumber}
-          roundNumber={round.roundNumber}
-        />
-      ))}
-    />
+  const addedPlayers = players.length
 
-    <ButtonStart isReadyToStart={false} />
+  return (
+    <div styleName="container">
 
-  </div>
-)
+      <PickedGameSection 
+        title="Players"
+        addedItems={addedPlayers}
+        minItems={MIN_NBR_OF_PLAYERS}
+        maxItems={MAX_NBR_OF_PLAYERS}
+        content={players.map(player => (
+          <PickedGameItem 
+            handleClick={() => removePlayerFromGame(player.id)}
+            key={player.id}
+            name={player.name}
+          />
+        ))}
+      />
+
+      <PickedGameSection 
+        title="Categories"
+        addedItems={addedCategories}
+        minItems={MIN_NBR_OF_ROUNDS * 5}
+        maxItems={MAX_NBR_OF_ROUNDS * 5} 
+        content={rounds.map(round => (
+          <PickedRound 
+            categoryIds={round.categoryIds}
+            categories={categories}
+            removeCategoryFromGame={removeCategoryFromGame}
+            key={round.roundNumber}
+            roundNumber={round.roundNumber}
+          />
+        ))}
+      />
+
+    <ButtonStart isReadyToStart={
+      addedCategories >= (MIN_NBR_OF_ROUNDS * 5) && 
+      addedPlayers >= MIN_NBR_OF_PLAYERS
+    }/>
+
+    </div>
+  )
+}
 
 ThisGameList.propTypes = {
   categories: PropTypes.object.isRequired,

@@ -179,6 +179,186 @@ export const categoriesResponse = {
           value: 5
         }
       ]
+    },
+    {
+      id: 6,
+      title: 'React Native',
+      cards: [
+        {
+          id: 26,
+          question: 'Bokstavera ordet färg med brittisk stavning',
+          answer: 'Colour',
+          value: 1
+        },
+        {
+          id: 27,
+          question: 'I vilken land hålls Eurovision Song Contest i år?',
+          answer: 'Österrike',
+          value: 2
+        },
+        {
+          id: 28,
+          question: 'Nämn fem av de sju nya världens underverk',
+          answer: 'Taj Mahal, Colosseum, Cristo Redentor, Chichen Itza, Kinesiska muren, Machu Picchu & Petra ',
+          value: 3
+        },
+        {
+          id: 29,
+          question: 'Vilket årtionde antogs tryckfrihetsförordningen?',
+          answer: '40-talet',
+          value: 4
+        },
+        {
+          id: 30,
+          question: 'Vilket århundrade formades en svensk riksdag',
+          answer: '1500-talet',
+          value: 5
+        }
+      ]
+    },
+    {
+      id: 7,
+      title: 'GraphQL',
+      cards: [
+        {
+          id: 31,
+          question: 'Vilken land vann VM 1982',
+          answer: 'Argentina',
+          value: 1
+        },
+        {
+          id: 32,
+          question: 'Vilka tre har gjort flest matcher i svenska landslaget?',
+          answer: 'Taco, Ravelli, Isaksson',
+          value: 2
+        },
+        {
+          id: 33,
+          question: 'Vad heter den enda obesegrade Arsenalmanagern?',
+          answer: 'Pat Rice',
+          value: 3
+        },
+        {
+          id: 34,
+          question: 'Vad heter Schalke 04 arena och var ligger den?',
+          answer: 'Veltins-Arena, Gelsenkirchen',
+          value: 4
+        },
+        {
+          id: 35,
+          question: 'Vilka är mininmum- och maximumgränsen i meter för en fotbollsplan?',
+          answer: 'Bredd = 45-90m, läng = 90-120m',
+          value: 5
+        }
+      ]
+    },
+    {
+      id: 8,
+      title: 'Relay',
+      cards: [
+        {
+          id: 36,
+          question: 'Nämn två av de tre skådespelarnas namn som spelar potentiell pappa i Mamma Mia?',
+          answer: 'Stellan Skarsgård, Pierce Brosnan & Colin Firth',
+          value: 1
+        },
+        {
+          id: 37,
+          question: 'Vad kallas karaktärerna i Top Gun?',
+          answer: 'Goose och Maverick',
+          value: 2
+        },
+        {
+          id: 38,
+          question: 'Vem spelar Commodus i Gladiator?',
+          answer: 'Joaquin Phoenix',
+          value: 3
+        },
+        {
+          id: 39,
+          question: 'Vilken film har genererat mest pengar någonsin?',
+          answer: 'Avatar',
+          value: 4
+        },
+        {
+          id: 40,
+          question: 'Ranka filmerna efter vilket år dem kom ut  - Titanic, The Shining, Seven, American Beauty & Gökboet',
+          answer: 'Gökboet (75), The Shining (80) Seven (95) Titanic (97), American Beauty (99)',
+          value: 5
+        }
+      ]
+    },
+    {
+      id: 9,
+      title: 'Redux',
+      cards: [
+        {
+          id: 41,
+          question: 'Vilken alkoholhalt (procent) har en standard Sofiero?',
+          answer: '5,0%',
+          value: 1
+        },
+        {
+          id: 42,
+          question: 'Hur många bröd respektive hamburgare innehåller en Big Mac?',
+          answer: '3 bröd och 2 hamburgare',
+          value: 2
+        },
+        {
+          id: 43,
+          question: 'Vilket land importerar Sverige mest livsmedel från?',
+          answer: 'Danmark',
+          value: 3
+        },
+        {
+          id: 44,
+          question: 'Var startade potatisens resa för 8000 år sedan (vilken världsdel)?',
+          answer: 'Anderna (Sydamerika)',
+          value: 4
+        },
+        {
+          id: 45,
+          question: 'Vilken är huvudingrediensen i en Dry Martini?',
+          answer: 'Gin',
+          value: 5
+        }
+      ]
+    },
+    {
+      id: 10,
+      title: 'React',
+      cards: [
+        {
+          id: 46,
+          question: 'Vad skyddas hjärnan av?',
+          answer: 'Kraniet',
+          value: 1
+        },
+        {
+          id: 47,
+          question: 'I vilka kroppsdelar återfinns båtbenet?',
+          answer: 'Fot och hand',
+          value: 2
+        },
+        {
+          id: 48,
+          question: 'Hur länge pågår (veckor) en normal graviditet?',
+          answer: '40',
+          value: 3
+        },
+        {
+          id: 49,
+          question: 'Vad är leukemi?',
+          answer: 'Blodcancer',
+          value: 4
+        },
+        {
+          id: 50,
+          question: 'Vad heter pung på korrekt medicinspråk?',
+          answer: 'Skrotum',
+          value: 5
+        }
+      ]
     }
   ]
 }
