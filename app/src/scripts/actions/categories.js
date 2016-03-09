@@ -1,13 +1,15 @@
 import { categoriesResponse } from '../dummyData'
 import { createAction } from 'redux-actions'
 import { normalize, Schema, arrayOf } from 'normalizr'
-import { 
+import {  
   REQUEST_CATEGORIES,
   RECEIVE_CATEGORIES,
   ADD_CATEGORY_TO_GAME,
   REMOVE_CATEGORY_FROM_GAME,
   REQUEST_NEW_CATEGORY,
-  RECEIVE_NEW_CATEGORY
+  RECEIVE_NEW_CATEGORY,
+  OPEN_EDIT_CATEGORY_MODAL,
+  CLOSE_EDIT_CATEGORY_MODAL
 } from '../constants/ActionTypes'
 
 export const addCategoryToGame = createAction(ADD_CATEGORY_TO_GAME)
@@ -17,6 +19,9 @@ const requestCategories = createAction(REQUEST_CATEGORIES)
 const receiveCategories = createAction(RECEIVE_CATEGORIES)
 const requestNewCategory = createAction(REQUEST_NEW_CATEGORY)
 const receiveNewCategory = createAction(RECEIVE_NEW_CATEGORY)
+
+export const openEditCategoryModal= createAction(OPEN_EDIT_CATEGORY_MODAL)
+export const closeEditCategoryModal = createAction(CLOSE_EDIT_CATEGORY_MODAL)
 
 const category = new Schema('categories')
 const card = new Schema('cards')
