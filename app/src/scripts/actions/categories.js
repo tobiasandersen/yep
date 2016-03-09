@@ -3,9 +3,15 @@
 
 import { createAction } from 'redux-actions'
 import { normalize, Schema, arrayOf } from 'normalizr'
-import { REQUEST_CATEGORIES, RECEIVE_CATEGORIES } from '../constants/ActionTypes'
+import { 
+  REQUEST_CATEGORIES,
+  RECEIVE_CATEGORIES,
+  REMOVE_CATEGORY_FROM_GAME
+} from '../constants/ActionTypes'
 
 import { categoriesResponse } from '../dummyData'
+
+export const removeCategoryFromGame = createAction(REMOVE_CATEGORY_FROM_GAME)
 
 const requestCategories = createAction(REQUEST_CATEGORIES)
 const receiveCategories = createAction(RECEIVE_CATEGORIES)

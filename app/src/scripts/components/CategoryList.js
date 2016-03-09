@@ -5,7 +5,13 @@ import ButtonAdd from './ButtonAdd'
 import CategoryListItem from './CategoryListItem'
 import AddNew from './AddNew'
 
-const CategoryList = ({ categories, categoryModalIsOpen, openCategoryModal, closeCategoryModal }) => (
+const CategoryList = ({ 
+  categories,
+  categoryModalIsOpen,
+  openCategoryModal,
+  closeCategoryModal,
+  removeCategoryFromGame
+}) => (
   <div styleName="container">
 
     <div styleName="title">
@@ -14,16 +20,20 @@ const CategoryList = ({ categories, categoryModalIsOpen, openCategoryModal, clos
 
     <div styleName="list">  
       {categories.map(category => (
-        <CategoryListItem key={category.id} category={category} />
+        <CategoryListItem 
+          handleClick={() => removeCategoryFromGame(category.id)}
+          key={category.id} 
+          title={category.title} 
+        />
       ))}
     </div>
 
     <ButtonAdd handleClick={openCategoryModal} />
     
-    <AddNew 
+    {/*<AddNew 
       modalIsOpen={categoryModalIsOpen} 
       closeModal={closeCategoryModal} 
-    />
+    />*/}
   </div>
 )
 
@@ -31,7 +41,8 @@ CategoryList.propTypes = {
   categories: PropTypes.array.isRequired,
   categoryModalIsOpen: PropTypes.bool.isRequired,
   openCategoryModal: PropTypes.func.isRequired,
-  closeCategoryModal: PropTypes.func.isRequired
+  closeCategoryModal: PropTypes.func.isRequired,
+  removeCategoryFromGame: PropTypes.func.isRequired
 }
 
 export default CSSModules(CategoryList, styles)
