@@ -1,0 +1,23 @@
+.container {
+  width: 100%;
+  display: flex;
+  flex-flow: row;
+}
+
+.value {
+  width: 5%;
+  text-align: center;
+}
+
+.list {
+  width: 95%;
+  display: flex;
+  flex-flow: column;
+}
+
+.list-item {
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
+  padding: 0 15px;
+}

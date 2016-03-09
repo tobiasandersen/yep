@@ -1,6 +1,17 @@
-import { OPEN_USER_MODAL, CLOSE_USER_MODAL, OPEN_CATEGORY_MODAL, CLOSE_CATEGORY_MODAL } from '../constants/ActionTypes'
+import { 
+  OPEN_USER_MODAL, 
+  CLOSE_USER_MODAL, 
+  OPEN_CATEGORY_MODAL, 
+  CLOSE_CATEGORY_MODAL,
+  OPEN_EDIT_CATEGORY_MODAL,
+  CLOSE_EDIT_CATEGORY_MODAL
+} from '../constants/ActionTypes'
 
-export function modals(state = { userModalIsOpen: false, categoryModalIsOpen: false }, action) {
+export function modals(state = { 
+  userModalIsOpen: false, 
+  categoryModalIsOpen: false,
+  editCategoryModalIsOpen: false 
+}, action) {
   switch (action.type) {
     case OPEN_USER_MODAL:
       return {
@@ -21,6 +32,16 @@ export function modals(state = { userModalIsOpen: false, categoryModalIsOpen: fa
       return {
         ...state,
         categoryModalIsOpen: false
+      }
+    case OPEN_EDIT_CATEGORY_MODAL:
+      return {
+        ...state,
+        editCategoryModalIsOpen: true
+      }
+    case CLOSE_EDIT_CATEGORY_MODAL:
+      return {
+        ...state,
+        editCategoryModalIsOpen: false
       }
     default:
       return state

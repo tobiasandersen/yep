@@ -4,8 +4,16 @@ import styles from 'styles/GameSetupBox.css'
 import ButtonAdd from './ButtonAdd'
 import CategoryListItem from './CategoryListItem'
 import AddNew from './AddNew'
+import EditCategoryContainer from '../containers/EditCategoryContainer'
 
-const CategoryList = ({ categories, categoryModalIsOpen, openCategoryModal, closeCategoryModal, addNewCategory }) => (
+const CategoryList = ({ 
+  categories, 
+  categoryModalIsOpen, 
+  openCategoryModal, 
+  closeCategoryModal, 
+  addNewCategory,
+  openEditCategoryModal 
+}) => (
   <div styleName="container">
     <div styleName="title">
       <h3>Categories</h3>
@@ -15,12 +23,14 @@ const CategoryList = ({ categories, categoryModalIsOpen, openCategoryModal, clos
         <CategoryListItem key={category.id} category={category} />
       ))}
     </div>
+    <button onClick={() => openEditCategoryModal()}>Edit</button>
     <ButtonAdd handleClick={openCategoryModal} />
     <AddNew 
       modalIsOpen={categoryModalIsOpen} 
       closeModal={closeCategoryModal}
       addNew={addNewCategory}
       placeHolder="Enter Category Name" />
+    <EditCategoryContainer />
   </div>
 )
 
@@ -29,7 +39,8 @@ CategoryList.propTypes = {
   categoryModalIsOpen: PropTypes.bool.isRequired,
   openCategoryModal: PropTypes.func.isRequired,
   closeCategoryModal: PropTypes.func.isRequired,
-  addNewCategory: PropTypes.func.isRequired
+  addNewCategory: PropTypes.func.isRequired,
+  openEditCategoryModal: PropTypes.func.isRequired
 }
 
 export default CSSModules(CategoryList, styles)

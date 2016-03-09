@@ -3,12 +3,20 @@
 
 import { createAction } from 'redux-actions'
 import { normalize, Schema, arrayOf } from 'normalizr'
-import { REQUEST_CATEGORIES, RECEIVE_CATEGORIES } from '../constants/ActionTypes'
+import { 
+  REQUEST_CATEGORIES, 
+  RECEIVE_CATEGORIES,
+  OPEN_EDIT_CATEGORY_MODAL,
+  CLOSE_EDIT_CATEGORY_MODAL 
+} from '../constants/ActionTypes'
 
 import { categoriesResponse } from '../dummyData'
 
 const requestCategories = createAction(REQUEST_CATEGORIES)
 const receiveCategories = createAction(RECEIVE_CATEGORIES)
+
+export const openEditCategoryModal= createAction(OPEN_EDIT_CATEGORY_MODAL)
+export const closeEditCategoryModal = createAction(CLOSE_EDIT_CATEGORY_MODAL)
 
 const category = new Schema('categories')
 const card = new Schema('cards')
