@@ -2,6 +2,7 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import ThisGameList from '../components/ThisGameList'
 import { removePlayerFromGame } from '../actions/players'
+import { removeCategoryFromGame } from '../actions/categories'
 
 function mapStateToProps(state) {
   const { categories, game } = state
@@ -16,7 +17,8 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return bindActionCreators({ 
-    removePlayerFromGame
+    removePlayerFromGame,
+    removeCategoryFromGame
   }, dispatch)
 }
 

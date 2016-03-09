@@ -1,36 +1,43 @@
 import React, { PropTypes } from 'react'
 import CSSModules from 'react-css-modules'
-import styles from 'styles/GameSetupBox.css'
+import PickedGameItem from './PickedGameItem'
+import styles from 'styles/ThisGameList.css'
 
-const ThisGameList = ({ categories, players, rounds, removePlayerFromGame }) => (
-  <div styleName="list">
+const ThisGameList = ({ 
+  categories, 
+  players, 
+  rounds,
+  removePlayerFromGame,
+  removeCategoryFromGame
+}) => (
+  <div styleName="container">
 
-    <h3 styleName="list-heading">Players</h3>
+    <h3 styleName="section-title">Players (0/5)</h3>
 
-    <div styleName="players-container">
-      {players.map(player => (
-        <div styleName="player" key={player.id}>
-
-          <span styleName="player-name">{player.name}</span>
-          <button styleName="remove-button" onClick={() => {
-            removePlayerFromGame(player.id)
-          }}>✖</button>
-
-        </div>
-      ))}
+    <div styleName="picked-items-section">
+      {players.map(player => <PickedGameItem 
+        handleClick={() => removePlayerFromGame(player.id)}
+        key={player.id}
+        name={player.name}
+      />)}
     </div>
 
-    <h3 styleName="list-heading">Categories</h3>
+    <h3 styleName="section-title">Categories (0/10)</h3>
 
     {rounds.map(round => (
       <div styleName="round" key={round.roundNumber}>
-        <h3 styleName="round-number">Round {round.roundNumber}</h3>
+        <h3 styleName="round-number">Round {round.roundNumber} (0/5)</h3>
 
-        {round.categoryIds.map(id => categories[id]).map(category => (
-          <div styleName="list-title" key={category.id}>
-            {category.title}    
-          </div>
-        ))}
+        <div styleName="picked-items-section">
+          {round.categoryIds.map(id => categories[id]).map(category => (
+            <PickedGameItem 
+              handleClick={() => removeCategoryFromGame(category.id)}
+              key={category.id}
+              name={category.title}
+            />
+          ))}
+        </div>
+
       </div>
     ))}
 
@@ -41,7 +48,8 @@ ThisGameList.propTypes = {
   categories: PropTypes.object.isRequired,
   players: PropTypes.array.isRequired,
   rounds: PropTypes.array.isRequired,
-  removePlayerFromGame: PropTypes.func.isRequired
+  removePlayerFromGame: PropTypes.func.isRequired,
+  removeCategoryFromGame: PropTypes.func.isRequired
 }
 
 export default CSSModules(ThisGameList, styles)

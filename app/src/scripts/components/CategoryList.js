@@ -10,7 +10,7 @@ const CategoryList = ({
   categoryModalIsOpen,
   openCategoryModal,
   closeCategoryModal,
-  removeCategoryFromGame
+  addCategoryToGame
 }) => (
   <div styleName="container">
 
@@ -21,7 +21,7 @@ const CategoryList = ({
     <div styleName="list">  
       {categories.map(category => (
         <CategoryListItem 
-          handleClick={() => removeCategoryFromGame(category.id)}
+          handleClick={() => addCategoryToGame(category.id)}
           key={category.id} 
           title={category.title} 
         />
@@ -42,7 +42,7 @@ CategoryList.propTypes = {
   categoryModalIsOpen: PropTypes.bool.isRequired,
   openCategoryModal: PropTypes.func.isRequired,
   closeCategoryModal: PropTypes.func.isRequired,
-  removeCategoryFromGame: PropTypes.func.isRequired
+  addCategoryToGame: PropTypes.func.isRequired
 }
 
 export default CSSModules(CategoryList, styles)

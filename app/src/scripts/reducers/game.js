@@ -1,7 +1,9 @@
 import { 
-  ADD_USER_TO_GAME,
   REGISTER_ANSWER,
-  REMOVE_PLAYER_FROM_GAME
+  ADD_USER_TO_GAME,
+  REMOVE_PLAYER_FROM_GAME,
+  ADD_CATEGORY_TO_GAME,
+  REMOVE_CATEGORY_FROM_GAME
 } from '../constants/ActionTypes'
 
 function createPlayer(user) {
@@ -44,18 +46,52 @@ function players(state = [], action) {
   }
 }
 
+function rounds(state = [
+  { 
+    roundNumber: 1,
+    categoryIds: []
+  },
+  { 
+    roundNumber: 2,
+    categoryIds: []
+  }
+], action) {
+  switch (action.type) {
+    case ADD_CATEGORY_TO_GAME:
+      const newId = action.payload
+
+      const isAlreadyAdded = state
+        .reduce((isAdded, current) => (
+          isAdded || current.categoryIds.indexOf(newId) > -1
+        ), false)
+      
+      let didAddCategory = false
+
+      return isAlreadyAdded 
+        ? state 
+        : state.map(round => {
+          if (round.categoryIds.length < 5 && !didAddCategory) {
+            round.categoryIds.push(action.payload)
+            didAddCategory = true
+          }
+
+          return round
+        })
+
+    case REMOVE_CATEGORY_FROM_GAME:
+      return state.map(round => {
+        round.categoryIds.pop(action.payload)
+        return round
+      })
+        
+    default:
+      return state
+  }
+}
+
 export default function game(state = {
-  players: [],
-  rounds: [
-    { 
-      roundNumber: 1,
-      categoryIds: []
-    },
-    { 
-      roundNumber: 2,
-      categoryIds: []
-    }
-  ]
+  players: players(state, action),
+  rounds: rounds(state, action)
 }, action) {
   switch (action.type) {
     case REGISTER_ANSWER: 
@@ -65,6 +101,14 @@ export default function game(state = {
         ...state,
         players: players(state.players, action)
       }
+
+    case ADD_CATEGORY_TO_GAME:
+    case REMOVE_CATEGORY_FROM_GAME:
+      return {
+        ...state,
+        rounds: rounds(state.rounds, action)
+      }
+
     default:
       return state
   }

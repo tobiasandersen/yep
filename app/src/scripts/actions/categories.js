@@ -6,11 +6,13 @@ import { normalize, Schema, arrayOf } from 'normalizr'
 import { 
   REQUEST_CATEGORIES,
   RECEIVE_CATEGORIES,
+  ADD_CATEGORY_TO_GAME,
   REMOVE_CATEGORY_FROM_GAME
 } from '../constants/ActionTypes'
 
 import { categoriesResponse } from '../dummyData'
 
+export const addCategoryToGame = createAction(ADD_CATEGORY_TO_GAME)
 export const removeCategoryFromGame = createAction(REMOVE_CATEGORY_FROM_GAME)
 
 const requestCategories = createAction(REQUEST_CATEGORIES)

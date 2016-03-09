@@ -1,0 +1,75 @@
+@value red from "./Colors.css";
+
+.container {
+  margin: 0 auto;
+  width: 85%;
+}
+
+.section-title {
+  display: inline-block;
+  font-size: 15px;
+  font-weight: 700;
+  margin: 15px 0 0 0;
+  text-transform: uppercase;
+}
+
+.section-title:last-of-type {
+  margin-top: 25px;
+}
+
+.list-container {
+}
+
+.picked-items-section {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.picked-items-section:not(:last-of-type) {
+  border-bottom: 2px solid #324760;
+  padding: 10px 0;
+}
+
+.picked-item {
+  background: #33485F;
+  border-radius: 4px;
+  font-size: 15px;
+  display: inline-block;
+  margin-bottom: 5px;
+  padding: 4px 8px;
+}
+
+.picked-item:not(:last-of-type) {
+  margin-right: 5px;
+}
+
+.picked-item-title {
+  margin-right: 6px;
+}
+
+.round {
+  margin-top: 20px;
+}
+
+.round-number {
+  font-size: 14px;
+  padding-top: 0;
+}
+
+.remove-button {
+  background: none;
+  border-radius: 100%;
+  border: none;
+  color: red;
+  font-size: 17px;
+  outline: none;
+  padding: 0;
+  position: relative;
+  top: 1px;
+  text-align: center;
+}
+
+.remove-button:hover {
+  cursor: pointer;
+  opacity: .9;
+}
