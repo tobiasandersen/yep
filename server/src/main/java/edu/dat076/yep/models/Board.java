@@ -5,6 +5,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * Class for representing the board from which the game is to be played.
+ *
+ * contains a list of which players currently are playing and a list of
+ * the specific rounds that are to be played.
+ *
  * Created by marcus on 2016-02-18.
  */
 @Entity

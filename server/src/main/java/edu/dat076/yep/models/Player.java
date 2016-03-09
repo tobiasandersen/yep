@@ -3,6 +3,8 @@ package edu.dat076.yep.models;
 import javax.persistence.*;
 
 /**
+ * Class for representing a player.
+ *
  * Created by marcus on 2016-02-18.
  */
 @Entity

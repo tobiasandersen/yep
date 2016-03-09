@@ -5,6 +5,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * Class for representing a round.
+ *
+ * a round contains five categories and a multiplier that determines
+ * how much this rounds cards are worth in points.
+ *
  * Created by marcus on 2016-02-18.
  */
 @Entity

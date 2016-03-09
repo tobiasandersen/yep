@@ -11,6 +11,12 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.core.annotation.Order;
 
+/**
+ * Main class for the application.
+ *
+ * the fetchData method inside the JService class is run every time
+ * at startup and fills the database if it appears to be empty.
+ */
 @SpringBootApplication
 public class YepServer {
 
