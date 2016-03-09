@@ -43,7 +43,8 @@ class AddNew extends Component {
     const { 
       modalIsOpen,
       closeModal,
-      addNew
+      addNew,
+      placeHolder
     } = this.props
 
     return (
@@ -54,12 +55,16 @@ class AddNew extends Component {
         }}
         style={modalStyles}
       >
-        {modalIsOpen 
+        {modalIsOpen
           ? <AddNewUser 
             handleKeyPress={addNew}
-            close={closeModal} />
+            close={closeModal} 
+            placeHolder={placeHolder}/>
           : null
         }
+        <div styleName="close-button" onClick={() => closeModal()}>
+          X
+        </div>
       </Modal>
     )
   }
@@ -68,7 +73,8 @@ class AddNew extends Component {
 AddNew.propTypes = {
   modalIsOpen: PropTypes.bool.isRequired,
   closeModal: PropTypes.func.isRequired,
-  addNew: PropTypes.func.isRequired
+  addNew: PropTypes.func.isRequired,
+  placeHolder: PropTypes.string
 }
 
 export default CSSModules(AddNew, styles)

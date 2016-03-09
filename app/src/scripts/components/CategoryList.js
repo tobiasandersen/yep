@@ -5,7 +5,7 @@ import ButtonAdd from './ButtonAdd'
 import CategoryListItem from './CategoryListItem'
 import AddNew from './AddNew'
 
-const CategoryList = ({ categories, categoryModalIsOpen, openCategoryModal, closeCategoryModal }) => (
+const CategoryList = ({ categories, categoryModalIsOpen, openCategoryModal, closeCategoryModal, addNewCategory }) => (
   <div styleName="container">
     <div styleName="title">
       <h3>Categories</h3>
@@ -16,9 +16,11 @@ const CategoryList = ({ categories, categoryModalIsOpen, openCategoryModal, clos
       ))}
     </div>
     <ButtonAdd handleClick={openCategoryModal} />
-    {/*<AddNew 
+    <AddNew 
       modalIsOpen={categoryModalIsOpen} 
-      closeModal={closeCategoryModal} /> */}
+      closeModal={closeCategoryModal}
+      addNew={addNewCategory}
+      placeHolder="Enter Category Name" />
   </div>
 )
 
@@ -26,7 +28,8 @@ CategoryList.propTypes = {
   categories: PropTypes.array.isRequired,
   categoryModalIsOpen: PropTypes.bool.isRequired,
   openCategoryModal: PropTypes.func.isRequired,
-  closeCategoryModal: PropTypes.func.isRequired
+  closeCategoryModal: PropTypes.func.isRequired,
+  addNewCategory: PropTypes.func.isRequired
 }
 
 export default CSSModules(CategoryList, styles)

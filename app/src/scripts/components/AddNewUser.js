@@ -2,12 +2,12 @@ import React, { PropTypes } from 'react'
 import CSSModules from 'react-css-modules'
 import styles from 'styles/AddNewUser'
 
-const AddNewUser = ({ handleKeyPress, close }) => (
+const AddNewUser = ({ handleKeyPress, close, placeHolder }) => (
   <div styleName="container">
     <input 
       styleName="username" 
       type="text" 
-      placeholder="Enter username"
+      placeholder={placeHolder}
       autofocus
       onKeyPress={(event) => {
         if (event.which === 13) {
@@ -21,7 +21,8 @@ const AddNewUser = ({ handleKeyPress, close }) => (
 )
 AddNewUser.propTypes = {
   handleKeyPress: PropTypes.func.isRequired,
-  close: PropTypes.func.isRequired
+  close: PropTypes.func.isRequired,
+  placeHolder: PropTypes.string
 }
 
 
