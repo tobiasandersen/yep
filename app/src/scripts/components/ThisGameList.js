@@ -3,6 +3,7 @@ import CSSModules from 'react-css-modules'
 import PickedGameSection from './PickedGameSection'
 import PickedGameItem from './PickedGameItem'
 import PickedRound from './PickedRound'
+import ButtonStart from './ButtonStart'
 import styles from 'styles/ThisGameList.css'
 import {
   MIN_NBR_OF_PLAYERS,
@@ -51,6 +52,8 @@ const ThisGameList = ({
         />
       ))}
     />
+
+    <ButtonStart isReadyToStart={false} />
 
   </div>
 )
