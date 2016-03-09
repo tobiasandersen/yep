@@ -1,0 +1,59 @@
+.container {
+  min-height: 100px;
+}
+
+.title {
+  border-bottom: 2px solid #324760;
+  display: inline-block;
+  font-size: 15px;
+  font-weight: 700;
+  margin: 15px 0 0 0;
+  text-transform: uppercase;
+  padding: 0 0 10px 0;
+  width: 100%;
+}
+
+.title:last-of-type {
+  margin-top: 25px;
+}
+
+.picked-section:not(:last-of-type) {
+  border-bottom: 2px solid #324760;
+}
+
+.picked-items-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 10px 0 0 0;
+}
+
+.picked-items:not(:last-of-type) {
+  border-bottom: 2px solid #324760;
+  padding: 10px 0;
+}
+
+.no-items-selected {
+  font-size: 14px;
+  font-style: italic; 
+}
+
+.container .container {
+  width: 47.5%; 
+}
+
+.container .container:first-of-type {
+  margin-right: 5%;
+}
+
+.container .container .title {
+  border: none;
+  font-size: 13px;
+  margin-top: 10px;
+}
+
+.checkmark {
+  right: 0;
+  margin-right: 10px;
+  position: relative;
+  top: 4px;
+}

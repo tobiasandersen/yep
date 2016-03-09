@@ -4,10 +4,14 @@ import Categories from '../components/Categories'
 import { selectCard } from '../actions/cards'
 
 function mapStateToProps(state) {
-  const { cards, categories, categoryIdList, selectedCard } = state
-
+  const { cards, categories, game, selectedCard } = state
+  const { currentRound, rounds } = game
+  const categoryIdsForCurrentRound = rounds
+  .filter(round => round.roundNumber === currentRound)[0]
+  .categoryIds
+  
   return {
-    categories: categoryIdList.map(id => categories[id]),
+    categories: categoryIdsForCurrentRound.map(id => categories[id]),
     cards,
     selectedCard
   }
