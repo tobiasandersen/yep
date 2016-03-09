@@ -5,22 +5,38 @@ import ButtonAdd from './ButtonAdd'
 import CategoryListItem from './CategoryListItem'
 import AddNew from './AddNew'
 
-const CategoryList = ({ categories, categoryModalIsOpen, openCategoryModal, closeCategoryModal, addNewCategory }) => (
+const CategoryList = ({ 
+  categories,
+  categoryModalIsOpen,
+  openCategoryModal,
+  closeCategoryModal,
+  addCategoryToGame,
+  addNewCategory
+}) => (
   <div styleName="container">
+
     <div styleName="title">
       <h3>Categories</h3>
     </div>
+
     <div styleName="list">  
       {categories.map(category => (
-        <CategoryListItem key={category.id} category={category} />
+        <CategoryListItem 
+          handleClick={() => addCategoryToGame(category.id)}
+          key={category.id} 
+          title={category.title} 
+        />
       ))}
     </div>
+
     <ButtonAdd handleClick={openCategoryModal} />
+
     <AddNew 
       modalIsOpen={categoryModalIsOpen} 
       closeModal={closeCategoryModal}
       addNew={addNewCategory}
-      placeHolder="Enter Category Name" />
+      placeHolder="Enter Category Name" 
+    />
   </div>
 )
 
@@ -29,6 +45,7 @@ CategoryList.propTypes = {
   categoryModalIsOpen: PropTypes.bool.isRequired,
   openCategoryModal: PropTypes.func.isRequired,
   closeCategoryModal: PropTypes.func.isRequired,
+  addCategoryToGame: PropTypes.func.isRequired,
   addNewCategory: PropTypes.func.isRequired
 }
 
