@@ -12,6 +12,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * Controller class for the Category object.
+ * Exposes a number of endpoints where an external component can fetch or send data.
+ *
  * Created by marcus on 2016-02-17.
  */
 @RestController
@@ -46,6 +49,9 @@ public class CategoryController {
         JSONArray jsonArray = jsonObject.getJSONArray("cards");
         List<Card> cards = new ArrayList<>();
 
+        /*
+         * Fetches and creates the cards.
+         */
         if (jsonArray != null) {
             for (int i = 0; i < jsonArray.length(); i++) {
                 JSONObject jsonCard = jsonArray.getJSONObject(i);

@@ -9,6 +9,9 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 /**
+ * Controller class for the Card object.
+ * Exposes a number of endpoints where an external component can fetch or send data.
+ *
  * Created by axel on 2016-02-17.
  */
 @RestController

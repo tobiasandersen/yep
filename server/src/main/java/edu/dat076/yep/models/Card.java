@@ -3,6 +3,8 @@ package edu.dat076.yep.models;
 import javax.persistence.*;
 
 /**
+ * Class for representing the cards that hold the questions and answers.
+ *
  * Created by axel on 2016-02-17.
  */
 @Entity

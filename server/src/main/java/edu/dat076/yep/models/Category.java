@@ -4,6 +4,10 @@ import javax.persistence.*;
 import java.util.List;
 
 /**
+ * Class for representing the categories.
+ *
+ * categories contains a list of cards that belong to that category.
+ *
  * Created by marcus on 2016-02-18.
  */
 @Entity

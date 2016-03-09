@@ -6,6 +6,10 @@ import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
 /**
+ * Persistence interface for the card class.
+ *
+ * is implemented by Spring at runtime.
+ *
  * Created by marcus on 2016-02-23.
  */
 public interface CardRepository extends CrudRepository<Card, Long> {

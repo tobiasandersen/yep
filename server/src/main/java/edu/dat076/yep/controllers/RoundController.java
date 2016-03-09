@@ -14,6 +14,9 @@ import java.util.List;
 
 
 /**
+ * Controller class for the Round object.
+ * Exposes a number of endpoints where an external component can fetch or send data.
+ *
  * Created by marcus on 2016-02-18.
  */
 @RestController
@@ -34,6 +37,9 @@ public class RoundController {
         List<Category> categories = new ArrayList<>();
         JSONArray jsonArray = jsonObject.getJSONArray("categories");
 
+        /*
+         * Fetches and creates the categories with necessary cards.
+         */
         if(jsonArray != null) {
             for(int i = 1; i < jsonArray.length(); i++) {
                 JSONObject tmpObject = jsonArray.getJSONObject(i);

@@ -12,6 +12,9 @@ import java.util.List;
 
 
 /**
+ * Controller class for the Board object.
+ * Exposes a number of endpoints where an external component can fetch or send data.
+ *
  * Created by marcus on 2016-02-18.
  */
 @RestController
@@ -35,7 +38,7 @@ public class BoardController {
         List<Round> rounds = new ArrayList<>();
 
         /*
-         * Creates the players for the board.
+         * Fetches and creates the players for the board.
          */
         if(playerArray != null) {
             for(int i = 0; i < playerArray.length(); i++) {
@@ -48,8 +51,8 @@ public class BoardController {
         }
 
         /*
-         * Creates the rounds for the board.
-         * Also creates necessary categories for the rounds and cards for the categories.
+         * Fetches and creates the rounds for the board.
+         * Also fetches and creates necessary categories for the rounds and cards for the categories.
          */
         if(roundArray != null) {
             for(int i = 0; i < roundArray.length(); i++) {
