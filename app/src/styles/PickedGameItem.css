@@ -1,0 +1,40 @@
+@value red from "./Colors.css";
+
+.picked-item {
+  background: #33485F;
+  border-radius: 4px;
+  font-size: 15px;
+  display: inline-block;
+  margin-bottom: 5px;
+  padding: 4px 16px 4px 8px;
+  position: relative;
+}
+
+.picked-item:not(:last-of-type) {
+  margin-right: 5px;
+}
+
+.title {
+  margin-right: 6px;
+}
+
+.remove-button {
+  background: none;
+  border-radius: 100%;
+  border: none;
+  color: red;
+  font-size: 16px;
+  margin-top: -9px;
+  outline: none;
+  padding: 0;
+  position: relative;
+  position: absolute;
+  top: 50%;
+  right: 5px;
+  text-align: center;
+}
+
+.remove-button:hover {
+  cursor: pointer;
+  opacity: .9;
+}
