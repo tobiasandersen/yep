@@ -7,18 +7,23 @@ import AddNew from './AddNew'
 
 const CategoryList = ({ categories, categoryModalIsOpen, openCategoryModal, closeCategoryModal }) => (
   <div styleName="container">
+
     <div styleName="title">
       <h3>Categories</h3>
     </div>
+
     <div styleName="list">  
       {categories.map(category => (
         <CategoryListItem key={category.id} category={category} />
       ))}
     </div>
+
     <ButtonAdd handleClick={openCategoryModal} />
+    
     <AddNew 
       modalIsOpen={categoryModalIsOpen} 
-      closeModal={closeCategoryModal} />
+      closeModal={closeCategoryModal} 
+    />
   </div>
 )
 

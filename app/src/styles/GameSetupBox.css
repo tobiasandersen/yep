@@ -1,3 +1,5 @@
+@value red from "./Colors.css";
+
 .container {
   position: relative;
   width: 30%;
@@ -21,12 +23,13 @@
 }
 
 .title {
-  width: 100%;
-  padding: 20px;
+  padding: 20px 0 30px 0;
   text-align: center;
+  width: 100%;
 }
 
-.button {
+.button,
+.button:visited {
   position: absolute;
   bottom: 0;
   height: 50px;
@@ -73,9 +76,21 @@
   background-color: #33485F;
 }
 
+.list-heading {
+  border-bottom: 3px solid #17212C;
+  font-size: 15px;
+  font-weight: 700;
+  margin: 15px 0 5px 0;
+  text-transform: uppercase;
+  padding: 0 0 15px 30px;
+}
+
+.list-heading:last-of-type {
+  margin-top: 25px;
+}
+
 .list-title {
   padding: 20px 30px 10px 30px;
-  font-weight: 700;
 }
 
 .list-item-image {
@@ -90,4 +105,53 @@
 
 .list-item-name {
 
+}
+
+.players-container {
+  display: flex;
+  margin: 10px 0 0 30px;
+}
+
+.player {
+  background: #33485F;
+  border-radius: 4px;
+  font-size: 15px;
+  display: inline-block;
+  padding: 4px 8px;
+}
+
+.player:not(:last-of-type) {
+  margin-right: 5px;
+}
+
+.player-name {
+  margin-right: 6px;
+}
+
+.round {
+  margin-top: 30px;
+}
+
+.round-number {
+  composes: list-title; 
+  font-size: 14px;
+  padding-top: 0;
+}
+
+.remove-button {
+  background: none;
+  border-radius: 100%;
+  border: none;
+  color: red;
+  font-size: 17px;
+  outline: none;
+  padding: 0;
+  position: relative;
+  top: 1px;
+  text-align: center;
+}
+
+.remove-button:hover {
+  cursor: pointer;
+  opacity: .9;
 }
