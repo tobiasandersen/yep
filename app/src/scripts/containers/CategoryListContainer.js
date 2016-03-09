@@ -1,8 +1,8 @@
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import CategoryList from '../components/CategoryList'
+import { addCategoryToGame, addNewCategory } from '../actions/categories'
 import { openCategoryModal, closeCategoryModal } from '../actions/categoryList'
-import { addCategoryToGame } from '../actions/categories'
 
 function mapStateToProps(state) {
   const { categories, categoryIdList } = state
@@ -18,7 +18,8 @@ function mapDispatchToProps(dispatch) {
   return bindActionCreators({ 
     openCategoryModal,
     closeCategoryModal,
-    addCategoryToGame
+    addCategoryToGame,
+    addNewCategory
   }, dispatch)
 }
 

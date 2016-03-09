@@ -22,7 +22,8 @@ const Users = ({ users, addUserToGame, userModalIsOpen, openUserModal, closeUser
     <AddNew 
       modalIsOpen={userModalIsOpen} 
       closeModal={closeUserModal}
-      addNew={addNewUser} />
+      addNew={addNewUser}
+      placeHolder="Enter Username" />
   </div>
 )
 
