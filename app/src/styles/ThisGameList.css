@@ -1,5 +1,7 @@
 .container {
   margin: 0 auto;
+  overflow: scroll;
+  margin-bottom: 85px;
   width: 85%;
 }
 
