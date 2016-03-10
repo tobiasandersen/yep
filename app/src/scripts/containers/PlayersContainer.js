@@ -4,7 +4,7 @@ import Players from '../components/Players'
 import { selectCard } from '../actions/cards'
 
 function mapStateToProps(state) {
-  return { players: state.players }
+  return { players: state.game.players }
 }
 
 function mapDispatchToProps(dispatch) {

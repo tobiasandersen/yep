@@ -81,7 +81,12 @@ function rounds(state = [
 
     case REMOVE_CATEGORY_FROM_GAME:
       return state.map(round => {
-        round.categoryIds.pop(action.payload)
+        const index = round.categoryIds.indexOf(action.payload)
+
+        if (index > -1) {
+          round.categoryIds.splice(index, 1)
+        }
+
         return round
       })
         
