@@ -58,4 +58,9 @@ public class CardController {
         return card;
     }
 
+    @RequestMapping(value="/cards/{cardID}", method=RequestMethod.DELETE)
+    public void deleteCard(@PathVariable int cardID) {
+        repository.delete((long) cardID);
+    }
+
 }

@@ -69,4 +69,9 @@ public class CategoryController {
 
         return updatedCategory;
     }
+
+    @RequestMapping(value="/categories/{categoryID}", method=RequestMethod.DELETE)
+    public void deleteCategory(@PathVariable int categoryID) {
+        repository.delete((long) categoryID);
+    }
 }

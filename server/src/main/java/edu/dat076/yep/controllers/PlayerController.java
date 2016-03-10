@@ -42,4 +42,9 @@ public class PlayerController {
         return repository.findOne((long) playerID);
     }
 
+    @RequestMapping(value="/players/{playerID}", method=RequestMethod.DELETE)
+    public void deletePlayer(@PathVariable int playerID) {
+        repository.delete((long) playerID);
+    }
+
 }

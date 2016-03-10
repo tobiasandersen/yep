@@ -99,4 +99,9 @@ public class BoardController {
         return repository.findOne((long) boardID);
     }
 
+    @RequestMapping(value="/boards/{boardID}", method=RequestMethod.DELETE)
+    public void deleteBoard(@PathVariable int boardID) {
+        repository.delete((long) boardID);
+    }
+
 }

@@ -20,7 +20,7 @@ public class Category {
 
     private String title;
 
-    @OneToMany
+    @OneToMany(cascade = CascadeType.REMOVE)
     private List<Card> cards;
 
     protected Category() {}

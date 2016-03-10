@@ -73,4 +73,9 @@ public class RoundController {
         return repository.findOne((long) roundID);
     }
 
+    @RequestMapping(value="/rounds/{roundID}", method=RequestMethod.DELETE)
+    public void deleteRound(@PathVariable int roundID) {
+        repository.delete((long) roundID);
+    }
+
 }
