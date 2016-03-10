@@ -3,6 +3,7 @@ import CSSModules from 'react-css-modules'
 import Modal from 'react-modal'
 import styles from 'styles/EditCategory'
 import Questions from './Questions'
+import QuestionDetails from './QuestionDetails'
 
 class EditCategory extends Component {
   constructor(props) {
@@ -66,6 +67,7 @@ class EditCategory extends Component {
                 cards={cards} />
             </div>
             <div styleName="right">
+              <QuestionDetails />
             </div>
           </div>
         </div>
