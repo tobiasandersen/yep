@@ -1,6 +1,7 @@
 package edu.dat076.yep.controllers;
 
 import edu.dat076.yep.YepApplicationTests;
+import edu.dat076.yep.models.Category;
 import edu.dat076.yep.models.Player;
 import edu.dat076.yep.repositories.PlayerRepository;
 import org.junit.After;
@@ -59,5 +60,16 @@ public class PlayerControllerTest extends YepApplicationTests {
     public void testFindPlayerByID() {
         Player player = controller.findPlayerByID(ID);
         Assert.assertNotNull("failure - expected to find a player with id " + ID, player);
+    }
+
+    @Test
+    public void testDeletePlayer() {
+        Player player = controller.findAllPlayers().get(0);
+        Assert.assertNotNull(player);
+
+        int playerID = player.getId().intValue();
+        Assert.assertNotNull(controller.findPlayerByID(playerID));
+        controller.deletePlayer(playerID);
+        Assert.assertNull(controller.findPlayerByID(playerID));
     }
 }

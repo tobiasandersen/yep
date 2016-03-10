@@ -4,6 +4,7 @@ import com.mashape.unirest.http.HttpResponse;
 import com.mashape.unirest.http.Unirest;
 import com.mashape.unirest.http.exceptions.UnirestException;
 import edu.dat076.yep.YepApplicationTests;
+import edu.dat076.yep.models.Category;
 import edu.dat076.yep.models.Round;
 import edu.dat076.yep.repositories.RoundRepository;
 import org.json.JSONArray;
@@ -127,5 +128,16 @@ public class RoundControllerTest extends YepApplicationTests {
         Round newRound = controller.createRound(json);
         Assert.assertNotNull("failure - expected newly created Round object", newRound);
         Assert.assertEquals("failure - excected the same mutiplier", MULTI, newRound.getMultiplier());
+    }
+
+    @Test
+    public void testDeleteRound() {
+        Round round = controller.findAllRounds().get(0);
+        Assert.assertNotNull(round);
+
+        int roundID = round.getId().intValue();
+        Assert.assertNotNull(controller.findRoundByID(roundID));
+        controller.deleteRound(roundID);
+        Assert.assertNull(controller.findRoundByID(roundID));
     }
 }

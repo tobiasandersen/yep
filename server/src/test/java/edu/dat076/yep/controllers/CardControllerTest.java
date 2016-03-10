@@ -1,6 +1,7 @@
 package edu.dat076.yep.controllers;
 
 import edu.dat076.yep.YepApplicationTests;
+import edu.dat076.yep.models.Board;
 import edu.dat076.yep.models.Card;
 import edu.dat076.yep.models.Category;
 import org.junit.After;
@@ -54,10 +55,21 @@ public class CardControllerTest extends YepApplicationTests {
 
     @Test
     public void testFindCardById() {
-        Card cardNotNull = controller.findCardByID(471); // id 172 should exist
+        Card cardNotNull = controller.findCardByID(2896); // Should exist
         Card cardNull = controller.findCardByID(999999);
 
         Assert.assertNotNull(cardNotNull);
         Assert.assertNull(cardNull);
+    }
+
+    @Test
+    public void testDeleteCard() {
+        Card card = controller.findAllCards().get(0);
+        Assert.assertNotNull(card);
+
+        int cardID = card.getId().intValue();
+        Assert.assertNotNull(controller.findCardByID(cardID));
+        controller.deleteCard(cardID);
+        Assert.assertNull(controller.findCardByID(cardID));
     }
 }

@@ -70,6 +70,16 @@ public class BoardControllerTest extends YepApplicationTests {
     public void testFindBoardByID() {
         Board board = controller.findBoardByID(ID);
         Assert.assertNotNull("failure - expected to find a board with id " + ID, board);
+    }
 
+    @Test
+    public void testDeleteBoard() {
+        Board board = controller.findAllBoards().get(0);
+        Assert.assertNotNull(board);
+
+        int boardID = board.getId().intValue();
+        Assert.assertNotNull(controller.findBoardByID(boardID));
+        controller.deleteBoard(boardID);
+        Assert.assertNull(controller.findBoardByID(boardID));
     }
 }

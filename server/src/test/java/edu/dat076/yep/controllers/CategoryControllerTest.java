@@ -24,7 +24,7 @@ public class CategoryControllerTest extends YepApplicationTests {
     @Autowired
     private CategoryController controller;
 
-    private final int ID = 172; // id 172 should exist
+    private final int ID = 569; // Should exist
 
     @Before
     public void setUp() {
@@ -85,6 +85,17 @@ public class CategoryControllerTest extends YepApplicationTests {
         nbrOfCardsAfterUpdate = test.getCards().size();
         Assert.assertTrue("failure - expected more cards from controller",
                 nbrOfCardsBeforeUpdate < nbrOfCardsAfterUpdate);
+    }
+
+    @Test
+    public void testDeleteCategory() {
+        Category category = controller.findAllCategories().get(0);
+        Assert.assertNotNull(category);
+
+        int categoryID = category.getId().intValue();
+        Assert.assertNotNull(controller.findCategoryByID(categoryID));
+        controller.deleteCategory(categoryID);
+        Assert.assertNull(controller.findCategoryByID(categoryID));
     }
 }
 
