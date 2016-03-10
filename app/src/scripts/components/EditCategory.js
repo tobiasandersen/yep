@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react'
 import CSSModules from 'react-css-modules'
 import Modal from 'react-modal'
 import styles from 'styles/EditCategory'
+import Questions from './Questions'
 
 class EditCategory extends Component {
   constructor(props) {
@@ -11,10 +12,10 @@ class EditCategory extends Component {
   render() {
     const {
       modalIsOpen,
+      category,
+      cards,
       closeEditCategoryModal
     } = this.props
-
-    console.log(modalIsOpen)
 
     const modalStyles = {
       overlay: {
@@ -52,10 +53,21 @@ class EditCategory extends Component {
         style={modalStyles} >
 
         <div styleName="container">
-          <div styleName="title">
-            CategoryName
+          <span styleName="title">{category.title}</span>
+          <div 
+            styleName="save-and-close" 
+            onClick={() => closeEditCategoryModal()} >
+            Save & Close
           </div>
-          <button onClick={() => closeEditCategoryModal()}>Close</button>
+          <div styleName="content">
+            <div styleName="left">
+              <Questions 
+                category={category}
+                cards={cards} />
+            </div>
+            <div styleName="right">
+            </div>
+          </div>
         </div>
 
       </Modal>
@@ -65,6 +77,8 @@ class EditCategory extends Component {
 
 EditCategory.propTypes = {
   modalIsOpen: PropTypes.bool.isRequired,
+  category: PropTypes.object.isRequired,
+  cards: PropTypes.object.isRequired,
   closeEditCategoryModal: PropTypes.func.isRequired
 }
 

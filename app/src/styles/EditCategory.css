@@ -3,8 +3,29 @@
   height: 100%;
   background-color: transparent;
   display: flex;
-  flex-flow: row;
+  flex-flow: column;
   color: white;
+}
+
+.content {
+  height: 80%;
+  margin-top: 20px;
+  padding: 20px 0;
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  background-color: #17212C;
+  border-radius: 20px;
+}
+
+.left {
+  width: 45%;
+  height: 100%;
+}
+
+.right {
+  width: 45%;
+  height: 100%;
 }
 
 .title {
@@ -13,4 +34,16 @@
   font-family: 'impact';
   font-size: 60px;
   text-align: center;
+}
+
+.save-and-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-family: 'impact';
+  cursor: pointer;
+}
+
+.save-and-close:hover {
+  color: green;
 }

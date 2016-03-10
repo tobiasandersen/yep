@@ -4,6 +4,7 @@ import CategoryList from '../components/CategoryList'
 import { 
   addCategoryToGame, 
   addNewCategory, 
+  editCategory,
   openEditCategoryModal 
 } from '../actions/categories'
 import { openCategoryModal, closeCategoryModal } from '../actions/categoryList'
@@ -24,6 +25,7 @@ function mapDispatchToProps(dispatch) {
     closeCategoryModal,
     addCategoryToGame,
     addNewCategory,
+    editCategory,
     openEditCategoryModal
   }, dispatch)
 }

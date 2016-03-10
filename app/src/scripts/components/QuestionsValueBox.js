@@ -1,18 +1,17 @@
-import React from 'react'
+import React, { PropTypes } from 'react'
 import CSSModules from 'react-css-modules'
 import styles from 'styles/QuestionsValueBox'
 
-const QuestionsValueBox = () => (
+const QuestionsValueBox = ({ value, question }) => (
   <div styleName="container">
-    <div styleName="value">
-      1
-    </div>
-    <div styleName="list">
-      <div styleName="list-item">
-        This is a Question
-      </div>
-    </div>
+    <span styleName="value">{value}</span>
+    <span styleName="question">{question}</span>
   </div>
 )
+
+QuestionsValueBox.propTypes = {
+  value: PropTypes.number.isRequired,
+  question: PropTypes.string.isRequired 
+}
 
 export default CSSModules(QuestionsValueBox, styles)

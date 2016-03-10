@@ -6,8 +6,12 @@ import {
 } from '../actions/categories'
 
 function mapStateToProps(state) {
+  const { cards, selectedCategory } = state
+
   return {
-    modalIsOpen: state.modals.editCategoryModalIsOpen
+    modalIsOpen: state.modals.editCategoryModalIsOpen,
+    category: state.selectedCategory,
+    cards
   }
 }
 
