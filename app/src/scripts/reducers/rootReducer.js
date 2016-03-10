@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux'
-import { categories, categoryIdList } from './categories'
+import { categories, categoryIdList, selectedCategory } from './categories'
 import { cards, selectedCard } from './cards'
 import { users, players } from './users'
 import { modals } from './modals'
@@ -11,6 +11,7 @@ export default combineReducers({
   categories,
   categoryIdList,
   selectedCard,
+  selectedCategory,
   users,
   modals,
   players,
