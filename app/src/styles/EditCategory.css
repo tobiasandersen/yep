@@ -10,21 +10,22 @@
 .content {
   height: 80%;
   margin-top: 20px;
+  padding: 20px 0;
   display: flex;
   flex-flow: row;
-  justify-content: space-around;
+  justify-content: center;
+  background-color: #17212C;
+  border-radius: 20px;
 }
 
 .left {
   width: 45%;
   height: 100%;
-  background-color: blue;
 }
 
 .right {
   width: 45%;
   height: 100%;
-  background-color: gray;
 }
 
 .title {
