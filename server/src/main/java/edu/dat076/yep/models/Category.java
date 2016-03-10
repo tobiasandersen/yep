@@ -42,6 +42,10 @@ public class Category {
         return title;
     }
 
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
     public List<Card> getCards() {
         return cards;
     }
@@ -52,6 +56,10 @@ public class Category {
 
     public void addCards(List<Card> cards) {
         this.cards.addAll(cards);
+    }
+
+    public void setCards(List<Card> cards) {
+        this.cards = cards;
     }
 
     @Override

@@ -44,6 +44,14 @@ public class CategoryTest extends YepApplicationTests {
     }
 
     @Test
+    public void testSetTitle() {
+        String testTitle = "test";
+        Assert.assertNotEquals(testTitle, category.getTitle());
+        category.setTitle(testTitle);
+        Assert.assertEquals(testTitle, category.getTitle());
+    }
+
+    @Test
     public void testGetCards() {
         Assert.assertEquals(CARDS.size(), category.getCards().size());
         Assert.assertEquals(CARDS, category.getCards());
@@ -79,5 +87,17 @@ public class CategoryTest extends YepApplicationTests {
         Assert.assertEquals(CARDS.size(), category.getCards().size());
         Assert.assertEquals(newCard, category.getCards().get(category.getCards().size() - 2));
         Assert.assertEquals(newCard2, category.getCards().get(category.getCards().size() - 1));
+    }
+
+    @Test
+    public void testSetCards() {
+        List<Card> testList = new ArrayList<>();
+        testList.add(new Card("test", "test", 100));
+        testList.add(new Card("test2", "test2", 200));
+        testList.add(new Card("test3", "test3", 300));
+
+        Assert.assertNotEquals(testList, category.getCards());
+        category.setCards(testList);
+        Assert.assertEquals(testList, category.getCards());
     }
 }

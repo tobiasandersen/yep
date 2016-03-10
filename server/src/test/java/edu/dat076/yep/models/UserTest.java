@@ -38,4 +38,12 @@ public class UserTest extends YepApplicationTests {
     public void testGetName() {
         Assert.assertTrue(user.getName().equals(NAME));
     }
+
+    @Test
+    public void testSetName() {
+        String testName = "test";
+        Assert.assertNotEquals(testName, user.getName());
+        user.setName(testName);
+        Assert.assertEquals(testName, user.getName());
+    }
 }
