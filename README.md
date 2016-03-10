@@ -32,6 +32,7 @@ The backend is divided into several packages where each has it's own responsabil
 The frontend runs as a separate app using the endpoints from the backend.
 ### Installation
 Make sure node is installed , then:
+
 1. Run: `npm install`
 2. Run: `npm start`
 
