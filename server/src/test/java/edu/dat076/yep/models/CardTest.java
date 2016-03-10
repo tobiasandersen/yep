@@ -36,12 +36,36 @@ public class CardTest extends YepApplicationTests {
     }
 
     @Test
+    public void testSetQuestion() {
+        String testQuestion = "testing";
+        Assert.assertNotEquals(testQuestion, card.getQuestion());
+        card.setQuestion(testQuestion);
+        Assert.assertEquals(testQuestion, card.getQuestion());
+    }
+
+    @Test
     public void testGetAnswer() {
         Assert.assertEquals(ANSWER, card.getAnswer());
     }
 
     @Test
+    public void testSetAnswer() {
+        String testAnswer = "testing";
+        Assert.assertNotEquals(testAnswer, card.getAnswer());
+        card.setAnswer(testAnswer);
+        Assert.assertEquals(testAnswer, card.getAnswer());
+    }
+
+    @Test
     public void testGetValue() {
         Assert.assertEquals(VALUE, card.getValue());
+    }
+
+    @Test
+    public void testSetValue() {
+        int testValue = 1337;
+        Assert.assertNotEquals(testValue, card.getValue());
+        card.setValue(testValue);
+        Assert.assertEquals(testValue, card.getValue());
     }
 }

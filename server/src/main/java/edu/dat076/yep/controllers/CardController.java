@@ -42,4 +42,20 @@ public class CardController {
         return repository.findOne((long) cardID);
     }
 
+    @RequestMapping(value="/cards/{cardID}", method=RequestMethod.PUT)
+    public Card findCardByID(@PathVariable int cardID, @RequestBody String json) {
+        Card card = repository.findOne((long) cardID);
+        JSONObject jsonObject = new JSONObject(json);
+        String question = jsonObject.getString("question");
+        String answer = jsonObject.getString("answer");
+        int value = jsonObject.getInt("value");
+
+        card.setQuestion(question);
+        card.setAnswer(answer);
+        card.setValue(value);
+
+        repository.save(card);
+        return card;
+    }
+
 }
