@@ -1,0 +1,17 @@
+.container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.username {
+  font-size: 80px;
+  text-align: center;
+  background: transparent;
+  font-family: 'impact';
+  color: white;
+  border: none;
+}

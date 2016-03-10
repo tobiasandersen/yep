@@ -1,17 +1,15 @@
-import React, { Component } from 'react'
+import React from 'react'
 import styles from 'styles/Board.css'
-import Cards from './Cards'
-import Players from './Players'
+import CategoriesContainer from '../containers/CategoriesContainer'
+import PlayersContainer from '../containers/PlayersContainer'
+import OpenCardContainer from '../containers/OpenCardContainer'
 
-class Board extends Component {
-  render() {
-    return (
-      <div className={styles.board}>
-        <Cards />
-        <Players />
-      </div>
-    )
-  }
-}
+const Board = () => (
+  <div className={styles.board}>
+    <OpenCardContainer /> 
+    <CategoriesContainer />
+    <PlayersContainer />
+  </div>
+)
 
 export default Board

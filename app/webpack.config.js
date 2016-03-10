@@ -12,7 +12,7 @@ module.exports = {
   },
   entry: {
     app: [
-      'webpack-dev-server/client?http://localhost:8090',
+      'webpack-dev-server/client?http://localhost:9000',
       './src/index'
     ]
   },

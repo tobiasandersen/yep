@@ -1,11 +1,24 @@
 import React, { Component } from 'react'
-import styles from 'styles/App.css'
-import Board from './Board'
+import { connect } from 'react-redux'
+import { fetchCategories } from '../actions/categories'
+import { fetchUsers } from '../actions/users'
+import '../../styles/App.css'
 
-export default class App extends Component {
+class App extends Component {
+  componentDidMount() {
+    const { dispatch } = this.props
+    dispatch(fetchCategories())
+    dispatch(fetchUsers())
+  }
+
   render() {
     return (
-      <Board />
+      <div>
+        {this.props.children}
+      </div>
     )
   }
 }
+
+export default connect()(App)
+
