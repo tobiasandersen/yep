@@ -1,0 +1,17 @@
+edu/dat076/yep/models/Board.class
+edu/dat076/yep/repositories/UserRepository.class
+edu/dat076/yep/repositories/CardRepository.class
+edu/dat076/yep/controllers/CardController.class
+edu/dat076/yep/jservice/JService.class
+edu/dat076/yep/models/Round.class
+edu/dat076/yep/models/Card.class
+edu/dat076/yep/YepServer.class
+edu/dat076/yep/models/User.class
+edu/dat076/yep/models/Category.class
+edu/dat076/yep/models/Player.class
+edu/dat076/yep/controllers/PlayerController.class
+edu/dat076/yep/controllers/BoardController.class
+edu/dat076/yep/controllers/CategoryController.class
+edu/dat076/yep/controllers/UserController.class
+edu/dat076/yep/controllers/RoundController.class
+edu/dat076/yep/repositories/CategoryRepository.class

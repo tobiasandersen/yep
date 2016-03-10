@@ -1,0 +1,4 @@
+edu/dat076/yep/controllers/UserControllerTest.class
+edu/dat076/yep/models/UserTest.class
+edu/dat076/yep/jservice/JServiceTests.class
+edu/dat076/yep/YepApplicationTests.class
