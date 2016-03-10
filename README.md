@@ -16,6 +16,7 @@ The backend runs as a separate app serving endpoints to the frontend according t
 
 ### Build/Run
 Alt.1: To build and run from a jar (including cleaning the package and running the tests) run: 
+
 1. `mvn clean package`
 2. `java -jar target/gs-rest-service-0.1.0.jar`.  
 
