@@ -65,6 +65,12 @@ public class JService {
                             String answer = cardObj.getString("answer");
                             int value = cardObj.getInt("value");
 
+                            if (value >= 200) {
+                                value = value / 200;
+                            } else {
+                                value = value / 100;
+                            }
+
                             Card card = new Card(question, answer, value);
                             cardsList.add(card);
                             cardRepository.save(card);
