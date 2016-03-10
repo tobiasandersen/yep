@@ -99,6 +99,7 @@ let closedCards = 0
 
 export default function game(state = {
   currentRound: 1,
+  isShowingAnswer: false,
   players: players(state, action),
   rounds: rounds(state, action)
 }, action) {

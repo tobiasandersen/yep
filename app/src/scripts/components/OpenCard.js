@@ -46,6 +46,7 @@ class OpenCard extends Component {
     const { 
       answer,
       handleClose,
+      isFlipped,
       id,
       isOpen,
       players,
@@ -58,8 +59,8 @@ class OpenCard extends Component {
       <Modal
         isOpen={isOpen}
         onRequestClose={() => { 
-          handleClose(id) 
           this.setState({ isFlipped: false })
+          handleClose(id) 
         }}
         style={modalStyles}
       >
@@ -80,6 +81,9 @@ class OpenCard extends Component {
                 cardId={id} 
                 answer={answer} 
                 players={players}
+                flipCard={() => { 
+                  this.setState({ isFlipped: false })}
+                }
                 registerAnswer={registerAnswer}
                 value={value}
               />

@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import { Motion, spring } from 'react-motion'
 
-class OpenCard extends Component {
+class CardFlipper extends Component {
   render() {
     const cardSideStyles = {
       backfaceVisibility: 'hidden',
@@ -47,10 +47,15 @@ class OpenCard extends Component {
   }
 }
 
-OpenCard.propTypes = {
+CardFlipper.propTypes = {
   back: PropTypes.element.isRequired,
   front: PropTypes.element.isRequired,
   isFlipped: PropTypes.bool.isRequired
 }
 
-export default OpenCard
+CardFlipper.defaultProps = {
+  isFlipped: false
+}
+  
+
+export default CardFlipper

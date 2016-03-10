@@ -5,7 +5,7 @@ import { closeCard } from '../actions/cards'
 import { registerAnswer } from '../actions/players'
 
 function mapStateToProps(state) {
-  const { cards, selectedCard: openCardId, players } = state
+  const { cards, game, selectedCard: openCardId } = state
 
   if (openCardId) {
     const { answer, question, value } = cards[openCardId]
@@ -13,9 +13,10 @@ function mapStateToProps(state) {
     return {
       value,
       answer,
+      isFlipped: game.isShowingAnswer,
       id: openCardId,
       isOpen: true,
-      players,
+      players: game.players,
       question
     }
   }

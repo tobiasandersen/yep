@@ -5,6 +5,7 @@ import styles from 'styles/OpenCardBack.css'
 const RegisterAnswerButton = ({ 
   cardId,
   playerId, 
+  flipCard,
   registerCorrect, 
   registerAnswer,
   value
@@ -18,6 +19,8 @@ const RegisterAnswerButton = ({
         value,
         wasCorrect: registerCorrect
       })
+
+      flipCard()
     }}
   >
     {registerCorrect ? 'Correct' : 'Wrong'}

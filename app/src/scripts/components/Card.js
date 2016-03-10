@@ -16,7 +16,7 @@ const Card = ({ id, categoryNumber, value, handleClick, isPicked, isSelected }) 
   }}>
     <span styleName="value">
       <span styleName="dollar-sign">$</span>
-      {value * 100}
+      {value}
     </span>
   </div>
 )

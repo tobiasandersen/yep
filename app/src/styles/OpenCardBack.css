@@ -21,9 +21,12 @@
 }
 
 .answer {
+  align-items: center;
+  display: flex;
   font-size: 52px;
-  line-height: 1.5;
   height: 100%;
+  justify-content: center;
+  line-height: 1.5;
   margin: 0 auto;
   width: 92%;
 }

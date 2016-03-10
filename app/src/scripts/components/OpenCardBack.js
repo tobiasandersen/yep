@@ -3,7 +3,7 @@ import CSSModules from 'react-css-modules'
 import RegisterAnswerButton from './RegisterAnswerButton'
 import styles from 'styles/OpenCardBack.css'
 
-const OpenCardBack = ({ answer, cardId, players, registerAnswer, value }) => (
+const OpenCardBack = ({ answer, flipCard, cardId, players, registerAnswer, value }) => (
   <div styleName="card">
     <div styleName="answer-container">
       <p styleName="answer">{answer}</p>
@@ -20,6 +20,7 @@ const OpenCardBack = ({ answer, cardId, players, registerAnswer, value }) => (
               key={registerCorrect ? 1 : 0}
               cardId={cardId}
               registerAnswer={registerAnswer}
+              flipCard={flipCard}
               registerCorrect={registerCorrect}
               playerId={player.id}
               value={value}

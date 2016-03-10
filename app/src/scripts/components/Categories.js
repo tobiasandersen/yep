@@ -9,17 +9,22 @@ const Categories = ({ cards, categories, selectCard, selectedCard }) => (
       <div key={category.id} styleName="category">
         <div styleName="title">{category.title}</div>
 
-        {category.cards.map((cardId) => cards[cardId]).map(card => (
-          <Card 
-            key={card.id}
-            id={card.id} 
-            value={card.value}
-            handleClick={selectCard}
-            isPicked={card.isPicked != null}
-            isSelected={card.id === selectedCard}
-            categoryNumber={i}
-          />
-        ))}
+        {category
+          .cards
+          .filter((cardId, i) => i < 5)
+          .map((cardId) => cards[cardId]).map(card => (
+            <Card 
+              key={card.id}
+              id={card.id} 
+              value={card.value}
+              handleClick={selectCard}
+              isPicked={card.isPicked != null}
+              isSelected={card.id === selectedCard}
+              categoryNumber={i}
+            />
+          )
+        )}
+
       </div>
     ))}
   </div>
