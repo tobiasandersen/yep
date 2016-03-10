@@ -1,14 +1,31 @@
-import React from 'react'
-import CSSModules from 'react-css-modules'
-import { Link } from 'react-router'
-import styles from 'styles/GameSetupBox.css'
+import React, { PropTypes } from 'react'
+import { browserHistory } from 'react-router'
 
-const ButtonStart = () => (
-  <Link to="/board">
-    <div styleName="button">
-      Start Game
-    </div>
-  </Link>
+const ButtonStart = ({ isReadyToStart }) => (
+  <div style={{ 
+    background: isReadyToStart ? '#3DA55F' : '#5F5F5F',
+    bottom: 0,
+    color: isReadyToStart ? 'white' : 'black',
+    cursor: 'pointer',
+    height: 50,
+    left: 0,
+    position: 'absolute',
+    textAlign: 'center',
+    lineHeight: '50px',
+    borderRadius: '0 0 20px 20px',
+    transition: 'all .3s ease',
+    width: '100%'
+  }} onClick={() => {
+    if (isReadyToStart) {
+      browserHistory.push('/board')
+    }
+  }}>
+    Start Game
+  </div>
 )
 
-export default CSSModules(ButtonStart, styles)
+ButtonStart.propTypes = {
+  isReadyToStart: PropTypes.bool.isRequired
+}
+
+export default ButtonStart

@@ -3,7 +3,8 @@ import {
   ADD_USER_TO_GAME,
   REMOVE_PLAYER_FROM_GAME,
   ADD_CATEGORY_TO_GAME,
-  REMOVE_CATEGORY_FROM_GAME
+  REMOVE_CATEGORY_FROM_GAME,
+  CLOSE_CARD
 } from '../constants/ActionTypes'
 
 function createPlayer(user) {
@@ -89,12 +90,15 @@ function rounds(state = [
   }
 }
 
+let closedCards = 0
+
 export default function game(state = {
+  currentRound: 1,
   players: players(state, action),
   rounds: rounds(state, action)
 }, action) {
   switch (action.type) {
-    case REGISTER_ANSWER: 
+    case REGISTER_ANSWER:
     case REMOVE_PLAYER_FROM_GAME: 
     case ADD_USER_TO_GAME:
       return {
@@ -108,6 +112,14 @@ export default function game(state = {
         ...state,
         rounds: rounds(state.rounds, action)
       }
+
+    case CLOSE_CARD:
+      return (++closedCards === 25) 
+        ? {
+          ...state,
+          currentRound: 2
+        }
+        : state
 
     default:
       return state
