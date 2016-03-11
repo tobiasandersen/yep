@@ -15,5 +15,5 @@
 
 .button:hover {
   background-color: #3D4C61;
-  transition: background-color .2s ease;
+  transition: background-color .1s ease;
 }

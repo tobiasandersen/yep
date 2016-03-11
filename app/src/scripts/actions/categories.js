@@ -39,7 +39,7 @@ export function editCategory(category) {
   return [
     sendEditCategory(category),
     openEditCategoryModal(),
-    showQuestionDetails(category.cards[0])
+    category.cards.length > 0 ? showQuestionDetails(category.cards[0]) : null
   ]
 }
 

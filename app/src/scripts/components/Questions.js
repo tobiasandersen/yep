@@ -3,6 +3,7 @@ import CSSModules from 'react-css-modules'
 import styles from 'styles/Questions'
 import classNames from 'classnames'
 import QuestionDetails from './QuestionDetails'
+import _ from 'underscore'
 
 class Questions extends Component {
   constructor(props) {
@@ -31,7 +32,11 @@ class Questions extends Component {
         </div>
         <div styleName="right">
           <QuestionDetails
-            card={editingCard} />
+            card={_.isEmpty(editingCard) ? {
+              question: '',
+              answer: '',
+              value: 0
+            } : editingCard} />
         </div>
       </div>
     )

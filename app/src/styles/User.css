@@ -14,8 +14,12 @@
   transition: background-color .1s ease;
 }
 
+.container.is-player {
+  background-color: #263345;
+}
+
 .username {
   width: 100%;
   font-family: 'Raleway', sans-serif;
-  font-size: 20px;
+  font-size: 18px;
 }
