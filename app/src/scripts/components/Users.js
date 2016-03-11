@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react'
 import CSSModules from 'react-css-modules'
-import styles from 'styles/GameSetupBox.css'
+import styles from 'styles/Users'
 import User from './User'
 import ButtonAdd from './ButtonAdd'
 import AddNew from './AddNew'
@@ -10,7 +10,7 @@ const Users = ({ users, addUserToGame, userModalIsOpen, openUserModal, closeUser
     <div styleName="title">
       <h3>Users</h3>
     </div>
-    <div styleName="list">
+    <div styleName="users">
       {users.map(user => (
         <User 
           key={user.id}

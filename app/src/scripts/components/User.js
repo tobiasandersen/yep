@@ -1,14 +1,12 @@
 import React, { PropTypes } from 'react'
 import CSSModules from 'react-css-modules'
-import styles from 'styles/GameSetupBox.css'
+import styles from 'styles/User'
 
 const User = ({ user, handleClick }) => (
-  <div styleName="list-item" onClick={() => { 
+  <div styleName="container" onClick={() => { 
     handleClick(user) 
   }}>
-    <div styleName="list-item-image">
-    </div>
-    <div styleName="list-item-name">
+    <div styleName="username">
       {user.name}
     </div>
   </div>

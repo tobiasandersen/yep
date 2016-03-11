@@ -1,18 +1,14 @@
 import React, { PropTypes } from 'react'
 import CSSModules from 'react-css-modules'
-import styles from 'styles/GameSetupBox.css'
+import styles from 'styles/CategoryListItem'
 
 const CategoryListItem = ({ handleClickAdd, handleClickEdit, title }) => (
-  <div styleName="list-item">
-    <div styleName="list-item-title">{title}</div>
-    <div styleName="list-item-icons">
-      <div styleName="list-item-edit" onClick={handleClickEdit}>
-        Edit
-      </div>
-      <div styleName="list-item-add" onClick={handleClickAdd}>
-        Add
-      </div>
+  <div styleName="container">
+    <div styleName="icon" onClick={handleClickEdit}>
+      ✎
     </div>
+    <div styleName="title" onClick={handleClickAdd}>{title}</div>
+    <div styleName="icon" onClick={handleClickAdd}></div>
   </div>
 )
 

@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react'
 import CSSModules from 'react-css-modules'
-import styles from 'styles/GameSetupBox.css'
+import styles from 'styles/CategoryList'
 import ButtonAdd from './ButtonAdd'
 import CategoryListItem from './CategoryListItem'
 import AddNew from './AddNew'
@@ -21,7 +21,7 @@ const CategoryList = ({
       <h3>Categories</h3>
     </div>
 
-    <div styleName="list">  
+    <div styleName="categories">  
       {categories.map(category => (
         <CategoryListItem 
           handleClickAdd={() => addCategoryToGame(category.id)}
