@@ -1,5 +1,35 @@
 .container {
-  background-color: blue;
   width: 100%;
   height: 100%;
+}
+
+.text-box {
+  
+}
+
+.text-type {
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.7)
+}
+
+.text {
+  padding: 10px 0 30px;
+  font-weight: 200;
+}
+
+.difficulty-container {
+  width: 100%;
+  display: flex;
+  flex-flow: row;
+}
+
+.difficulty-title {
+  padding-bottom: 10px;
+}
+
+.difficulty-item {
+  width: 20%;
+  height: 100%;
+  line-height: 30px;
+  text-align: center;
 }

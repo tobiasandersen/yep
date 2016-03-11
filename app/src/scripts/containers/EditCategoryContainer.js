@@ -2,22 +2,25 @@ import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import EditCategory from '../components/EditCategory'
 import {
-  closeEditCategoryModal
+  closeEditCategoryModal,
+  showQuestionDetails
 } from '../actions/categories'
 
 function mapStateToProps(state) {
-  const { cards, selectedCategory } = state
+  const { cards, selectedCategory, editingCard } = state
 
   return {
     modalIsOpen: state.modals.editCategoryModalIsOpen,
-    category: state.selectedCategory,
-    cards
+    category: selectedCategory,
+    cards,
+    editingCard: cards[editingCard]
   }
 }
 
 function mapDispatchToProps(dispatch) {
   return bindActionCreators({ 
-    closeEditCategoryModal
+    closeEditCategoryModal,
+    showQuestionDetails
   }, dispatch)
 }
 

@@ -1,3 +1,37 @@
 .container {
-    overflow: scroll;
+  width: 100%;
+  height: 85%;
+  padding: 50px;
+  display: flex;
+  flex-flow: row;
+  font-size: 18px;
+}
+
+.left {
+  width: 50%;
+  height: 100%;
+  padding-right: 20px;
+  overflow: scroll;
+}
+
+.right {
+  width: 50%;
+  height: 100%;
+  padding-left: 20px;
+}
+
+.item {
+  width: 100%;
+  padding: 0 20px 20px 20px;
+  color: #354151;
+}
+
+.item:hover {
+  color: white;
+  cursor: pointer;
+  transition: color .3s ease;
+}
+
+.item.is-active {
+  color: white;
 }

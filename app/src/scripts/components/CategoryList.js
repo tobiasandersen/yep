@@ -13,8 +13,7 @@ const CategoryList = ({
   closeCategoryModal,
   addCategoryToGame,
   addNewCategory,
-  editCategory,
-  openEditCategoryModal 
+  editCategory
 }) => (
   <div styleName="container">
 
@@ -28,7 +27,6 @@ const CategoryList = ({
           handleClickAdd={() => addCategoryToGame(category.id)}
           handleClickEdit={() => {
             editCategory(category)
-            openEditCategoryModal()
           }}
           key={category.id} 
           title={category.title} 
@@ -52,7 +50,6 @@ CategoryList.propTypes = {
   categoryModalIsOpen: PropTypes.bool.isRequired,
   openCategoryModal: PropTypes.func.isRequired,
   closeCategoryModal: PropTypes.func.isRequired,
-  openEditCategoryModal: PropTypes.func.isRequired,
   addCategoryToGame: PropTypes.func.isRequired,
   addNewCategory: PropTypes.func.isRequired,
   editCategory: PropTypes.func.isRequired

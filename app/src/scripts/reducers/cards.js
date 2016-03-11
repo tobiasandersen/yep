@@ -1,6 +1,8 @@
 import { 
   RECEIVE_CATEGORIES, 
-  CLOSE_CARD, SELECT_CARD
+  CLOSE_CARD, SELECT_CARD,
+  SHOW_QUESTION_DETAILS,
+  CLOSE_EDIT_CATEGORY_MODAL
 } from '../constants/ActionTypes'
 
 export function selectedCard(state = null, action) {
@@ -28,6 +30,17 @@ export function cards(state = {}, action) {
         ...state,
         ...closedCard
       }
+    default:
+      return state
+  }
+}
+
+export function editingCard(state = null, action) {
+  switch(action.type) {
+    case SHOW_QUESTION_DETAILS:
+      return action.payload
+    case CLOSE_EDIT_CATEGORY_MODAL:
+      return null
     default:
       return state
   }
