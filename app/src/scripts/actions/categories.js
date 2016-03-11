@@ -11,13 +11,27 @@ import {
   EDIT_CATEGORY,
   OPEN_EDIT_CATEGORY_MODAL,
   CLOSE_EDIT_CATEGORY_MODAL,
-  SHOW_QUESTION_DETAILS
+  SHOW_QUESTION_DETAILS,
+  CREATE_NEW_QUESTION,
+  SAVE_QUESTION,
+  EDIT_QUESTION,
+  UPDATE_CARD
 } from '../constants/ActionTypes'
 
 export const addCategoryToGame = createAction(ADD_CATEGORY_TO_GAME)
 export const removeCategoryFromGame = createAction(REMOVE_CATEGORY_FROM_GAME)
 
 const sendEditCategory = createAction(EDIT_CATEGORY)
+export const createNewQuestion = createAction(CREATE_NEW_QUESTION)
+export const saveQuestion = createAction(SAVE_QUESTION)
+export const editQuestion = createAction(EDIT_QUESTION)
+
+export function updateCard(cardId, changeArea, text) {
+  type: UPDATE_CARD,
+  cardId,
+  changeArea,
+  text
+}
 
 const requestCategories = createAction(REQUEST_CATEGORIES)
 const receiveCategories = createAction(RECEIVE_CATEGORIES)

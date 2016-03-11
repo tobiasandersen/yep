@@ -4,19 +4,40 @@
   padding: 50px;
   display: flex;
   flex-flow: row;
+  flex-wrap: wrap;
   font-size: 18px;
 }
 
 .left {
   width: 50%;
-  height: 100%;
+  height: 85%;
   padding-right: 20px;
   overflow: scroll;
 }
 
 .right {
   width: 50%;
-  height: 100%;
+  height: 85%;
+  padding-left: 20px;
+  overflow: scroll;
+}
+
+.bottom {
+  height: 20%;
+  width: 100%;
+  margin-top: 40px;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-around;
+}
+
+.bottom-left {
+  width: 50%;
+  padding-right: 20px;
+}
+
+.bottom-right {
+  width: 50%;
   padding-left: 20px;
 }
 

@@ -16,7 +16,12 @@ class EditCategory extends Component {
       cards,
       closeEditCategoryModal,
       showQuestionDetails,
-      editingCard
+      editingCard,
+      createNewQuestion,
+      editingQuestion,
+      saveQuestion,
+      editQuestion,
+      updateCard
     } = this.props
 
     const modalStyles = {
@@ -66,7 +71,12 @@ class EditCategory extends Component {
               category={category}
               cards={cards}
               showQuestionDetails={showQuestionDetails}
-              editingCard={editingCard} />
+              editingCard={editingCard} 
+              createNewQuestion={() => createNewQuestion(category)}
+              editingQuestion={editingQuestion}
+              saveQuestion={saveQuestion}
+              editQuestion={editQuestion}
+              updateCard={updateCard} />
           </div>
         </div>
 
@@ -81,7 +91,12 @@ EditCategory.propTypes = {
   cards: PropTypes.object.isRequired,
   closeEditCategoryModal: PropTypes.func.isRequired,
   showQuestionDetails: PropTypes.func.isRequired,
-  editingCard: PropTypes.object
+  editingCard: PropTypes.object,
+  createNewQuestion: PropTypes.func.isRequired,
+  editingQuestion: PropTypes.bool.isRequired,
+  saveQuestion: PropTypes.func.isRequired,
+  editQuestion: PropTypes.func.isRequired,
+  updateCard: PropTypes.func.isRequired
 }
 
 export default CSSModules(EditCategory, styles)
