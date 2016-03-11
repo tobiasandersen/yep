@@ -8,24 +8,12 @@
 }
 
 .content {
-  height: 80%;
+  height: 100%;
+  width: 100%;
   margin-top: 20px;
   padding: 20px 0;
-  display: flex;
-  flex-flow: row;
-  justify-content: center;
   background-color: #17212C;
   border-radius: 20px;
-}
-
-.left {
-  width: 45%;
-  height: 100%;
-}
-
-.right {
-  width: 45%;
-  height: 100%;
 }
 
 .title {
@@ -41,6 +29,7 @@
   top: 0;
   right: 0;
   font-family: 'impact';
+  font-size: 30px;
   cursor: pointer;
 }
 
