@@ -59,7 +59,7 @@ class EditCategory extends Component {
           <div 
             styleName="save-and-close" 
             onClick={() => closeEditCategoryModal()} >
-            Save & Close
+            ×
           </div>
           <div styleName="content">
             <Questions 

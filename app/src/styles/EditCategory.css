@@ -5,6 +5,7 @@
   display: flex;
   flex-flow: column;
   color: white;
+  font-family: 'Raleway';
 }
 
 .content {
@@ -19,20 +20,17 @@
 .title {
   width: 100%;
   align-self: flex-start;
-  font-family: 'impact';
-  font-size: 60px;
+  font-family: 'Raleway', sans-serif;
+  font-size: 34px;
   text-align: center;
+  font-weight: 700;
+  text-transform: uppercase;
 }
 
 .save-and-close {
   position: absolute;
-  top: 0;
-  right: 0;
-  font-family: 'impact';
-  font-size: 30px;
+  top: -14px;
+  right: 30px;
+  font-size: 50px;
   cursor: pointer;
-}
-
-.save-and-close:hover {
-  color: green;
 }

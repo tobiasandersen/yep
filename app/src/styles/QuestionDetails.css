@@ -9,12 +9,14 @@
 
 .text-type {
   padding-bottom: 10px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.7)
+  border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+  font-weight: 700;
 }
 
 .text {
   padding: 10px 0 30px;
-  font-weight: 200;
+  font-weight: 400;
+  font-size: 16px;
 }
 
 .difficulty-container {

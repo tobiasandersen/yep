@@ -63,7 +63,7 @@ class AddNew extends Component {
           : null
         }
         <div styleName="close-button" onClick={() => closeModal()}>
-          X
+          ×
         </div>
       </Modal>
     )
