@@ -7,9 +7,10 @@ import {
   CLOSE_CARD
 } from '../constants/ActionTypes'
 
-function createPlayer(user) {
+function createPlayer(user, isInteractive = false) {
   return {
     ...user,
+    isInteractive,
     score: 0
   }
 }
@@ -98,6 +99,7 @@ function rounds(state = [
 let closedCards = 0
 
 export default function game(state = {
+  id: 1,
   currentRound: 1,
   isShowingAnswer: false,
   players: players(state, action),

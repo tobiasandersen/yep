@@ -46,7 +46,6 @@ class OpenCard extends Component {
     const { 
       answer,
       handleClose,
-      isFlipped,
       id,
       isOpen,
       players,
