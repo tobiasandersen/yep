@@ -8,7 +8,7 @@ import GameSetup from '../components/GameSetup'
 class GameSetupContainer extends Component {
   componentDidMount() {
     const { dispatch } = this.props
-    dispatch(createNewGame())
+    //dispatch(createNewGame())
     dispatch(fetchCategories())
     dispatch(fetchUsers())
   }
