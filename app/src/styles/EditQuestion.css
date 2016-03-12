@@ -19,6 +19,20 @@
   font-size: 16px;
 }
 
+textarea {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  background: none;
+  background-color: transparent;
+  font-size: 16px;
+  font-family: 'Raleway';
+  font-weight: 400;
+  color: white;
+  border: none;
+  outline: none;
+}
+
 .difficulty-container {
   width: 100%;
   display: flex;

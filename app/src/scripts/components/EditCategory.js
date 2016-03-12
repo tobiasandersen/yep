@@ -3,7 +3,6 @@ import CSSModules from 'react-css-modules'
 import Modal from 'react-modal'
 import styles from 'styles/EditCategory'
 import Questions from './Questions'
-import QuestionDetails from './QuestionDetails'
 
 class EditCategory extends Component {
   constructor(props) {
@@ -15,7 +14,14 @@ class EditCategory extends Component {
       modalIsOpen,
       category,
       cards,
-      closeEditCategoryModal
+      closeEditCategoryModal,
+      showQuestionDetails,
+      editingCard,
+      createNewQuestion,
+      editingQuestion,
+      saveQuestion,
+      editQuestion,
+      updateCard
     } = this.props
 
     const modalStyles = {
@@ -34,9 +40,9 @@ class EditCategory extends Component {
         border: 'none',
         borderRadius: 0,
         bottom: 'auto',
-        height: '80vh',
+        height: '85vh',
         left: 'auto',
-        maxHeight: 600,
+        maxHeight: 700,
         maxWidth: 955,
         overflow: 'initial',
         padding: '0',
@@ -58,17 +64,19 @@ class EditCategory extends Component {
           <div 
             styleName="save-and-close" 
             onClick={() => closeEditCategoryModal()} >
-            Save & Close
+            ×
           </div>
           <div styleName="content">
-            <div styleName="left">
-              <Questions 
-                category={category}
-                cards={cards} />
-            </div>
-            <div styleName="right">
-              <QuestionDetails />
-            </div>
+            <Questions 
+              category={category}
+              cards={cards}
+              showQuestionDetails={showQuestionDetails}
+              editingCard={editingCard} 
+              createNewQuestion={() => createNewQuestion(category)}
+              editingQuestion={editingQuestion}
+              saveQuestion={saveQuestion}
+              editQuestion={editQuestion}
+              updateCard={updateCard} />
           </div>
         </div>
 
@@ -81,7 +89,14 @@ EditCategory.propTypes = {
   modalIsOpen: PropTypes.bool.isRequired,
   category: PropTypes.object.isRequired,
   cards: PropTypes.object.isRequired,
-  closeEditCategoryModal: PropTypes.func.isRequired
+  closeEditCategoryModal: PropTypes.func.isRequired,
+  showQuestionDetails: PropTypes.func.isRequired,
+  editingCard: PropTypes.object,
+  createNewQuestion: PropTypes.func.isRequired,
+  editingQuestion: PropTypes.bool.isRequired,
+  saveQuestion: PropTypes.func.isRequired,
+  editQuestion: PropTypes.func.isRequired,
+  updateCard: PropTypes.func.isRequired
 }
 
 export default CSSModules(EditCategory, styles)
