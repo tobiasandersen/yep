@@ -5,7 +5,6 @@ import {
 } from '../constants/ActionTypes'
 
 export const createNewGame = createAction(CREATE_NEW_GAME)
-const connectPlayer = createAction(CONNECT_PLAYER)
 
 export function receiveEvent(event) {
   console.log('receiveEvent', event)
@@ -24,7 +23,8 @@ export function receiveEvent(event) {
       }
 
     default:
-      console.log('nothing here')
-      return
+      return {
+        type: null
+      }
   }
 }

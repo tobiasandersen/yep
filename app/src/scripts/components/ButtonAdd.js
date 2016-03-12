@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react'
 import CSSModules from 'react-css-modules'
-import styles from 'styles/GameSetupBox.css'
+import styles from 'styles/ButtonAdd'
 
 const ButtonAdd = ({ handleClick }) => (
   <div styleName="button" onClick={handleClick}>

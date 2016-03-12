@@ -14,7 +14,8 @@ const ButtonStart = ({ isReadyToStart }) => (
     lineHeight: '50px',
     borderRadius: '0 0 20px 20px',
     transition: 'all .3s ease',
-    width: '100%'
+    width: '100%',
+    textTransform: 'uppercase'
   }} onClick={() => {
     if (isReadyToStart) {
       browserHistory.push('/board')

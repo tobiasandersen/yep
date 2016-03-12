@@ -4,5 +4,10 @@ node_modules
 *.swp
 .idea/
 *.iml
+<<<<<<< HEAD
 server/target
 *.class
+=======
+*.class
+server/target/MANIFEST.MF
+>>>>>>> edit-category

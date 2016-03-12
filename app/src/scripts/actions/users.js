@@ -29,9 +29,7 @@ export function fetchUsers() {
       dispatch(receiveUsers(usersResponse)) 
     }, 500)
 
-    // Use this once we have a server :)
-    //
-    // return fetch('/users')
+    // return fetch('http://localhost:8080/players')
     // .then((response) => {
     //   if (response.status >= 400) {
     //     throw new Error('Bad response from server')
@@ -39,7 +37,8 @@ export function fetchUsers() {
     //   return response.json()
     // })
     // .then((response) => {
-    //   dispatch(receiveUsers(response))
+    //   console.log(response)
+    //   dispatch(receiveUsers(response)) 
     // })
   }
 }
