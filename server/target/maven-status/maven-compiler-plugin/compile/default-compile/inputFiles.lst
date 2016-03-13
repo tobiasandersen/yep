@@ -1,0 +1,17 @@
+/Users/marcus/dev/chalmers/yep/server/src/main/java/edu/dat076/yep/controllers/UserController.java
+/Users/marcus/dev/chalmers/yep/server/src/main/java/edu/dat076/yep/models/Category.java
+/Users/marcus/dev/chalmers/yep/server/src/main/java/edu/dat076/yep/controllers/RoundController.java
+/Users/marcus/dev/chalmers/yep/server/src/main/java/edu/dat076/yep/models/Card.java
+/Users/marcus/dev/chalmers/yep/server/src/main/java/edu/dat076/yep/controllers/CardController.java
+/Users/marcus/dev/chalmers/yep/server/src/main/java/edu/dat076/yep/models/User.java
+/Users/marcus/dev/chalmers/yep/server/src/main/java/edu/dat076/yep/jservice/JService.java
+/Users/marcus/dev/chalmers/yep/server/src/main/java/edu/dat076/yep/models/Round.java
+/Users/marcus/dev/chalmers/yep/server/src/main/java/edu/dat076/yep/models/Player.java
+/Users/marcus/dev/chalmers/yep/server/src/main/java/edu/dat076/yep/models/Board.java
+/Users/marcus/dev/chalmers/yep/server/src/main/java/edu/dat076/yep/controllers/BoardController.java
+/Users/marcus/dev/chalmers/yep/server/src/main/java/edu/dat076/yep/controllers/PlayerController.java
+/Users/marcus/dev/chalmers/yep/server/src/main/java/edu/dat076/yep/repositories/CategoryRepository.java
+/Users/marcus/dev/chalmers/yep/server/src/main/java/edu/dat076/yep/YepServer.java
+/Users/marcus/dev/chalmers/yep/server/src/main/java/edu/dat076/yep/repositories/UserRepository.java
+/Users/marcus/dev/chalmers/yep/server/src/main/java/edu/dat076/yep/repositories/CardRepository.java
+/Users/marcus/dev/chalmers/yep/server/src/main/java/edu/dat076/yep/controllers/CategoryController.java
