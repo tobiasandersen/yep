@@ -1,9 +1,6 @@
 # Yep
 With Yep you become the ultimate Jepoardy host for your friends. You can create a game with your own set of questions, or choose from a predefined set of real Jeopardy questions (from the JService API). Your friends can connect to your game using their phone, which then acts as a buzzer, or you can handle everything manually using the UI controls.
 
-## Functionality
-A list of working Use Cases can be found in the *docs* folder.
-
 **Authors**
 Axel Niklasson (axelni[at]student.chalmers.se), David Bergström (davbe[at]student.chalmers.se), Marcus Trigell (trigell[at]student.chalmers.se) and Tobias Andersen (tobiaa[at]student.chalmers.se).  
   
@@ -115,3 +112,6 @@ A complete routing solution for React, which also keeps our UI in sync with the 
 ---webpack.config.js  
 
 -server
+
+### Functionality
+A list of working Use Cases can be found in the *docs* folder.
