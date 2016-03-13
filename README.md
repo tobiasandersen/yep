@@ -36,7 +36,7 @@ The backend is divided into several packages where each has it's own responsabil
 All client code lives inside the /app directory. During development, Webpack is used to serve javascript and css as separate bundles on port 9000. The javascript bundle essentially concist of a React.js app, that on load gets injected into `<div id="root"></div>`. This allows Webpack to automatically, and continuously, update the app with changes – which greatly improves the DX (developer experience).
 
 ### Running the app
-Make you've started the backend server (see above) and that node and npm is installed, then cd into /app and:
+Make sure you've started the backend server (see above) and that node and npm is installed, then cd into /app and:
 
 1. Run: `npm install` (this might take a while)
 2. Run: `npm start`
@@ -45,13 +45,14 @@ This will create two files:
 - bundle.js
 - style.css
 
-both served on http://localhost:9000.
+both served on http://localhost:9000. To use the app, go to: http://localhost:8080.
 
 ### Libraries & Middleware
-All npm packages that are being used are listed in `app/package.json`. What follows is a short description of those playing a big part of our application:
+All npm packages that are being used are listed in `app/package.json`. What follows is a short list of those playing a big part of our application:
 - React
+- Redux
 - React Router
-- Redux (with middlewares: redux-thunk, redux-multi)
+- React Motion
 - CSSModules
 
 These are of great help when developing the app:
@@ -60,4 +61,19 @@ These are of great help when developing the app:
 - Express
 - redux-devtools
 
+#### React
+- react-dom
+A declarative, efficient, and flexible JavaScript library for building user interfaces. This is the core part of our client app. All view components are written in React and it is responsible for updating the DOM.
 
+
+#### Redux
+- react-redux
+- redux-thunk
+- redux-multi
+- redux-devtools
+Redux is a predictable state container for JavaScript apps. It helps us write applications that behave consistently and work great together with React, especially using the bindings in the `react-redux` lib.
+
+
+#### React Router
+- react-router-redux
+A complete routing solution for React.js.
