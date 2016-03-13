@@ -63,6 +63,7 @@ These are of great help when developing the app:
 
 #### React
 - react-dom
+
 A declarative, efficient, and flexible JavaScript library for building user interfaces. This is the core part of our client app. All view components are written in React and it is responsible for updating the DOM.
 
 
@@ -71,9 +72,50 @@ A declarative, efficient, and flexible JavaScript library for building user inte
 - redux-thunk
 - redux-multi
 - redux-devtools
+
 Redux is a predictable state container for JavaScript apps. It helps us write applications that behave consistently and work great together with React, especially using the bindings in the `react-redux` lib.
 
 
 #### React Router
 - react-router-redux
-A complete routing solution for React.js.
+
+A complete routing solution for React, which also keeps our UI in sync with the URL. 
+
+### Folder structure
+ 
+yep
+- app
+--- src
+----- scripts
+------- actions
+Communicates with the server,
+ 
+------- components
+React components rendering the UI
+ 
+------- constants
+Action types
+ 
+------- containers
+Anonymus React components that connects Redux state and actions to React components
+ 
+------- reducers
+Copies current state and returns a new desired state depending on the action
+ 
+------- store
+Configures the Redux store object with middleware and the root reducer
+ 
+------- utils
+Wrappers for web socket functionality
+ 
+----- styles
+Holds all stylesheets for all components
+ 
+----- index.js
+Attaches the application to the DOM. Sets up router configuration. Creates the Redux store.
+ 
+--- devServer.js
+Configuration for client development server.
+ 
+--- webpack.config.js  
+- server
