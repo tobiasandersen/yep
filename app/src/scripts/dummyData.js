@@ -1,3 +1,7 @@
+/* 
+ * This is only used for development purposes 
+ */
+
 export const categoriesResponse = {
   categories: [
     {
