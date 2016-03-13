@@ -47,7 +47,7 @@ This will create two files:
 
 both served on http://localhost:9000. To use the app, go to: http://localhost:8080.
 
-### Libraries & Middleware
+### Libraries, Middleware & Tools
 All npm packages that are being used are listed in `app/package.json`. What follows is a short list of those playing a big part of our application:
 - React
 - Redux
@@ -59,7 +59,6 @@ These are of great help when developing the app:
 - Babel
 - ESlint
 - Express
-- redux-devtools
 
 #### React
 - react-dom
@@ -73,45 +72,86 @@ A declarative, efficient, and flexible JavaScript library for building user inte
 - redux-multi
 - redux-devtools
 
-Redux is a predictable state container for JavaScript apps. It helps us write applications that behave consistently and work great together with React, especially using the bindings in the `react-redux` lib.
+Redux is a predictable state container for JavaScript apps. It helps us write an application that behaves consistently and it work great together with React, especially using the bindings in the `react-redux` lib. By using thunks we can do async requests in an easy way. Multi lets us dispatch mulitple actions.
 
 
 #### React Router
 - react-router-redux
 
-A complete routing solution for React, which also keeps our UI in sync with the URL. 
+A complete routing solution for React, which also keeps our UI in sync with the URL. To stay in sync with the server, it starts by checking the path with the one the server has provided on load.
+
+#### React Motion
+A spring animation library used to create smooth animations (e.g. the card flip)
+
+#### CSSModules
+- css-loader
+- postcss-loader
+- autoprefixer
+- react-css-modules
+
+A CSS Module is a CSS file in which all class names and animation names are scoped locally by default. This lets us write regular css, without worrying about naming conflicts and global selectors overwriting each other. Autoprefixer is used with the postcss-loader to give the built css file browser prefixes.
+
+#### Babel
+- babel-core
+- babel-loader
+- babel-react-transform
+- babel-preset-es2015
+- babel-preset-react
+- babel-preset-stage-0
+- babel-eslint
+
+Babel is a compiler for writing next generation JavaScript. By using it we can use some of the newer features of React and javascript and let babel and webpack compile it into javascript that the browsers understand.
+
+#### ESlint
+- eslint
+- eslint-loader
+- eslint-plugin-react
+- eslint-plugin-import
+- eslint-plugin-babel
+- eslint-import-resolver-webpack
+
+
+ESlint is a linter that helps us write better and more consistent code. Used together with babel and webpack it's an essential tool in our development workflow as it contantly checks our files for errors.
+
+
+#### Express
+Express is really a web framework of its own. But since it's so small and flexible, we use it together with webpack to serve our bundles while developing.
 
 ### Folder structure
  
--app
-
----src
-
------scripts
-
--------actions | Communicates with the server, dispatches actions to the client store
-
--------components | React components rendering the UI
-
--------constants | Action types
-
--------containers | Anonymus React components that connects Redux state and actions to React components
-
--------reducers | Copies current state and returns a new desired state depending on the action
-
--------store | Configures the Redux store object with middleware and the root reducer
-
--------utils | Wrappers for web socket functionality
-
------styles | Holds all stylesheets for all components
-
------index.js | Attaches the application to the DOM. Sets up router configuration. Creates the Redux store.
-
----devServer.js | Configuration for client development server.
-
----webpack.config.js  
-
--server
-
-### Functionality
-A list of working Use Cases can be found in the *docs* folder.
+yep
+- app
+--- src
+----- scripts
+------- actions
+Communicates with the server,
+ 
+------- components
+React components rendering the UI
+ 
+------- constants
+Action types
+ 
+------- containers
+Anonymus React components that connects Redux state and actions to React components
+ 
+------- reducers
+Copies current state and returns a new desired state depending on the action
+ 
+------- store
+Configures the Redux store object with middleware and the root reducer
+ 
+------- utils
+Wrappers for web socket functionality
+ 
+----- styles
+Holds all stylesheets for all components
+ 
+----- index.js
+Attaches the application to the DOM. Sets up router configuration. Creates the Redux store.
+ 
+--- devServer.js
+Configuration for client development server.
+ 
+--- webpack.config.js  
+- server
