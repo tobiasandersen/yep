@@ -4,7 +4,7 @@ package edu.dat076.yep.config;
  * Created by andersen on 2016-03-10.
  */
 
-import edu.dat076.yep.handlers.MyWebSocketHandler;
+import edu.dat076.yep.handlers.YepWebSocketHandler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.socket.config.annotation.*;
@@ -14,7 +14,7 @@ import org.springframework.web.socket.config.annotation.*;
 public class WebSocketConfig implements WebSocketConfigurer {
 
     @Autowired
-    protected MyWebSocketHandler webSocketHandler;
+    protected YepWebSocketHandler webSocketHandler;
 
     @Override
     public void registerWebSocketHandlers(WebSocketHandlerRegistry registry) {
