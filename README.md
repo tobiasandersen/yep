@@ -47,12 +47,17 @@ This will create two files:
 
 both served on http://localhost:9000.
 
+### Libraries & Middleware
+All npm packages that are being used are listed in `app/package.json`. What follows is a short description of those playing a big part of our application:
+- React
+- React Router
+- Redux (with middlewares: redux-thunk, redux-multi)
+- CSSModules
 
+These are of great help when developing the app:
+- Babel
+- ESlint
+- Express
+- redux-devtools
 
-
-#### Build
-Just run `npm run build` and webpack will bundle everything together into
-bundle.js and style.css and place them in the dist folder. We'll have to update
-the webpack build config to fix paths for index.html when going to production
-(or just do it manually).
 
