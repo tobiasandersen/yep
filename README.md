@@ -12,7 +12,7 @@ This README serves as the main documentation of the application.
 UML-diagrams and such is located in the *docs* folder.
 
 ## Backend
-The backend runs as a separate app serving endpoints to the frontend according to a RESTful URI pattern. Categories and Cards are, aside from created by users in-game, fetched from [JService.io](http://www.jservice.io) which provides over 150,000 authentic trivia questions. 
+The backend runs as a separate app serving endpoints to the frontend according to a RESTful URI pattern. Categories and Cards are, aside from created by users in-game, fetched from [JService.io](http://www.jservice.io) which provides over 150,000 authentic trivia questions. The server also provides full-duplex communication between multiple clients using WebSockets. The actual web page that is being served uses the `index.html` template under `server/src/main/resources/templates/index.html`.
 
 ### Build/Run
 Alt.1: To build and run from a jar (including cleaning the package and running the tests) run: 
@@ -24,18 +24,31 @@ Alt.2: To run the backend locally at port 8080 run `mvn spring-boot:run`.
 ### Packages
 The backend is divided into several packages where each has it's own responsability:
 
-1. Controllers - The classes serving the endpoints to the frontend.
-2. JServices - The service that populates the database if not already populated.
-3. Models - All the object oriented models of the Yep-game.
-4. Repositories - The interfaces responsible for mapping the oo-model to the MySQL database.
+1. Config – Spring configuration files.
+2. Controllers - The classes serving the endpoints to the frontend.
+3. Handlers – The WebSocket connection handlers.
+4. JServices - The service that populates the database if not already populated.
+5. Models - All the object oriented models of the Yep-game.
+6. Repositories - The interfaces responsible for mapping the oo-model to the MySQL database.
+8. Utils – Utility classes.
 
 ## Frontend
-The frontend runs as a separate app using the endpoints from the backend.
-### Installation
-Make sure node is installed , then:
+All client code lives inside the /app directory. During development, Webpack is used to serve javascript and css as separate bundles on port 9000. The javascript bundle essentially concist of a React.js app, that on load gets injected into `<div id="root"></div>`. This allows Webpack to automatically, and continuously, update the app with changes – which greatly improves the DX (developer experience).
 
-1. Run: `npm install`
+### Running the app
+Make you've started the backend server (see above) and that node and npm is installed, then cd into /app and:
+
+1. Run: `npm install` (this might take a while)
 2. Run: `npm start`
+
+This will create two files:
+- bundle.js
+- style.css
+
+both served on http://localhost:9000.
+
+
+
 
 #### Build
 Just run `npm run build` and webpack will bundle everything together into
