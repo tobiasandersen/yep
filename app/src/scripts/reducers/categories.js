@@ -1,4 +1,5 @@
 import { 
+  REQUEST_CATEGORIES,
   RECEIVE_CATEGORIES,
   RECEIVE_NEW_CATEGORY,
   EDIT_CATEGORY,
@@ -32,20 +33,36 @@ export function editingQuestion(state = false, action) {
   }
 }
 
-export function categoryIdList(state = [], action) {
+export function categoryIdList(state = {
+  isFetching: false,
+  items: []
+}, action) {
   switch(action.type) {
+    case REQUEST_CATEGORIES:
+      return {
+        ...state,
+        isFetching: true
+      }
     case RECEIVE_CATEGORIES:
       if (action.payload && action.payload.result && action.payload.result.categories) {
-        return action.payload.result.categories
+        return {
+          ...state,
+          items: action.payload.result.categories,
+          isFetching: false
+        }
       }
 
       return state
 
     case RECEIVE_NEW_CATEGORY:
-      return [
+      return {
         ...state,
-        action.payload.id
-      ]
+        isFetching: false,
+        items: [
+          ...state.items,
+          action.payload.id
+        ]
+      }
 
     default:
       return state

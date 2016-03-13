@@ -8,12 +8,16 @@ import {
 import { cards, selectedCard, editingCard } from './cards'
 import { users, players } from './users'
 import { modals } from './modals'
+import screen from './screen'
 import game from './game'
+import play from './play'
+import lastAction from './last-action'
 import { routerReducer } from 'react-router-redux'
 
 export default combineReducers({
   cards,
   categories,
+  lastAction,
   categoryIdList,
   selectedCard,
   selectedCategory,
@@ -21,8 +25,10 @@ export default combineReducers({
   editingQuestion,
   users,
   modals,
+  play,
   players,
   game,
+  screen,
   routing: routerReducer
 })
 

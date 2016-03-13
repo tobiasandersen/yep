@@ -14,7 +14,8 @@ function mapStateToProps(state) {
   const categoryModalIsOpen = state.modals.categoryModalIsOpen
 
   return {
-    categories: categoryIdList.map(id => categories[id]),
+    isFetching: categoryIdList.isFetching,
+    categories: categoryIdList.items.map(id => categories[id]),
     categoryModalIsOpen
   }
 }

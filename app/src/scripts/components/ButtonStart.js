@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react'
 import { browserHistory } from 'react-router'
 
-const ButtonStart = ({ isReadyToStart }) => (
+const ButtonStart = ({ isReadyToStart, startGame }) => (
   <div style={{ 
     background: isReadyToStart ? '#3DA55F' : '#5F5F5F',
     bottom: 0,
@@ -18,6 +18,7 @@ const ButtonStart = ({ isReadyToStart }) => (
     textTransform: 'uppercase'
   }} onClick={() => {
     if (isReadyToStart) {
+      startGame()
       browserHistory.push('/board')
     }
   }}>
@@ -26,7 +27,8 @@ const ButtonStart = ({ isReadyToStart }) => (
 )
 
 ButtonStart.propTypes = {
-  isReadyToStart: PropTypes.bool.isRequired
+  isReadyToStart: PropTypes.bool.isRequired,
+  startGame: PropTypes.func.isRequired
 }
 
 export default ButtonStart

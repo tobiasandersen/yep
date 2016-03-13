@@ -18,10 +18,15 @@
   position: relative;
 }
 
+.player.is-answering {
+  background: #7CE7FF;
+  z-index: 11;
+}
+
 .name {
   color: #111;
-  font-size: 18px;
-  font-family: "Operator Mono", monospace;
+  font-size: 32px;
+  font-family: "reenie-beanie";
   font-weight: 500;
   margin: 13px 0 0 0;
 }
@@ -33,7 +38,7 @@
   font-size: 40px;
   position: absolute;
   height: 135px;
-  line-height: 130px;
+  line-height: 135px;
   top: 0;
   width: 100%;
 }

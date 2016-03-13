@@ -1,24 +1,11 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { connect } from 'react-redux'
-import { fetchCategories } from '../actions/categories'
-import { fetchUsers } from '../actions/users'
-import '../../styles/App.css'
 
-class App extends Component {
-  componentDidMount() {
-    const { dispatch } = this.props
-    dispatch(fetchCategories())
-    dispatch(fetchUsers())
-  }
-
-  render() {
-    return (
-      <div>
-        {this.props.children}
-      </div>
-    )
-  }
-}
+const App = ({ children }) => (
+  <div style={{ height: '100%' }}>
+    {children}
+  </div>
+)
 
 export default connect()(App)
 

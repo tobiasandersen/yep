@@ -1,4 +1,3 @@
-import { categoriesResponse } from '../dummyData'
 import { createAction } from 'redux-actions'
 import { normalize, Schema, arrayOf } from 'normalizr'
 import {  
@@ -71,31 +70,22 @@ export function fetchCategories() {
   return dispatch => {
     dispatch(requestCategories())
 
-    setTimeout(() => {
-      const response = normalize(categoriesResponse, {
+    return fetch('/categories')
+    .then((response) => {
+      if (response.status >= 400) {
+        throw new Error('Bad response from server')
+      }
+      return response.json()
+    })
+    .then((response) => {
+      const responseObject = {}
+      responseObject.categories = response
+      response = normalize(responseObject, {
         categories: arrayOf(category)
       })
-    
       dispatch(receiveCategories(response)) 
-    }, 500)
+    })
 
-    // return fetch('http://localhost:8080/categories')
-    // .then((response) => {
-    //   if (response.status >= 400) {
-    //     throw new Error('Bad response from server')
-    //   }
-    //   return response.json()
-    // })
-    // .then((response) => {
-    //   console.log(response)
-    //   const responseObject = {}
-    //   responseObject.categories = response
-    //   response = normalize(responseObject, {
-    //     categories: arrayOf(category)
-    //   })
-
-    //   dispatch(receiveCategories(response)) 
-    // })
   }
 }
 

@@ -14,8 +14,10 @@ import {
 
 const ThisGameList = ({ 
   categories, 
+  game,
   players, 
   rounds,
+  startGame,
   removePlayerFromGame,
   removeCategoryFromGame
 }) => {
@@ -60,10 +62,13 @@ const ThisGameList = ({
         ))}
       />
 
-    <ButtonStart isReadyToStart={
-      addedCategories >= (MIN_NBR_OF_ROUNDS * 5) && 
-      addedPlayers >= MIN_NBR_OF_PLAYERS
-    }/>
+    <ButtonStart 
+      isReadyToStart={
+        addedCategories >= (MIN_NBR_OF_ROUNDS * 5) && 
+        addedPlayers >= MIN_NBR_OF_PLAYERS
+      }
+      startGame={() => startGame(game)}
+    />
 
     </div>
   )
@@ -71,6 +76,7 @@ const ThisGameList = ({
 
 ThisGameList.propTypes = {
   categories: PropTypes.object.isRequired,
+  game: PropTypes.object.isRequired,
   players: PropTypes.array.isRequired,
   rounds: PropTypes.array.isRequired,
   removePlayerFromGame: PropTypes.func.isRequired,

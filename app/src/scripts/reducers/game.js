@@ -4,24 +4,44 @@ import {
   REMOVE_PLAYER_FROM_GAME,
   ADD_CATEGORY_TO_GAME,
   REMOVE_CATEGORY_FROM_GAME,
-  CLOSE_CARD
+  CLOSE_CARD,
+  SOCKET_BUZZ
 } from '../constants/ActionTypes'
+
+export const IDLE = 'IDLE'
+export const ANSWERING = 'ANSWERING'
+export const GAVE_CORRECT_ANSWER = 'GAVE_CORRECT_ANSWER'
+export const GAVE_INCORRECT_ANSWER = 'GAVE_INCORRECT_ANSWER'
 
 function createPlayer(user) {
   return {
     ...user,
-    score: 0
+    score: 0,
+    status: IDLE
   }
 }
 
 function players(state = [], action) {
   switch (action.type) {
+    case SOCKET_BUZZ:
+      return state.map(player => {
+
+        if (action.payload === player.id) {
+          player.status = ANSWERING 
+        }
+
+        return player
+      })
+
     case REGISTER_ANSWER: 
       const { playerId, value, wasCorrect } =  action.payload
       return state.map(player => {
+
         if (playerId === player.id) {
           player.score += wasCorrect ? value : -value
+          player.status = IDLE
         }
+
         return player
       })
 
@@ -98,6 +118,7 @@ function rounds(state = [
 let closedCards = 0
 
 export default function game(state = {
+  id: 1,
   currentRound: 1,
   isShowingAnswer: false,
   players: players(state, action),
@@ -107,6 +128,7 @@ export default function game(state = {
     case REGISTER_ANSWER:
     case REMOVE_PLAYER_FROM_GAME: 
     case ADD_USER_TO_GAME:
+    case SOCKET_BUZZ:
       return {
         ...state,
         players: players(state.players, action)
