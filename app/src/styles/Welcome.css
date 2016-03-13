@@ -1,0 +1,44 @@
+.container {
+  align-items: center;
+  background: #17212C;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+  text-align: center;
+}
+
+.content {
+  max-width: 300px;
+  width: 95%;
+}
+
+.title {
+  margin: 0 0 35px 0;
+  font-size: 82px;
+  line-height: 1;
+}
+
+.button {
+  background-image: radial-gradient(#8A5BE6, #6833D0);
+  border: 2px solid #131C25;
+  border-radius: 4px;
+  color: white;
+  height: 55px;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 55px;
+  transition: all .3s ease;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+.button:not(:last-of-type) {
+  background-image: radial-gradient(#FF4A8F, #FB2870);
+  margin-bottom: 15px;
+}
+
+.button:hover {
+  cursor: pointer;
+  opacity: .85;
+}

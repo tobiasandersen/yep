@@ -1,16 +1,22 @@
 import React from 'react'
+import CSSModules from 'react-css-modules'
+import styles from 'styles/Welcome'
 import { browserHistory } from 'react-router'
 
 const Welcome = () => (
-  <div>
-    <button onClick={() => browserHistory.push('/new')}>
-      Create new game
-    </button>
+  <div styleName="container">
+    <div styleName="content">
 
-    <button onClick={() => browserHistory.push('/join')}>
-      Join game
-    </button>
+      <div styleName="button" onClick={() => browserHistory.push('/new')}>
+        Create your own game
+      </div>
+
+      <div styleName="button" onClick={() => browserHistory.push('/join')}>
+        Join a game
+      </div>
+
+    </div>
   </div>
 )
 
-export default Welcome
+export default CSSModules(Welcome, styles)

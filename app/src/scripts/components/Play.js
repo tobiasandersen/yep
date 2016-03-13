@@ -13,7 +13,7 @@ const Play = ({ buzz, hasStarted, player }) => (
           </div>
 
         </span>
-        : <LoadingSpinner />
+        : <LoadingSpinner text="Waiting for game to start..." />
     }
   </div>
 )
