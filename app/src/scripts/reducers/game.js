@@ -39,9 +39,14 @@ function players(state = [], action) {
 
         if (playerId === player.id) {
           player.score += wasCorrect ? value : -value
-          player.status = IDLE
         }
 
+        return player
+      })
+
+    case CLOSE_CARD:
+      return state.map(player => {
+        player.status = IDLE
         return player
       })
 
@@ -145,9 +150,13 @@ export default function game(state = {
       return (++closedCards === 25) 
         ? {
           ...state,
+          players: players(state.players, action),
           currentRound: 2
         }
-        : state
+        : {
+          ...state,
+          players: players(state.players, action)
+        }
 
     default:
       return state
