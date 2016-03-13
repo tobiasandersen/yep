@@ -84,14 +84,16 @@ A complete routing solution for React, which also keeps our UI in sync with the 
 ### Folder structure
  
 -app
+
 ---src
+
 -----scripts
--------actions
-  Communicates with the server,
--------components
-  React components rendering the UI
--------constants
-  Action types
+
+-------actions | Communicates with the server,
+
+-------components | React components rendering the UI
+
+-------constants | Action types
 -------containers
   Anonymus React components that connects Redux state and actions to React components
 -------reducers
