@@ -1,0 +1,11 @@
+@value board-bg from "./Colors.css";
+
+.board {
+  background: board-bg; 
+  font-family: "Proxima Nova", sans-serif;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 100vw;
+}

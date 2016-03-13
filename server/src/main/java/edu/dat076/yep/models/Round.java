@@ -1,20 +1,34 @@
 package edu.dat076.yep.models;
 
+import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * Class for representing a round.
+ *
+ * a round contains five categories and a multiplier that determines
+ * how much this rounds cards are worth in points.
+ *
  * Created by marcus on 2016-02-18.
  */
+@Entity
+@Table(name = "ROUNDS")
 public class Round {
 
-    private int multiplier;
-    private List<Category> categories; //TODO categories must be 5..?
-    private Board board;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
 
-    public Round(int multiplier, List<Category> categories, Board board) {
+    private int multiplier;
+    @OneToMany
+    private List<Category> categories = new ArrayList<>(5);
+
+    protected Round() {}
+
+    public Round(int multiplier, List<Category> categories) {
         this.multiplier = multiplier;
         this.categories = categories;
-        this.board = board;
     }
 
     public int getMultiplier() {
@@ -25,7 +39,7 @@ public class Round {
         return categories;
     }
 
-    public Board getBoard() {
-        return board;
+    public Long getId() {
+        return id;
     }
 }

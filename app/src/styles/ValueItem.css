@@ -1,0 +1,17 @@
+.container {
+  height: 100%;
+  width: 100%;
+  color: #354151;
+  padding: 10px 0;
+}
+
+.container:hover {
+  color: white;
+  cursor: pointer;
+  transition: all .3s ease;
+}
+
+.container.is-filled {
+  color: white;
+  font-weight: 700;
+}

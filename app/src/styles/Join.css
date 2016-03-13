@@ -1,0 +1,32 @@
+.container {
+  composes: container from './Welcome.css';
+  background: #B080FF;
+}
+
+.content {
+  composes: content from './Welcome.css';
+}
+
+.title {
+  margin: 0 0 20px 0;
+  font-size: 32px;
+  text-transform: uppercase;
+}
+
+.textfield {
+  border-radius: 4px;
+  box-shadow: none;
+  border: none;
+  color: #333;
+  font: inherit;
+  height: 45px;
+  line-height: 45px;
+  margin-bottom: 20px;
+  outline: none;
+  padding: 0 8px;
+  width: 100%;
+}
+
+.button {
+  composes: button from './Welcome.css';
+}

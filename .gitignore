@@ -4,5 +4,5 @@ node_modules
 *.swp
 .idea/
 *.iml
+server/target
 *.class
-server/target/classes

@@ -1,0 +1,35 @@
+.container {
+  width: 100%;
+  background-color: #407F78;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+  display: flex;
+  flex-flow: row;
+  cursor: pointer;
+}
+
+.container:hover {
+  background-color: #64BBB2;
+  transition: background-color .1s ease;
+}
+
+.title {
+  width: 80%;
+  padding: 13px;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.icon {
+  width: 10%;
+  padding: 10px;
+  color: white;
+  font-size: 18px;
+}
+
+.icon:hover {
+  color: #10171F;
+  transition: color .2s ease;
+}

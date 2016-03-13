@@ -1,10 +1,11 @@
-import React, { Component } from 'react'
-import styles from 'styles/App.css'
+import React from 'react'
+import { connect } from 'react-redux'
 
-export default class App extends Component {
-  render() {
-    return (
-      <h1>Yep!</h1>
-    )
-  }
-}
+const App = ({ children }) => (
+  <div style={{ height: '100%' }}>
+    {children}
+  </div>
+)
+
+export default connect()(App)
+
