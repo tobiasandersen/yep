@@ -4,13 +4,13 @@ import {
   ADD_NEW_USER
 } from '../constants/ActionTypes'
 
-let userId = 10000
+let userId = 21
 
 function createUser(name, sessionId = null) {
   return {
     id: userId++,
     name,
-    image_url: 'hello.jpg',
+    points: 1,
     sessionId
   }
 }
