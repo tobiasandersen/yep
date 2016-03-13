@@ -12,11 +12,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Component
-public class MyWebSocketHandler extends TextWebSocketHandler {
+public class YepWebSocketHandler extends TextWebSocketHandler {
 
     private List<WebSocketSession> sessions;
 
-    public MyWebSocketHandler() {
+    public YepWebSocketHandler() {
        sessions = new ArrayList<WebSocketSession>();
     }
 
