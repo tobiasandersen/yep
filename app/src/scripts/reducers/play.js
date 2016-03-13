@@ -1,4 +1,5 @@
 import { 
+  ADD_INTERACTIVE_PLAYER,
   CONNECT_PLAYER,
   CREATE_NEW_GAME,
   REGISTER_ANSWER
@@ -6,9 +7,18 @@ import {
 
 export default function play(state = {
   game: {},
-  sessionId: null
+  sessionId: null,
+  name: ''
 }, action) {
   switch(action.type) {
+
+    case ADD_INTERACTIVE_PLAYER:
+      const name = action.payload
+
+      return {
+        ...state,
+        name
+      }
 
     case CREATE_NEW_GAME:
       const game = action.payload
@@ -20,12 +30,11 @@ export default function play(state = {
       }
 
     case CONNECT_PLAYER:
-      const { sessionId } = action.payload
-
-      return {
-        ...state,
-        sessionId
-      }
+      return (state.name === action.payload.name) 
+        ? {
+          ...state,
+          sessionId: action.payload.sessionId
+        } : state
 
     case REGISTER_ANSWER:
     default:
