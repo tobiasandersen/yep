@@ -83,39 +83,28 @@ A complete routing solution for React, which also keeps our UI in sync with the 
 
 ### Folder structure
  
-yep
-- app
---- src
------ scripts
-------- actions
-Communicates with the server,
- 
-------- components
-React components rendering the UI
- 
-------- constants
-Action types
- 
-------- containers
-Anonymus React components that connects Redux state and actions to React components
- 
-------- reducers
-Copies current state and returns a new desired state depending on the action
- 
-------- store
-Configures the Redux store object with middleware and the root reducer
- 
-------- utils
-Wrappers for web socket functionality
- 
------ styles
-Holds all stylesheets for all components
- 
------ index.js
-Attaches the application to the DOM. Sets up router configuration. Creates the Redux store.
- 
---- devServer.js
-Configuration for client development server.
- 
---- webpack.config.js  
-- server
+-app
+---src
+-----scripts
+-------actions
+  Communicates with the server,
+-------components
+  React components rendering the UI
+-------constants
+  Action types
+-------containers
+  Anonymus React components that connects Redux state and actions to React components
+-------reducers
+  Copies current state and returns a new desired state depending on the action
+-------store
+  Configures the Redux store object with middleware and the root reducer
+-------utils
+  Wrappers for web socket functionality
+-----styles
+  Holds all stylesheets for all components
+-----index.js
+  Attaches the application to the DOM. Sets up router configuration. Creates the Redux store.
+---devServer.js
+  Configuration for client development server.
+---webpack.config.js  
+-server
