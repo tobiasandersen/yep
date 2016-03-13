@@ -5,7 +5,14 @@ import User from './User'
 import ButtonAdd from './ButtonAdd'
 import AddNew from './AddNew'
 
-const Users = ({ users, addUserToGame, userModalIsOpen, openUserModal, closeUserModal, addNewUser }) => (
+const Users = ({ 
+  users,
+  addUserToGame,
+  userModalIsOpen,
+  openUserModal,
+  closeUserModal,
+  addNewUser
+}) => (
   <div styleName="container">
     <div styleName="title">
       <h3>Users</h3>
@@ -15,7 +22,8 @@ const Users = ({ users, addUserToGame, userModalIsOpen, openUserModal, closeUser
         <User 
           key={user.id}
           user={user}
-          handleClick={addUserToGame} />
+          handleClick={addUserToGame} 
+        />
       ))}
     </div>
     <ButtonAdd handleClick={openUserModal}/>

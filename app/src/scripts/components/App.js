@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 
 const App = ({ children }) => (
-  <div>
+  <div style={{ height: '100%' }}>
     {children}
   </div>
 )

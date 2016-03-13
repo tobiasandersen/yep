@@ -11,7 +11,7 @@ import static edu.dat076.yep.utils.State.populateModel;
 
 @Controller
 public class IndexController {
-    @RequestMapping(value = {"/", "/join", "/board", "/new"}, method = RequestMethod.GET)
+    @RequestMapping(value = {"/", "/join", "/board", "/new", "/play"}, method = RequestMethod.GET)
     public ModelAndView index(HttpServletRequest request) {
 
         ModelAndView result = new ModelAndView();

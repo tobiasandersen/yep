@@ -1,6 +1,3 @@
-// require('es6-promise').polyfill()
-// require('isomorphic-fetch')
-
 import { createAction } from 'redux-actions'
 import { 
     REQUEST_USERS, 
@@ -10,8 +7,6 @@ import {
     OPEN_USER_MODAL,
     ADD_NEW_USER
 } from '../constants/ActionTypes'
-
-import { usersResponse } from '../dummyData'
 
 const requestUsers = createAction(REQUEST_USERS)
 const receiveUsers = createAction(RECEIVE_USERS)
@@ -25,20 +20,15 @@ export function fetchUsers() {
   return dispatch => {
     dispatch(requestUsers())
 
-    setTimeout(() => {
-      dispatch(receiveUsers(usersResponse)) 
-    }, 500)
-
-    // return fetch('http://localhost:8080/players')
-    // .then((response) => {
-    //   if (response.status >= 400) {
-    //     throw new Error('Bad response from server')
-    //   }
-    //   return response.json()
-    // })
-    // .then((response) => {
-    //   console.log(response)
-    //   dispatch(receiveUsers(response)) 
-    // })
+    return fetch('/players')
+    .then((response) => {
+      if (response.status >= 400) {
+        throw new Error('Bad response from server')
+      }
+      return response.json()
+    })
+    .then((response) => {
+      dispatch(receiveUsers(response)) 
+    })
   }
 }

@@ -3,31 +3,37 @@ export default class PlayerWebSocket {
     this.websocket = new WebSocket(`ws://${url}`)
 
     this.websocket.onmessage = function(message) {
-      const action = JSON.parse(message.data)
-
-      console.log('onmessage', action)
-      dispatcher(action)
+      dispatcher(JSON.parse(message.data))
     }
   }
 
-  createNewGame() {
-    console.log('createNewGame')
+  send(event) {
+    this.websocket.send(JSON.stringify(event))
+  }
+
+  startGame(game) {
     this.websocket.send(
       JSON.stringify({
         event_type: 1,
-        gameId: 1
+        game
       })
     )
   }
 
   addPlayer(name) {
-    console.log('add player', name)
     this.websocket.send(
       JSON.stringify({
         event_type: 2,
         name
       })
     )
+  }
+
+  buzz(playerId) {
+    this.send({
+      event_type: 3,
+      playerId
+    })
   }
 
   close() {

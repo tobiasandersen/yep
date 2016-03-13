@@ -1,0 +1,38 @@
+.container {
+  align-items: stretch;
+  background: #AD86FF;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  padding: 20px;
+  width: 100%;
+}
+
+.your-score {
+  margin: 12px 0 20px 0;
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.buzz-button {
+  align-items: center;
+  align-self: center;
+  background: #6037AF;
+  box-shadow: 0 2px 2px 2px rgba(0, 0, 0, .6);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+}
+
+.buzz-text {
+  color: #E4D6FF;
+  font-size: 26px;
+  font-weight: 700;
+  text-transform: uppercase;
+}

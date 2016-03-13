@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import PlayFromPhone from '../components/PlayFromPhone'
+import Join from '../components/Join'
 import { addInteractivePlayer } from '../actions/players'
 
 function mapStateToProps(state) {
@@ -15,4 +15,4 @@ function mapDispatchToProps(dispatch) {
   }, dispatch)
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(PlayFromPhone)
+export default connect(mapStateToProps, mapDispatchToProps)(Join)

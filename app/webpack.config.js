@@ -32,7 +32,9 @@ module.exports = {
       constants: 'scripts/constants',
       reducers: 'scripts/reducers',
       store: 'scripts/store',
+      utils: 'scripts/utils',
       styles: 'styles',
+      svg: 'svg'
     }
   },
   module: {
@@ -57,6 +59,24 @@ module.exports = {
         test: /\.css$/, 
         loader: ExtractTextPlugin.extract('style-loader', 'css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!postcss-loader') 
       },
+      {
+        test: /\.(jpe?g|png|gif)$/i,
+        loaders: [
+          'file-loader',
+        ]
+      },
+      {
+        test: /\.svg$/,
+        loader: 'svg-sprite!svgo?' + JSON.stringify({
+          name: '[name]_[hash]',
+          prefixize: true,
+          plugins: [
+            {removeTitle: true},
+            {convertColors: {shorthex: false}},
+            {convertPathData: false}
+          ]
+        })
+      }
     ]
   },
   postcss: [

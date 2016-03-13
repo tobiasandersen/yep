@@ -1,5 +1,6 @@
 import { createAction } from 'redux-actions'
 import { 
+  SOCKET_BUZZ,
   CONNECT_PLAYER,
   CREATE_NEW_GAME
 } from '../constants/ActionTypes'
@@ -7,19 +8,26 @@ import {
 export const createNewGame = createAction(CREATE_NEW_GAME)
 
 export function receiveEvent(event) {
-  console.log('receiveEvent', event)
-  
   switch (event.event_type) {
     case 1:
       return {
-        type: 'TEST',
-        payload: event.name
+        type: CREATE_NEW_GAME,
+        payload: event.game
       }
 
     case 2: 
       return {
         type: CONNECT_PLAYER,
-        payload: event.name
+        payload: {
+          name: event.name,
+          sessionId: event.session_id
+        }
+      }
+
+    case 3: 
+      return {
+        type: SOCKET_BUZZ,
+        payload: event.playerId
       }
 
     default:

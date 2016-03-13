@@ -63,6 +63,8 @@
     "redux-thunk": "^1.0.3",
     "reselect": "^2.0.3",
     "style-loader": "^0.13.0",
+    "svg-sprite-loader": "0.0.18",
+    "svgo-loader": "^1.1.0",
     "underscore": "^1.8.3",
     "webpack-dev-server": "^1.14.0"
   }

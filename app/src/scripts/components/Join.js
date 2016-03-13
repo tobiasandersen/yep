@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react'
+import { browserHistory } from 'react-router'
 
-class PlayFromPhone extends Component {
+class Join extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -27,7 +28,9 @@ class PlayFromPhone extends Component {
 
           if (name != '') {
             addPlayer(name)
+            browserHistory.push('/play')
           }
+
         }}>Join game</button>
 
       </div>
@@ -35,8 +38,8 @@ class PlayFromPhone extends Component {
   }
 }
 
-PlayFromPhone.propTypes = {
+Join.propTypes = {
   addPlayer: PropTypes.func.isRequired
 }
 
-export default PlayFromPhone
+export default Join

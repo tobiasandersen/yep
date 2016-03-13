@@ -18,6 +18,11 @@
   position: relative;
 }
 
+.player.is-answering {
+  background: #7CE7FF;
+  z-index: 11;
+}
+
 .name {
   color: #111;
   font-size: 18px;

@@ -1,5 +1,6 @@
 package edu.dat076.yep.handlers;
 
+import org.json.JSONObject;
 import org.springframework.stereotype.Component;
 import org.springframework.web.socket.CloseStatus;
 import org.springframework.web.socket.TextMessage;
@@ -42,9 +43,11 @@ public class MyWebSocketHandler extends TextWebSocketHandler {
     public void handleTextMessage(WebSocketSession session, TextMessage message) throws IOException {
         String id = session.getId();
 
-        System.out.println("Send text message to session ID: " + session.getId());
+        JSONObject json = new JSONObject(message.getPayload());
 
-        TextMessage msg = new TextMessage(message.getPayload());
+        json.put("session_id", id);
+
+        TextMessage msg = new TextMessage(json.toString());
 
         for (WebSocketSession currentSession: this.sessions) {
             currentSession.sendMessage(msg);
