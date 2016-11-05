@@ -1,4 +1,4 @@
-import { 
+import {
   REQUEST_CATEGORIES,
   RECEIVE_CATEGORIES,
   RECEIVE_NEW_CATEGORY,
@@ -35,7 +35,7 @@ export function editingQuestion(state = false, action) {
 
 export function categoryIdList(state = {
   isFetching: false,
-  items: []
+  items: [ '1', '2', '3', '4', '5' ]
 }, action) {
   switch(action.type) {
     case REQUEST_CATEGORIES:
@@ -85,7 +85,7 @@ export function categories(state = {}, action) {
 
       return {
         ...state,
-        ...newCategory 
+        ...newCategory
       }
 
     default:

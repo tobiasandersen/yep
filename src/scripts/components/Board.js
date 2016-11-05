@@ -6,7 +6,7 @@ import OpenCardContainer from '../containers/OpenCardContainer'
 
 const Board = () => (
   <div className={styles.board}>
-    <OpenCardContainer /> 
+    <OpenCardContainer />
     <CategoriesContainer />
     <PlayersContainer />
   </div>

@@ -7,9 +7,9 @@ function mapStateToProps(state) {
   const { cards, categories, game, selectedCard } = state
   const { currentRound, rounds } = game
   const categoryIdsForCurrentRound = rounds
-  .filter(round => round.roundNumber === currentRound)[0]
-  .categoryIds
-  
+    .filter(round => round.roundNumber === currentRound)[0]
+    .categoryIds
+
   return {
     categories: categoryIdsForCurrentRound.map(id => categories[id]),
     cards,
