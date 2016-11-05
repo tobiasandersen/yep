@@ -20,7 +20,7 @@ export default {
       a: 'Pannkakor'
     },
     {
-      q: 'Angels on horseback är en rätt där bacon lindas runt detta',
+      q: '"Angels on horseback" är en rätt där bacon lindas runt detta',
       a: 'Ostron'
     }
   ]

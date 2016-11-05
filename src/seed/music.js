@@ -11,11 +11,11 @@ export default {
       a: 'Jackson Brothers'
     },
     {
-      q: 'Vad heter egentligen Jay-Z',
+      q: 'Vad heter egentligen Jay-Z?',
       a: 'Shawn Corey Carter,'
     },
     {
-      q: `Vilket av banden Beatles, Fleetwood Mac, Pink Floyd
+      q: `Vilket av banden Beatles, Fleetwood Mac & Pink Floyd
           släppte sin debutskiva först?`,
       a: 'Beatles'
     },

@@ -7,9 +7,12 @@ import people from './people'
 const seed = (categories) => {
   const categoryMap = {}
   const cards = {}
-  let cardId
+  let cardId = 1
 
-  const createCard = ({ q, a, id, value }, idx) => {
+  const createCard = ({ q, a, value }) => {
+    console.log({value})
+    const id = cardId++
+
     const card = {
       id,
       value,
@@ -27,7 +30,6 @@ const seed = (categories) => {
       title,
       cards: questions.map((card, i) => createCard({
         ...card,
-        id: (idx + 1) * (i + 1),
         value: (i + 1) * 100
       }))
     }
@@ -44,8 +46,17 @@ const seed = (categories) => {
 
 }
 
+Object.size = function(obj) {
+  let size = 0, key
+  for (key in obj) {
+    if (obj.hasOwnProperty(key)) size++
+  }
+  return size
+}
+
 const categories = [music, general, food, history, people]
 const data = seed(categories)
+console.log(Object.size(data.cards))
 
 export default {
   categoryIdList: categories.map(({ id }) => id),

@@ -3,24 +3,24 @@ export default {
   title: 'Allmänt',
   questions: [
     {
-      q: 'Question',
-      a: 'Answer'
+      q: 'Detta är piña:n i piña colada',
+      a: 'Ananas'
+    },
+    {
+      q: 'I vilket land är Elon Musk född?',
+      a: 'Sydafrika'
     },
     {
       q: 'År 1938 grundades detta elektronikföretag i David Packards garage i Palo Alto, California',
       a: 'Hewlett-Packard (HP)'
     },
     {
-      q: 'Question',
-      a: 'Answer'
+      q: 'Leonardo da Vinci föddes år 1452 nära denna lilla stad i Toscana',
+      a: 'Vinci'
     },
     {
-      q: 'Question',
-      a: 'Answer'
-    },
-    {
-      q: 'Question',
-      a: 'Answer'
+      q: 'Vilken stavning är korrekt? 1. följdaktligen, 2. följaktligen, 3. följeaktligen',
+      a: 'Följaktligen'
     }
   ]
 }
