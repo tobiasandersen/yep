@@ -1,6 +1,6 @@
-import { 
+import {
   CONNECT_PLAYER,
-  RECEIVE_USERS, 
+  RECEIVE_USERS,
   ADD_NEW_USER
 } from '../constants/ActionTypes'
 
@@ -15,14 +15,18 @@ function createUser(name, sessionId = null) {
   }
 }
 
-export function users(state = [], action) {
+export function users(state = [
+  createUser('Joel'),
+  createUser('Johan'),
+  createUser('Olle')
+], action) {
   switch(action.type) {
     case RECEIVE_USERS:
       return action.payload ? action.payload : state
 
     case ADD_NEW_USER:
       return [
-        ...state, 
+        ...state,
         createUser(action.payload)
       ]
 

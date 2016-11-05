@@ -9,13 +9,13 @@ import {
   MIN_NBR_OF_PLAYERS,
   MAX_NBR_OF_PLAYERS,
   MIN_NBR_OF_ROUNDS,
-  MAX_NBR_OF_ROUNDS 
+  MAX_NBR_OF_ROUNDS
 } from '../constants/GameSettings'
 
-const ThisGameList = ({ 
-  categories, 
+const ThisGameList = ({
+  categories,
   game,
-  players, 
+  players,
   rounds,
   startGame,
   removePlayerFromGame,
@@ -32,13 +32,13 @@ const ThisGameList = ({
   return (
     <div styleName="container">
 
-      <PickedGameSection 
+      <PickedGameSection
         title="Players"
         addedItems={addedPlayers}
         minItems={MIN_NBR_OF_PLAYERS}
         maxItems={MAX_NBR_OF_PLAYERS}
         content={players.map(player => (
-          <PickedGameItem 
+          <PickedGameItem
             handleClick={() => removePlayerFromGame(player.id)}
             key={player.id}
             name={player.name}
@@ -46,13 +46,13 @@ const ThisGameList = ({
         ))}
       />
 
-      <PickedGameSection 
+      <PickedGameSection
         title="Categories"
         addedItems={addedCategories}
         minItems={MIN_NBR_OF_ROUNDS * 5}
-        maxItems={MAX_NBR_OF_ROUNDS * 5} 
+        maxItems={MAX_NBR_OF_ROUNDS * 5}
         content={rounds.map(round => (
-          <PickedRound 
+          <PickedRound
             categoryIds={round.categoryIds}
             categories={categories}
             removeCategoryFromGame={removeCategoryFromGame}
@@ -62,9 +62,9 @@ const ThisGameList = ({
         ))}
       />
 
-    <ButtonStart 
+    <ButtonStart
       isReadyToStart={
-        addedCategories >= (MIN_NBR_OF_ROUNDS * 5) && 
+        addedCategories >= (MIN_NBR_OF_ROUNDS * 5) &&
         addedPlayers >= MIN_NBR_OF_PLAYERS
       }
       startGame={() => startGame(game)}

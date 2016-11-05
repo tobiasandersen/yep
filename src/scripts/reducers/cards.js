@@ -1,11 +1,12 @@
-import { 
-  RECEIVE_CATEGORIES, 
+import {
+  RECEIVE_CATEGORIES,
   CLOSE_CARD, SELECT_CARD,
   SHOW_QUESTION_DETAILS,
   CLOSE_EDIT_CATEGORY_MODAL,
   CREATE_NEW_QUESTION,
   UPDATE_CARD
 } from '../constants/ActionTypes'
+import { cards as seed } from '../../seed'
 
 export function selectedCard(state = null, action) {
   switch(action.type) {
@@ -13,12 +14,12 @@ export function selectedCard(state = null, action) {
       return action.payload
     case CLOSE_CARD:
       return null
-    default: 
+    default:
       return state
   }
 }
 
-export function cards(state = {}, action) {
+export function cards(state = seed, action) {
   switch(action.type) {
     case RECEIVE_CATEGORIES:
       return (action.payload && action.payload.entities && action.payload.entities.cards)

@@ -13,7 +13,6 @@
   },
   "parser": "babel-eslint",
   "rules": {
-    "array-bracket-spacing": [ 2, "always" ],
     "eol-last": 2,
     "indent": [ 2, 2, { "SwitchCase": 1 } ],
     "jsx-quotes": [ 2, "prefer-double" ],
@@ -21,7 +20,6 @@
     "no-multiple-empty-lines": 2,
     "no-unused-vars": 1,
     "no-var": 2,
-    "object-curly-spacing": [ 2, "always" ],
     "quotes": [ 2, "single", "avoid-escape" ],
     "semi": [ 2, "never" ],
     "strict": [2, "never" ],
