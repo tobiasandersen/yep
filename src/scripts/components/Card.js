@@ -10,7 +10,6 @@ const Card = ({ id, categoryNumber, value, handleClick, isPicked, isSelected }) 
     'is-picked': isPicked,
     'is-in-last-category': (++categoryNumber % 5) === 0
   })} onClick={() => {
-    console.log({id})
     if (!isPicked) {
       handleClick(id)
     }

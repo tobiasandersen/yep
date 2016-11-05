@@ -1,92 +1,13 @@
+import music from './music'
+import general from './general'
+import history from './history'
+import food from './food'
+
 export default {
-  '1': [
-    {
-      q: 'Question',
-      a: 'Answer'
-    },
-    {
-      q: 'Question',
-      a: 'Answer'
-    },
-    {
-      q: 'Question',
-      a: 'Answer'
-    },
-    {
-      q: 'Question',
-      a: 'Answer'
-    },
-    {
-      q: 'Question',
-      a: 'Answer'
-    }
-  ],
-  '2': [
-    {
-      q: 'Question',
-      a: 'Answer'
-    },
-    {
-      q: 'Question',
-      a: 'Answer'
-    },
-    {
-      q: 'Question',
-      a: 'Answer'
-    },
-    {
-      q: 'Question',
-      a: 'Answer'
-    },
-    {
-      q: 'Question',
-      a: 'Answer'
-    }
-  ],
-  '3': [
-    {
-      q: 'Question',
-      a: 'Answer'
-    },
-    {
-      q: 'Question',
-      a: 'Answer'
-    },
-    {
-      q: 'Question',
-      a: 'Answer'
-    },
-    {
-      q: 'Question',
-      a: 'Answer'
-    },
-    {
-      q: 'Question',
-      a: 'Answer'
-    }
-  ],
-  '4': [
-    {
-      q: 'Question',
-      a: 'Answer'
-    },
-    {
-      q: 'Question',
-      a: 'Answer'
-    },
-    {
-      q: 'Question',
-      a: 'Answer'
-    },
-    {
-      q: 'Question',
-      a: 'Answer'
-    },
-    {
-      q: 'Question',
-      a: 'Answer'
-    }
-  ],
+  'general': general,
+  'history': history,
+  'music': music,
+  'food': food,
   '5': [
     {
       q: 'Question',

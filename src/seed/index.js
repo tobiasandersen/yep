@@ -1,34 +1,55 @@
-const categories = ['1', '2', '3', '4', '5']
-import questions from './questions'
+import music from './music'
+import general from './general'
+import food from './food'
+import history from './history'
+import people from './people'
 
-let id = 0
+const seed = (categories) => {
+  const categoryMap = {}
+  const cards = {}
+  let cardId
 
-function createCategory(title) {
+  const createCard = ({ q, a, id, value }, idx) => {
+    const card = {
+      id,
+      value,
+      question: q,
+      answer: a
+    }
+
+    cards[id] = card
+    return card.id
+  }
+
+  const createCategory = ({ id, title, questions }, idx) => {
+    const category = {
+      id,
+      title,
+      cards: questions.map((card, i) => createCard({
+        ...card,
+        id: (idx + 1) * (i + 1),
+        value: (i + 1) * 100
+      }))
+    }
+
+    categoryMap[id] = category
+  }
+
+  categories.map(createCategory)
+
   return {
-    id: id++,
-    title: 'Category ' + title,
-    cards: questions[title].map(createCard)
-  }
-}
-
-let cardId = 1
-const cards = {}
-
-function createCard({ q, a }, idx) {
-  const id = cardId++
-  const card = {
-    id,
-    question: q,
-    answer: a,
-    value: (idx + 1) * 100
+    categories: categoryMap,
+    cards: cards
   }
 
-  cards[id] = card
-  return card.id
 }
+
+const categories = [music, general, food, history, people]
+const data = seed(categories)
 
 export default {
-  categories: categories.map(createCategory),
-  cards
+  categoryIdList: categories.map(({ id }) => id),
+  categories: data.categories,
+  cards: data.cards
 }
 
