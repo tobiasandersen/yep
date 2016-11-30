@@ -10,7 +10,6 @@ const seed = (categories) => {
   let cardId = 1
 
   const createCard = ({ q, a, value }) => {
-    console.log({value})
     const id = cardId++
 
     const card = {
@@ -56,7 +55,7 @@ Object.size = function(obj) {
 
 const categories = [music, general, food, history, people]
 const data = seed(categories)
-console.log(Object.size(data.cards))
+console.log({data})
 
 export default {
   categoryIdList: categories.map(({ id }) => id),

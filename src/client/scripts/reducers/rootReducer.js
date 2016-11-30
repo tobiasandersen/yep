@@ -1,12 +1,12 @@
 import { combineReducers } from 'redux'
-import { 
-  categories, 
-  categoryIdList, 
-  selectedCategory, 
-  editingQuestion 
+import {
+  categories,
+  categoryIdList,
+  selectedCategory,
+  editingQuestion
 } from './categories'
 import { cards, selectedCard, editingCard } from './cards'
-import { users, players } from './users'
+import { users } from './users'
 import { modals } from './modals'
 import screen from './screen'
 import game from './game'
@@ -26,7 +26,6 @@ export default combineReducers({
   users,
   modals,
   play,
-  players,
   game,
   screen,
   routing: routerReducer

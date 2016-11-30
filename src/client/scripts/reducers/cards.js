@@ -6,7 +6,9 @@ import {
   CREATE_NEW_QUESTION,
   UPDATE_CARD
 } from '../constants/ActionTypes'
-import { cards as seed } from '../../seed'
+import seed from '../../seed'
+
+console.log({seed})
 
 export function selectedCard(state = null, action) {
   switch(action.type) {
@@ -19,7 +21,7 @@ export function selectedCard(state = null, action) {
   }
 }
 
-export function cards(state = seed, action) {
+export function cards(state = seed.cards, action) {
   switch(action.type) {
     case RECEIVE_CATEGORIES:
       return (action.payload && action.payload.entities && action.payload.entities.cards)

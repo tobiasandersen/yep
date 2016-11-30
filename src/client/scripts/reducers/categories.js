@@ -8,7 +8,7 @@ import {
   EDIT_QUESTION,
   CLOSE_EDIT_CATEGORY_MODAL
 } from '../constants/ActionTypes'
-import { categoryIdList as idSeed, categories as seed } from '../../seed'
+import seed from '../../seed'
 
 export function selectedCategory(state = {}, action) {
   switch (action.type) {
@@ -36,7 +36,7 @@ export function editingQuestion(state = false, action) {
 
 export function categoryIdList(state = {
   isFetching: false,
-  items: idSeed
+  items: seed.categoryIdList
 }, action) {
   switch(action.type) {
     case REQUEST_CATEGORIES:
@@ -70,7 +70,7 @@ export function categoryIdList(state = {
   }
 }
 
-export function categories(state = seed, action) {
+export function categories(state = seed.categories, action) {
   switch(action.type) {
     case RECEIVE_CATEGORIES:
       if (action.payload && action.payload.entities && action.payload.entities.categories) {

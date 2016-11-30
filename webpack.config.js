@@ -1,29 +1,27 @@
-var path = require('path');
-var webpack = require('webpack');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
+const path = require('path')
+const webpack = require('webpack')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
+
+const isProduction = process.env.NODE_ENV === 'production'
 
 module.exports = {
   devtool: 'eval-source-map',
   debug: true,
   colors: true,
-  eslint: {
-    configFile: '.eslintrc'
-  },
   entry: {
     app: [
-      'webpack-dev-server/client?http://localhost:9000',
-      './src/index'
+      'webpack-hot-middleware/client?path=/__webpack_hmr&timeout=2000',
+      './src/client/index'
     ]
   },
   output: {
     path: path.join(__dirname, 'dist'),
-    filename: 'bundle.js',
-    path: '/static',
+    filename: 'bundle.js'
   },
   resolve: {
     extensions: ['', '.js', '.css'],
-    root: path.resolve('./src'),
+    root: path.resolve('./src/client'),
     alias: {
       actions: 'scripts/actions',
       api: 'scripts/api',
@@ -37,19 +35,31 @@ module.exports = {
       svg: 'svg'
     }
   },
+ externals: {
+    ws: 'WebSocket'
+  },
   module: {
-    preLoaders: [
-      {
-        test: /\.js$/,
-        loader: "eslint-loader",
-        exclude: /node_modules/,
-      }
-    ],
     loaders: [
       {
         test: /\.js$/,
-        loaders: ['babel'],
-        include: path.join(__dirname, 'src')
+        include: path.join(__dirname, 'src'),
+        loader: 'babel',
+        query: {
+          env: {
+            development: {
+              presets: ['es2015-node6', 'react', 'stage-0'],
+              plugins: [
+                'transform-decorators-legacy'
+              ]
+            },
+            production: {
+              presets: ['es2015-node6', 'react', 'react-optimize', 'stage-0'],
+              plugins: [
+                'transform-decorators-legacy'
+              ]
+            }
+          }
+        }
       },
       {
         test: /\.less/,
@@ -87,8 +97,18 @@ module.exports = {
       title: 'Jeopardy',
       template: './index.html'
     }),
+    new webpack.DefinePlugin({
+      'process.env': {
+        IS_BROWSER: true, // Because webpack is used only for browser code.
+        NODE_ENV: JSON.stringify(isProduction ? 'production' : 'development')
+      }
+    }),
+    new webpack.ProvidePlugin({
+      ReactDOM: 'react-dom',
+      React: 'react'
+    }),
     new ExtractTextPlugin('style.css', { allChunks: true }),
-    new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin()
+    new webpack.optimize.OccurenceOrderPlugin(),
+    new webpack.HotModuleReplacementPlugin()
   ]
 };
