@@ -25,7 +25,8 @@ module.exports = {
     alias: {
       actions: 'scripts/actions',
       api: 'scripts/api',
-      components: 'scripts/components',
+      components: 'components',
+      lib: 'lib',
       containers: 'scripts/containers',
       constants: 'scripts/constants',
       reducers: 'scripts/reducers',

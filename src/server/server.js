@@ -7,23 +7,7 @@ import webpackHotMiddleware from 'webpack-hot-middleware'
 import webpackConfig from '../../webpack.config'
 import config from './config'
 
-//webpackConfig.entry.app.unshift("webpack-dev-server/client?http://localhost:9000", "webpack/hot/dev-server")
-
 const app = express()
-
-const proxies = typeof config.proxy === 'string'
-  ? [config.proxy]
-  : Object.keys(config.proxy).map(key => config.proxy[key])
-
-proxies
-  .map(opts => {
-    if (typeof opts === 'string') {
-      const [path, target] = opts.split('=', 2)
-      return {path, target}
-    }
-    return opts
-  })
-  .forEach(({ path, ...options }) => app.use(path, httpProxyMiddleware(options)))
 
 const webpackCompiler = webpack(webpackConfig)
 
@@ -45,7 +29,7 @@ app.use(webpackDevMiddleware(webpackCompiler, {
 }))
 app.use(webpackHotMiddleware(webpackCompiler, {
   path: '/__webpack_hmr',
-  heartbeat: 10 * 1000
+  // heartbeat: 10 * 1000
 }))
 
 app.get('/healthcheck', (req, res, next) => res.sendStatus(200))
